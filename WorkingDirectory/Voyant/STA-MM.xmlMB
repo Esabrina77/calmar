@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="STA-MM" ChaineMin="0" ChaineMax="0" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="" Masse="0" OffsetFlotteur="0" OffsetOrganeau="0">
+		</Structure>
+		<Flotteur Name="" Masse="0">
+		</Flotteur>
+		<Equipement Name="A_VOY_STA_MM_ALU_01" Height="0.09" WidthHigh="0.04" WidthLow="0.04" Masse="6.12" />
+		<Equipement Name="" Height="0.07071" WidthHigh="0.43842" WidthLow="0.34123" Masse="0" />
+		<Equipement Name="" Height="0.24" WidthHigh="0.103" WidthLow="0.441" Masse="0" />
+		<Equipement Name="" Height="0.24" WidthHigh="0.441" WidthLow="0.103" Masse="0" />
+		<Equipement Name="" Height="0.07071" WidthHigh="0.34123" WidthLow="0.441" Masse="0" />
+	</Buoy>
+</Calmar>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Day mark STA ALU" ChaineMin="0" ChaineMax="0" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="" Masse="0" OffsetFlotteur="0" OffsetOrganeau="0">
+		</Structure>
+		<Flotteur Name="" Masse="0">
+		</Flotteur>
+		<Pylone Name="OCT STA" Height="0.01" WidthHigh="0.6" WidthLow="0.6" Masse="30" />
+		<Pylone Name="OCT STA 01" Height="0.25" WidthHigh="0.23" WidthLow="0.492" Masse="0" />
+		<Pylone Name="OCT STA 02" Height="0.269" WidthHigh="0.23" WidthLow="0.23" Masse="0" />
+		<Pylone Name="OCT STA 03" Height="0.472" WidthHigh="0.2" WidthLow="0.68" Masse="0" />
+		<Pylone Name="OCT STA 04" Height="0.472" WidthHigh="0.68" WidthLow="0.2" Masse="0" />
+		<Pylone Name="OCT STA 05" Height="0.1" WidthHigh="0.23" WidthLow="0.23" Masse="0" />
+	</Buoy>
+</Calmar>

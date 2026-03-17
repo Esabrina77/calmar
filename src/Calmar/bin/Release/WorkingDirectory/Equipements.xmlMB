@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+<EquipementSupplementaire>
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LED 155 simplex" MasseUnitaire="3.9" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LED 155 duplex" MasseUnitaire="5.9" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LED 155 triplex" MasseUnitaire="7.9" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="VP LED" MasseUnitaire="25" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LS 502" MasseUnitaire="1.1" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LS 650" MasseUnitaire="1.58" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LS 701" MasseUnitaire="8" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LS 702" MasseUnitaire="7.75" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LS 704" MasseUnitaire="11.75" />
+	<EquipementSupplementaireElementItem Categorie="Light" Name="LS 708" MasseUnitaire="11.88" />
+	<EquipementSupplementaireElementItem Categorie="Solar panel" Name="20 W" MasseUnitaire="4.1" />
+	<EquipementSupplementaireElementItem Categorie="Solar panel" Name="50 W" MasseUnitaire="9.2" />
+	<EquipementSupplementaireElementItem Categorie="Solar panel" Name="85 W" MasseUnitaire="13" />
+	<EquipementSupplementaireElementItem Categorie="Battery" Name="60 Ah" MasseUnitaire="20" />
+	<EquipementSupplementaireElementItem Categorie="Battery" Name="100 Ah" MasseUnitaire="39" />
+</EquipementSupplementaire>
+</Calmar>

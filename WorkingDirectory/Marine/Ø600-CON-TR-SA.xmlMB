@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Ø600-CON-TR-SA" ChaineMin="10" ChaineMax="16" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="10KG moussée" Createur="Marine SACCOMAN">
+		<Structure Name="" Masse="0" OffsetFlotteur="0" OffsetOrganeau="-0.05065">
+		</Structure>
+		<Flotteur Name="Ø600" Masse="10">
+			<ElementDimItem H="0.13" D0="0.045" D1="0.045" DI="0" Volume="0.00067" />
+			<ElementDimItem H="0.37" D0="0.114" D1="0.6" DI="0" Volume="0.03963" />
+			<ElementDimItem H="0.06" D0="0.6" D1="0.6" DI="0" Volume="0.01696" />
+			<ElementDimItem H="0.28" D0="0.6" D1="0.2" DI="0" Volume="0.03812" />
+		</Flotteur>
+		<Pylone Name="Croix SA 01" Height="0.004" WidthHigh="0.17" WidthLow="0.17" Masse="1" />
+		<Pylone Name="Croix SA 02" Height="0.16" WidthHigh="0.025" WidthLow="0.025" Masse="0" />
+		<Pylone Name="Croix SA 03" Height="0.117" WidthHigh="0.0815" WidthLow="0.244" Masse="0" />
+		<Pylone Name="Croix SA 04" Height="0.117" WidthHigh="0.244" WidthLow="0.0815" Masse="0" />
+		<Pylone Name="Croix SA 05" Height="0.005" WidthHigh="0.025" WidthLow="0.025" Masse="0" />
+	</Buoy>
+</Calmar>

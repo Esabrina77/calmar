@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetBuoy" targetNamespace="http://tempuri.org/DataSetBuoy.xsd" xmlns:mstns="http://tempuri.org/DataSetBuoy.xsd" xmlns="http://tempuri.org/DataSetBuoy.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetBuoy" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetBuoy" msprop:Generator_UserDSName="DataSetBuoy">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Structure" msprop:Generator_TableClassName="StructureDataTable" msprop:Generator_TableVarName="tableStructure" msprop:Generator_TablePropName="_Structure" msprop:Generator_RowDeletingName="StructureRowDeleting" msprop:Generator_UserTableName="Structure" msprop:Generator_RowChangingName="StructureRowChanging" msprop:Generator_RowEvHandlerName="StructureRowChangeEventHandler" msprop:Generator_RowDeletedName="StructureRowDeleted" msprop:Generator_RowEvArgName="StructureRowChangeEvent" msprop:Generator_RowChangedName="StructureRowChanged" msprop:Generator_RowClassName="StructureRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" />
+              <xs:element name="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" msprop:Generator_UserColumnName="Volume" type="xs:double" minOccurs="0" />
+              <xs:element name="Masse" msprop:Generator_ColumnVarNameInTable="columnMasse" msprop:Generator_ColumnPropNameInRow="Masse" msprop:Generator_ColumnPropNameInTable="MasseColumn" msprop:Generator_UserColumnName="Masse" type="xs:double" minOccurs="0" />
+              <xs:element name="Offset" msprop:Generator_ColumnVarNameInTable="columnOffset" msprop:Generator_ColumnPropNameInRow="Offset" msprop:Generator_ColumnPropNameInTable="OffsetColumn" msprop:Generator_UserColumnName="Offset" type="xs:double" minOccurs="0" />
+              <xs:element name="ElementId" msprop:Generator_ColumnVarNameInTable="columnElementId" msprop:Generator_ColumnPropNameInRow="ElementId" msprop:Generator_ColumnPropNameInTable="ElementIdColumn" msprop:Generator_UserColumnName="ElementId" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Flotteur" msprop:Generator_TableClassName="FlotteurDataTable" msprop:Generator_TableVarName="tableFlotteur" msprop:Generator_TablePropName="Flotteur" msprop:Generator_RowDeletingName="FlotteurRowDeleting" msprop:Generator_UserTableName="Flotteur" msprop:Generator_RowChangingName="FlotteurRowChanging" msprop:Generator_RowEvHandlerName="FlotteurRowChangeEventHandler" msprop:Generator_RowDeletedName="FlotteurRowDeleted" msprop:Generator_RowEvArgName="FlotteurRowChangeEvent" msprop:Generator_RowChangedName="FlotteurRowChanged" msprop:Generator_RowClassName="FlotteurRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" />
+              <xs:element name="Volume" msprop:Generator_ColumnVarNameInTable="columnVolume" msprop:Generator_ColumnPropNameInRow="Volume" msprop:Generator_ColumnPropNameInTable="VolumeColumn" msprop:Generator_UserColumnName="Volume" type="xs:double" minOccurs="0" />
+              <xs:element name="Masse" msprop:Generator_ColumnVarNameInTable="columnMasse" msprop:Generator_ColumnPropNameInRow="Masse" msprop:Generator_ColumnPropNameInTable="MasseColumn" msprop:Generator_UserColumnName="Masse" type="xs:double" minOccurs="0" />
+              <xs:element name="ElementId" msprop:Generator_ColumnVarNameInTable="columnElementId" msprop:Generator_ColumnPropNameInRow="ElementId" msprop:Generator_ColumnPropNameInTable="ElementIdColumn" msprop:Generator_UserColumnName="ElementId" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pylone" msprop:Generator_TableClassName="PyloneDataTable" msprop:Generator_TableVarName="tablePylone" msprop:Generator_TablePropName="Pylone" msprop:Generator_RowDeletingName="PyloneRowDeleting" msprop:Generator_UserTableName="Pylone" msprop:Generator_RowChangingName="PyloneRowChanging" msprop:Generator_RowEvHandlerName="PyloneRowChangeEventHandler" msprop:Generator_RowDeletedName="PyloneRowDeleted" msprop:Generator_RowEvArgName="PyloneRowChangeEvent" msprop:Generator_RowChangedName="PyloneRowChanged" msprop:Generator_RowClassName="PyloneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" />
+              <xs:element name="Masse" msprop:Generator_ColumnVarNameInTable="columnMasse" msprop:Generator_ColumnPropNameInRow="Masse" msprop:Generator_ColumnPropNameInTable="MasseColumn" msprop:Generator_UserColumnName="Masse" type="xs:double" minOccurs="0" />
+              <xs:element name="LongueurBas" msprop:Generator_ColumnVarNameInTable="columnLongueurBas" msprop:Generator_ColumnPropNameInRow="LongueurBas" msprop:Generator_ColumnPropNameInTable="LongueurBasColumn" msprop:Generator_UserColumnName="LongueurBas" type="xs:double" minOccurs="0" />
+              <xs:element name="LongueurHaut" msprop:Generator_ColumnVarNameInTable="columnLongueurHaut" msprop:Generator_ColumnPropNameInRow="LongueurHaut" msprop:Generator_ColumnPropNameInTable="LongueurHautColumn" msprop:Generator_UserColumnName="LongueurHaut" type="xs:double" minOccurs="0" />
+              <xs:element name="Hauteur" msprop:Generator_ColumnVarNameInTable="columnHauteur" msprop:Generator_ColumnPropNameInRow="Hauteur" msprop:Generator_ColumnPropNameInTable="HauteurColumn" msprop:Generator_UserColumnName="Hauteur" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Equipement" msprop:Generator_TableClassName="EquipementDataTable" msprop:Generator_TableVarName="tableEquipement" msprop:Generator_TablePropName="Equipement" msprop:Generator_RowDeletingName="EquipementRowDeleting" msprop:Generator_UserTableName="Equipement" msprop:Generator_RowChangingName="EquipementRowChanging" msprop:Generator_RowEvHandlerName="EquipementRowChangeEventHandler" msprop:Generator_RowDeletedName="EquipementRowDeleted" msprop:Generator_RowEvArgName="EquipementRowChangeEvent" msprop:Generator_RowChangedName="EquipementRowChanged" msprop:Generator_RowClassName="EquipementRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" type="xs:string" />
+              <xs:element name="Masse" msprop:Generator_ColumnVarNameInTable="columnMasse" msprop:Generator_ColumnPropNameInRow="Masse" msprop:Generator_ColumnPropNameInTable="MasseColumn" msprop:Generator_UserColumnName="Masse" type="xs:double" minOccurs="0" />
+              <xs:element name="LongueurBas" msprop:Generator_ColumnVarNameInTable="columnLongueurBas" msprop:Generator_ColumnPropNameInRow="LongueurBas" msprop:Generator_ColumnPropNameInTable="LongueurBasColumn" msprop:Generator_UserColumnName="LongueurBas" type="xs:double" minOccurs="0" />
+              <xs:element name="LongueurHaut" msprop:Generator_ColumnVarNameInTable="columnLongueurHaut" msprop:Generator_ColumnPropNameInRow="LongueurHaut" msprop:Generator_ColumnPropNameInTable="LongueurHautColumn" msprop:Generator_UserColumnName="LongueurHaut" type="xs:double" minOccurs="0" />
+              <xs:element name="Hauteur" msprop:Generator_ColumnVarNameInTable="columnHauteur" msprop:Generator_ColumnPropNameInRow="Hauteur" msprop:Generator_ColumnPropNameInTable="HauteurColumn" msprop:Generator_UserColumnName="Hauteur" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Elements" msprop:Generator_TableClassName="ElementsDataTable" msprop:Generator_TableVarName="tableElements" msprop:Generator_TablePropName="Elements" msprop:Generator_RowDeletingName="ElementsRowDeleting" msprop:Generator_UserTableName="Elements" msprop:Generator_RowChangingName="ElementsRowChanging" msprop:Generator_RowEvHandlerName="ElementsRowChangeEventHandler" msprop:Generator_RowDeletedName="ElementsRowDeleted" msprop:Generator_RowEvArgName="ElementsRowChangeEvent" msprop:Generator_RowChangedName="ElementsRowChanged" msprop:Generator_RowClassName="ElementsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementId" msprop:Generator_ColumnVarNameInTable="columnElementId" msprop:Generator_ColumnPropNameInRow="ElementId" msprop:Generator_ColumnPropNameInTable="ElementIdColumn" msprop:Generator_UserColumnName="ElementId" type="xs:double" />
+              <xs:element name="DiametreBas" msprop:Generator_ColumnVarNameInTable="columnDiametreBas" msprop:Generator_ColumnPropNameInRow="DiametreBas" msprop:Generator_ColumnPropNameInTable="DiametreBasColumn" msprop:Generator_UserColumnName="DiametreBas" type="xs:double" minOccurs="0" />
+              <xs:element name="DiametreHaut" msprop:Generator_ColumnVarNameInTable="columnDiametreHaut" msprop:Generator_ColumnPropNameInRow="DiametreHaut" msprop:Generator_ColumnPropNameInTable="DiametreHautColumn" msprop:Generator_UserColumnName="DiametreHaut" type="xs:double" minOccurs="0" />
+              <xs:element name="Hauteur" msprop:Generator_ColumnVarNameInTable="columnHauteur" msprop:Generator_ColumnPropNameInRow="Hauteur" msprop:Generator_ColumnPropNameInTable="HauteurColumn" msprop:Generator_UserColumnName="Hauteur" type="xs:double" minOccurs="0" />
+              <xs:element name="DiametreInt" msprop:Generator_ColumnVarNameInTable="columnDiametreInt" msprop:Generator_ColumnPropNameInRow="DiametreInt" msprop:Generator_ColumnPropNameInTable="DiametreIntColumn" msprop:Generator_UserColumnName="DiametreInt" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="StructureKeyNom" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Structure" />
+      <xs:field xpath="mstns:Nom" />
+    </xs:unique>
+    <xs:unique name="FlotteurKeyNom" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Flotteur" />
+      <xs:field xpath="mstns:Nom" />
+    </xs:unique>
+    <xs:unique name="PyloneKeyNom" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pylone" />
+      <xs:field xpath="mstns:Nom" />
+    </xs:unique>
+    <xs:unique name="EquipementKeyNom" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Equipement" />
+      <xs:field xpath="mstns:Nom" />
+    </xs:unique>
+    <xs:unique name="ElementIdKey">
+      <xs:selector xpath=".//mstns:Elements" />
+      <xs:field xpath="mstns:ElementId" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Structure_Elements" msdata:parent="Structure" msdata:child="Elements" msdata:parentkey="ElementId" msdata:childkey="ElementId" msprop:Generator_UserChildTable="Elements" msprop:Generator_ChildPropName="GetElementsRows" msprop:Generator_ParentPropName="StructureRow" msprop:Generator_UserRelationName="Structure_Elements" msprop:Generator_RelationVarName="relationStructure_Elements" msprop:Generator_UserParentTable="Structure" />
+      <msdata:Relationship name="Flotteur_Elements" msdata:parent="Flotteur" msdata:child="Elements" msdata:parentkey="ElementId" msdata:childkey="ElementId" msprop:Generator_UserChildTable="Elements" msprop:Generator_ChildPropName="GetElementsRows" msprop:Generator_ParentPropName="FlotteurRow" msprop:Generator_UserRelationName="Flotteur_Elements" msprop:Generator_RelationVarName="relationFlotteur_Elements" msprop:Generator_UserParentTable="Flotteur" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

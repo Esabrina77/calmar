@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Mod 1200" ChaineMin="14" ChaineMax="20" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="ST Mod1200" Masse="26" OffsetFlotteur="0.294" OffsetOrganeau="0.27">
+			<ElementDimItem H="0.294" D0="0.35" D1="0.35" DI="0.337" Volume="0" />
+			<ElementDimItem H="0.6" D0="0.35" D1="0.35" DI="0.35" Volume="0" />
+		</Structure>
+		<Flotteur Name="Mod 1200" Masse="56">
+			<ElementDimItem H="0.297" D0="0.292" D1="1.2" DI="0" Volume="0" />
+			<ElementDimItem H="0.302" D0="1.2" D1="0.576" DI="0" Volume="0" />
+		</Flotteur>
+		<Pylone Name="PE Mast Ø400 1.05" Height="0.135" WidthHigh="0.4" WidthLow="0.57" Masse="9" />
+		<Pylone Name="" Height="0.915" WidthHigh="0.4" WidthLow="0.4" Masse="9" />
+	</Buoy>
+</Calmar>

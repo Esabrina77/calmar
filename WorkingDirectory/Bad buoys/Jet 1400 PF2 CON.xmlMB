@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 1400 PF2 CON" ChaineMin="12" ChaineMax="20" MasseLestUnitaire="75" NombreLestMin="2" NombreLestMax="2">
+		<Structure Name="STR_JET_1400" Masse="251" OffsetFlotteur="0.28" OffsetOrganeau="0.14">
+			<ElementDimItem H="0.135" D0="0.878" D1="0.878" DI="0.868" Volume="0.003735" />
+			<ElementDimItem H="0.12" D0="0.878" D1="1.096" DI="0.868" Volume="0.004172" />
+			<ElementDimItem H="0.005" D0="1.2" D1="1.2" DI="0.868" Volume="0.001275" />
+			<ElementDimItem H="0.72" D0="0.878" D1="0.878" DI="0.868" Volume="0.010999" />
+			<ElementDimItem H="0.008" D0="1.48" D1="1.48" DI="0.42" Volume="0.011655" />
+		</Structure>
+		<Flotteur Name="FLT_JET_1400" Masse="112">
+			<ElementDimItem H="0.7" D0="2" D1="2" DI="1.06" Volume="1.434" />
+		</Flotteur>
+		<Pylone Name="VOY_CON_TRI_1" Height="0.135" WidthHigh="0.4" WidthLow="0.57" Masse="16" />
+		<Pylone Name="VOY_CON_TRI_2" Height="0.316" WidthHigh="0.4" WidthLow="0.4" Masse="0" />
+		<Pylone Name="VOY_CON_TRI_3" Height="0.713" WidthHigh="0.416" WidthLow="1" Masse="15" />
+		<Pylone Name="VOY_CON_TRI_4" Height="0.391" WidthHigh="0.416" WidthLow="0.416" Masse="0" />
+	</Buoy>
+</Calmar>

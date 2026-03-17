@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="BC 1500-STRP-CYL" ChaineMin="14" ChaineMax="30" MasseLestUnitaire="50" NombreLestMin="0" NombreLestMax="2" Commentaire="Dossier 200664-Structure peinte" Createur="Marine SACCOMAN">
+		<Structure Name=" A_STR_BC1240_0X-P" Masse="208" OffsetFlotteur="1.019" OffsetOrganeau="0.969">
+			<ElementDimItem H="0.249" D0="0.2" D1="0.34" DI="0" Volume="0.00255" />
+			<ElementDimItem H="0.634" D0="0.2191" D1="0.2191" DI="0" Volume="0.02389" />
+			<ElementDimItem H="0.1" D0="0.47" D1="0.47" DI="0" Volume="0.00459" />
+			<ElementDimItem H="0.01" D0="0.4" D1="0.4" DI="0" Volume="0.00119" />
+			<ElementDimItem H="0.636" D0="0.2191" D1="0.2191" DI="0" Volume="0.02397" />
+			<ElementDimItem H="0.2" D0="0.2191" D1="0.6191" DI="0" Volume="0.00793" />
+			<ElementDimItem H="0.14" D0="0.8" D1="0.6" DI="0" Volume="0.01596" />
+		</Structure>
+		<Flotteur Name="STD_P_FLT_3Flo764" Masse="133">
+			<ElementDimItem H="0.81" D0="1.5" D1="1.5" DI="0.28" Volume="1.2616" />
+		</Flotteur>
+		<Pylone Name="STD_P_VOY_3Voy05121022+P_FLT_VOY-CYL-PE-GM_01" Height="0.025" WidthHigh="0.57" WidthLow="0.57" Masse="28" />
+		<Pylone Name="" Height="0.10985" WidthHigh="0.4" WidthLow="0.57" Masse="0" />
+		<Pylone Name="" Height="0.06582" WidthHigh="0.4" WidthLow="0.4" Masse="0" />
+		<Pylone Name="" Height="0.6882" WidthHigh="0.93392" WidthLow="1" Masse="0" />
+		<Pylone Name="" Height="0.14599" WidthHigh="0.416" WidthLow="0.416" Masse="0" />
+	</Buoy>
+</Calmar>

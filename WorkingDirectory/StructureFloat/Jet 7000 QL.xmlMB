@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 7000 QL" ChaineMin="25" ChaineMax="50" MasseLestUnitaire="100" NombreLestMin="3" NombreLestMax="7">
+		<Structure Name="A_STR_79-QL-P_STR_01" Masse="800" OffsetFlotteur="4.582" OffsetOrganeau="4.497">
+			<ElementDimItem H="0.376" D0="0.042" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.015" D0="0.524" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.3" D0="0.7" D1="0.7" DI="0.3" Volume="0" />
+			<ElementDimItem H="3.329" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.056" D0="0.445" D1="0.445" DI="0" Volume="0" />
+			<ElementDimItem H="0.036" D0="0.324" D1="0.708" DI="0" Volume="0" />
+			<ElementDimItem H="0.053" D0="0.708" D1="0.83" DI="0" Volume="0" />
+			<ElementDimItem H="0.042" D0="0.83" D1="0.83" DI="0" Volume="0" />
+			<ElementDimItem H="0.053" D0="0.83" D1="0.708" DI="0" Volume="0" />
+			<ElementDimItem H="0.061" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.2" D0="0.324" D1="0.624" DI="0" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.7" D1="0.7" DI="0" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.15" D0="1.729" D1="1.57" DI="0" Volume="0" />
+			<ElementDimItem H="0.102" D0="1.423" D1="1.423" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J7DI330_01" Masse="680">
+			<ElementDimItem H="0.205" D0="0.788" D1="1.81" DI="0.345" Volume="0.24" />
+			<ElementDimItem H="0.463" D0="1.81" D1="2.6" DI="0.345" Volume="1.6" />
+			<ElementDimItem H="0.347" D0="2.6" D1="2.6" DI="0.345" Volume="0" />
+			<ElementDimItem H="0.056" D0="2.6" D1="2.48" DI="0.345" Volume="0.07" />
+			<ElementDimItem H="0.152" D0="2.48" D1="2.48" DI="0.33" Volume="0" />
+			<ElementDimItem H="0.056" D0="2.48" D1="2.6" DI="0.345" Volume="0.129" />
+			<ElementDimItem H="0.369" D0="2.6" D1="2.6" DI="0.345" Volume="0" />
+			<ElementDimItem H="0.062" D0="2.6" D1="2.47" DI="0.345" Volume="0.099" />
+			<ElementDimItem H="0.081" D0="1.76" D1="1.59" DI="0.345" Volume="0" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

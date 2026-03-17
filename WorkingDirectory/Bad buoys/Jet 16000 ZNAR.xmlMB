@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 16000 ZNAR" ChaineMin="25" ChaineMax="40" MasseLestUnitaire="100" NombreLestMin="6" NombreLestMax="6">
+		<Structure Name="Jet 16000 hitz" Masse="1284" OffsetFlotteur="2.552" OffsetOrganeau="2.473">
+			<ElementDimItem H="0.274" D0="0.07" D1="0.07" DI="0" Volume="0" />
+			<ElementDimItem H="2.237" D0="0.508" D1="0.508" DI="0" Volume="0" />
+			<ElementDimItem H="0.01" D0="1" D1="1" DI="0" Volume="0" />
+			<ElementDimItem H="2.063" D0="0.508" D1="0.508" DI="0" Volume="0" />
+			<ElementDimItem H="0.2" D0="2.5" D1="2.276" DI="0" Volume="0" />
+			<ElementDimItem H="0.15" D0="2" D1="2" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="Jet 16000" Masse="1200">
+			<ElementDimItem H="0.646" D0="1.378" D1="3.6" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.362" D0="3.6" D1="3.6" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.067" D0="3.6" D1="3.482" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.141" D0="3.482" D1="3.482" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.067" D0="3.482" D1="3.6" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.456" D0="3.6" D1="3.6" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.155" D0="3.6" D1="3.296" DI="0.524" Volume="0" />
+			<ElementDimItem H="0.123" D0="3.296" D1="3.265" DI="0.524" Volume="0" />
+		</Flotteur>
+		<Pylone Name="ZNAR base" Height="0.81" WidthHigh="1.824" WidthLow="1.824" Masse="50" />
+		<Pylone Name="ZNAR panneau" Height="2.5" WidthHigh="1.824" WidthLow="1.824" Masse="100" />
+		<Pylone Name="Crown Hitz" Height="0.706" WidthHigh="2.5" WidthLow="1.824" Masse="56" />
+		<Pylone Name="Radar reflector" Height="0.394" WidthHigh="0.32" WidthLow="1.4" Masse="50" />
+		<Pylone Name="Top mark support" Height="0.64" WidthHigh="0.32" WidthLow="0.32" Masse="5" />
+		<Equipement Name="STA" Height="0.4" WidthHigh="0.17" WidthLow="0.55" Masse="5.5" />
+		<Equipement Name="STA-1" Height="0.4" WidthHigh="0.55" WidthLow="0.17" Masse="5.5" />
+	</Buoy>
+</Calmar>

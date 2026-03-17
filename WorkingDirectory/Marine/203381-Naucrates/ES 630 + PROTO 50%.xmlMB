@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="ES 630 + PROTO 50%" ChaineMin="18" ChaineMax="30" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Marine SACCOMAN">
+		<Structure Name="proto poisson 50%" Masse="0" OffsetFlotteur="1" OffsetOrganeau="0">
+			<ElementDimItem H="1" D0="1" D1="1" DI="0" Volume="1E-07" />
+		</Structure>
+		<Flotteur Name="SP 630" Masse="208">
+			<ElementDimItem H="0.4" D0="0.26" D1="0.26" DI="0" Volume="0" />
+			<ElementDimItem H="0.55" D0="0.26" D1="0.63" DI="0" Volume="0" />
+			<ElementDimItem H="0.35" D0="0.63" D1="0.63" DI="0" Volume="0" />
+			<ElementDimItem H="0.477" D0="0.63" D1="0.63" DI="0" Volume="0.149" />
+			<ElementDimItem H="0.15" D0="0.63" D1="0.4" DI="0" Volume="0.03" />
+			<ElementDimItem H="0.459" D0="0.4" D1="0.4" DI="0" Volume="0.055" />
+			<ElementDimItem H="0.708" D0="0.4" D1="0.4" DI="0" Volume="0.0643" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

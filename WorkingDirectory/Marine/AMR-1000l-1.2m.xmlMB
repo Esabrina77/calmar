@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="AMR-1000l-1.2m" ChaineMin="14" ChaineMax="25" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="AMR_1000_20t" Masse="114.8" OffsetFlotteur="0.53" OffsetOrganeau="0.485">
+			<ElementDimItem H="0.12" D0="0" D1="0.24" DI="0" Volume="0.00068" />
+			<ElementDimItem H="0.18" D0="0.24" D1="0.24" DI="0" Volume="0.00196" />
+			<ElementDimItem H="0.215" D0="0.219" D1="0.219" DI="0.205" Volume="0.00103" />
+			<ElementDimItem H="0.01" D0="0.45" D1="0.45" DI="0.205" Volume="0.00125" />
+			<ElementDimItem H="0.815" D0="0.219" D1="0.219" DI="0.205" Volume="0.00386" />
+			<ElementDimItem H="0.01" D0="0.45" D1="0.45" DI="0.205" Volume="0.00125" />
+			<ElementDimItem H="0.3" D0="0.219" D1="0.219" DI="0.205" Volume="0.00199" />
+			<ElementDimItem H="0.2" D0="0.035" D1="0.035" DI="0" Volume="0.00047" />
+		</Structure>
+		<Flotteur Name="FLT_AMR1000" Masse="92">
+			<ElementDimItem H="0.81" D0="1.24" D1="1.24" DI="0.218" Volume="0.936" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

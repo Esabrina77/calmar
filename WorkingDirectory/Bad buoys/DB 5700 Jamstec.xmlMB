@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DB 5700 Jamstec" ChaineMin="20" ChaineMax="30" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="6">
+		<Structure Name="DB 5700" Masse="980" OffsetFlotteur="1.4" OffsetOrganeau="0.3">
+			<ElementDimItem H="0.15" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.08" D1="1.08" DI="0.898" Volume="0" />
+			<ElementDimItem H="1.13" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.03" D1="1.03" DI="0.898" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.85" D1="1.85" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.15" D0="2.143" D1="1.98" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.1" D0="1.42" D1="1.42" DI="0.898" Volume="0" />
+		</Structure>
+		<Flotteur Name="5700" Masse="680">
+			<ElementDimItem H="0.162" D0="1.018" D1="1.809" DI="0.465" Volume="0" />
+			<ElementDimItem H="0.463" D0="1.809" D1="2.6" DI="0.465" Volume="0" />
+			<ElementDimItem H="0.997" D0="2.6" D1="2.6" DI="0.465" Volume="0" />
+		</Flotteur>
+		<Pylone Name="DB5700" Height="2.09" WidthHigh="1.34" WidthLow="1.34" Masse="400" />
+	</Buoy>
+</Calmar>

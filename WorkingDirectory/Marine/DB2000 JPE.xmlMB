@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DB2000 JPE" ChaineMin="16" ChaineMax="30" MasseLestUnitaire="40" NombreLestMin="0" NombreLestMax="6" Commentaire="" Createur="Marine SACCOMAN">
+		<Structure Name="STR_JET-2000_PE" Masse="82" OffsetFlotteur="0.72" OffsetOrganeau="-0.118">
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.21" D0="0.814" D1="0.814" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.4" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.83" D1="0.83" DI="0.6" Volume="0" />
+			<ElementDimItem H="1.1" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.83" D1="0.83" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.15" D0="0.63" D1="0.87" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.87" D1="0.87" DI="0.6" Volume="0" />
+		</Structure>
+		<Flotteur Name="Jet 2000" Masse="282">
+			<ElementDimItem H="0.4" D0="0.97" D1="1.9" DI="0.74" Volume="0" />
+			<ElementDimItem H="0.21" D0="1.9" D1="1.9" DI="0.74" Volume="0" />
+			<ElementDimItem H="0.17" D0="1.8" D1="1.8" DI="0.74" Volume="0" />
+			<ElementDimItem H="0.17" D0="1.9" D1="1.9" DI="0.74" Volume="0" />
+			<ElementDimItem H="0.1" D0="1.9" D1="1.7" DI="0.74" Volume="0" />
+		</Flotteur>
+		<Pylone Name="M_MAT_HV-1M-STD" Height="1.105" WidthHigh="0.982" WidthLow="0.982" Masse="50" />
+		<Equipement Name="A_SUP_1FX_01" Height="0.417" WidthHigh="0.31" WidthLow="0.31" Masse="4.63" />
+		<Equipement Name="A_SUP_1FX_01 2" Height="0.145" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="A_VOY_STA_MM_ALU_01" Height="0.09" WidthHigh="0.04" WidthLow="0.04" Masse="6.12" />
+		<Equipement Name="" Height="0.07071" WidthHigh="0.43842" WidthLow="0.34123" Masse="0" />
+		<Equipement Name="" Height="0.24" WidthHigh="0.103" WidthLow="0.441" Masse="0" />
+		<Equipement Name="" Height="0.24" WidthHigh="0.441" WidthLow="0.103" Masse="0" />
+		<Equipement Name="" Height="0.07071" WidthHigh="0.34123" WidthLow="0.441" Masse="0" />
+	</Buoy>
+</Calmar>

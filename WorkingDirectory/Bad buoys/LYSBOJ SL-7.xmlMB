@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="LYSBOJ SL-7" ChaineMin="25" ChaineMax="45" MasseLestUnitaire="40" NombreLestMin="0" NombreLestMax="10">
+		<Structure Name="Str LYSBOJ SL-7" Masse="320" OffsetFlotteur="1.731" OffsetOrganeau="1.806">
+			<ElementDimItem H="7.063" D0="0.273" D1="0.273" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="Flotteur LYSBOJ SL-7" Masse="1330">
+			<ElementDimItem H="1.671" D0="0.273" D1="1.5" DI="0.273" Volume="0" />
+			<ElementDimItem H="3.661" D0="1.5" D1="0.54" DI="0.273" Volume="0" />
+			<ElementDimItem H="0.152" D0="0.54" D1="0.5" DI="0" Volume="0" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

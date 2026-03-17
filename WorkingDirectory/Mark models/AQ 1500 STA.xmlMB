@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="AQ 1500 STA" ChaineMin="20" ChaineMax="25" MasseLestUnitaire="50" NombreLestMin="1" NombreLestMax="3" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="AQ 1500" Masse="250" OffsetFlotteur="1.629" OffsetOrganeau="1.58">
+			<ElementDimItem H="0.235" D0="0.05" D1="0.34" DI="0" Volume="0" />
+			<ElementDimItem H="0.15" D0="0.5" D1="0.5" DI="0.206" Volume="0" />
+			<ElementDimItem H="1.094" D0="0.219" D1="0.219" DI="0.206" Volume="0" />
+			<ElementDimItem H="0.1" D0="0.47" D1="0.47" DI="0.206" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.4" D1="0.4" DI="0.206" Volume="0" />
+			<ElementDimItem H="1.66" D0="0.219" D1="0.219" DI="0.206" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.8" D1="0.8" DI="0.206" Volume="0" />
+			<ElementDimItem H="0.11" D0="0.7" D1="0.7" DI="0.206" Volume="0" />
+			<ElementDimItem H="0.015" D0="0.6" D1="0.6" DI="0.206" Volume="0" />
+		</Structure>
+		<Flotteur Name="AQ 1500" Masse="164">
+			<ElementDimItem H="0.47" D0="0.355" D1="1.24" DI="0.218" Volume="0.23" />
+			<ElementDimItem H="0.34" D0="1.24" D1="1.24" DI="0.218" Volume="0.39" />
+			<ElementDimItem H="0.81" D0="1.24" D1="1.24" DI="0.218" Volume="0.94" />
+		</Flotteur>
+		<Pylone Name="OCT STA" Height="0.01" WidthHigh="0.6" WidthLow="0.6" Masse="30" />
+		<Pylone Name="OCT STA 01" Height="0.25" WidthHigh="0.23" WidthLow="0.492" Masse="0" />
+		<Pylone Name="OCT STA 02" Height="0.269" WidthHigh="0.23" WidthLow="0.23" Masse="0" />
+		<Pylone Name="OCT STA 03" Height="0.472" WidthHigh="0.2" WidthLow="0.68" Masse="0" />
+		<Pylone Name="OCT STA 04" Height="0.472" WidthHigh="0.68" WidthLow="0.2" Masse="0" />
+		<Pylone Name="OCT STA 05" Height="0.1" WidthHigh="0.23" WidthLow="0.23" Masse="0" />
+	</Buoy>
+</Calmar>

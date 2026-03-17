@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="FB800 CYL" ChaineMin="10" ChaineMax="18" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="17kg non moussée-28kg moussée" Createur="Marine SACCOMAN">
+		<Structure Name="" Masse="0" OffsetFlotteur="0" OffsetOrganeau="-0.07">
+		</Structure>
+		<Flotteur Name="Ø800-FB CYL" Masse="28">
+			<ElementDimItem H="0.122" D0="0.04" D1="0.04" DI="0" Volume="0.00096" />
+			<ElementDimItem H="0.103" D0="0.61" D1="0.8" DI="0" Volume="0.02365" />
+			<ElementDimItem H="0.14" D0="0.8" D1="0.8" DI="0" Volume="0.06995" />
+			<ElementDimItem H="0.6" D0="0.52" D1="0.52" DI="0" Volume="0.13023" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

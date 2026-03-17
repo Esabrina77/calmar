@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 7000 QI PF3" ChaineMin="25" ChaineMax="45" MasseLestUnitaire="100" NombreLestMin="2" NombreLestMax="5">
+		<Structure Name="A_STR_J79QI-P_STD_01" Masse="619" OffsetFlotteur="2.328" OffsetOrganeau="2.245">
+			<ElementDimItem H="0.376" D0="0.042" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.015" D0="0.524" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.24" D0="0.7" D1="0.7" DI="0.309" Volume="0" />
+			<ElementDimItem H="1.454" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.037" D0="0.324" D1="0.708" DI="0" Volume="0" />
+			<ElementDimItem H="0.053" D0="0.708" D1="0.83" DI="0" Volume="0" />
+			<ElementDimItem H="0.042" D0="0.83" D1="0.83" DI="0" Volume="0" />
+			<ElementDimItem H="0.053" D0="0.83" D1="0.708" DI="0" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.7" D1="0.7" DI="0" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.15" D0="1.73" D1="1.57" DI="0" Volume="0" />
+			<ElementDimItem H="0.105" D0="1.423" D1="1.423" DI="1.023" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J7DI330_01" Masse="680">
+			<ElementDimItem H="0.205" D0="0.788" D1="1.81" DI="0.345" Volume="0.24" />
+			<ElementDimItem H="0.463" D0="1.81" D1="2.6" DI="0.345" Volume="1.6" />
+			<ElementDimItem H="0.347" D0="2.6" D1="2.6" DI="0.345" Volume="0" />
+			<ElementDimItem H="0.056" D0="2.6" D1="2.48" DI="0.345" Volume="0.07" />
+			<ElementDimItem H="0.152" D0="2.48" D1="2.48" DI="0.33" Volume="0" />
+			<ElementDimItem H="0.056" D0="2.48" D1="2.6" DI="0.345" Volume="0.129" />
+			<ElementDimItem H="0.369" D0="2.6" D1="2.6" DI="0.345" Volume="0" />
+			<ElementDimItem H="0.062" D0="2.6" D1="2.47" DI="0.345" Volume="0.099" />
+			<ElementDimItem H="0.081" D0="1.76" D1="1.59" DI="0.345" Volume="0" />
+		</Flotteur>
+		<Pylone Name="A_COM_MAT_MIL_2M_03" Height="2" WidthHigh="0.6" WidthLow="0.89" Masse="78" />
+	</Buoy>
+</Calmar>

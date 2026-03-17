@@ -1,0 +1,206 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BuoyLib
+</name>
+</assembly>
+<members>
+<member name="M:BuoyLib.Buoy.CChaine.CHARGE_EPREUVE(System.Int32)">
+ <summary>
+ Charge d'epreuve (en t)
+ </summary>
+ <param name="QL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.BUOY">
+ <summary>
+ Propriete du modele de bouée selectionner - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.CHAIN">
+ <summary>
+ Propriete correspondant a la chaine selectionner - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.QualiteChaine">
+ <summary>
+ Propriete correspondant a la qualite de la chaine selectionner - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.Lest">
+ <summary>
+ Propriete du lest pour le calcul - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.MasseLest">
+ <summary>
+ Propiete de la masse du lest (en kg) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.MasseEquipement">
+ <summary>
+ Propiete de la masse de tous les equipements (en kg) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.Profondeur">
+ <summary>
+ Propiete de la profondeur (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.Marnage">
+ <summary>
+ Propiete du marnage (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.HouleMax">
+ <summary>
+ Propiete de la houle max (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.HouleSignif">
+ <summary>
+ Propiete de la houle significant (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.PeriodeHoule">
+ <summary>
+ Propiete de la periode de la houle (en sec) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.VitesseVent">
+ <summary>
+ Propiete de la vitesse du vent (en m/s) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.VitesseVentKMH">
+ <summary>
+ Propiete de la vitesse en vent (en km/h) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.VitesseCourant">
+ <summary>
+ Propiete de la vitesse du courant (en m/s) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.VitesseCourantNDS">
+ <summary>
+ Propiete de la vitesse du courant (en noeuds) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.DensiteCM">
+ <summary>
+ Propiete de la densité du corps mort (en kg/m³) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.RATIO_PROFONDEUR_PAR_TROIS">
+ <summary>
+ Ratio d'absurdité pour une comparaison avec le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.PROFONDEUR_MAX">
+ <summary>
+ Propiete calculer par l'adition de la :
+ Profondeur + marnage + houle maximun / 2
+  (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.PROFONDEUR_MIN">
+ <summary>
+ Propiete calculer par la soustraction de la profondeur et la houle maximun sur 2  (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.HAUTEUR_CATENAIRE">
+ <summary>
+ Propiete calculer par l'adition de la :
+ Profondeur maximun + Profondeur de l'organeau de la bouée
+ (en m) - Donnée d'entrée pour le calcul
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BuoyLib.CCalculMouillage.VITESSE_COURANT_SURFACE">
+ <summary>
+ Propiete calculer par l'adition de la 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BuoyLib.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BuoyLib.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BuoyLib.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+</members>
+</doc>

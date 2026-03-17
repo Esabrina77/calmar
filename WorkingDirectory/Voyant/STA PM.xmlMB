@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="STA PM" ChaineMin="0" ChaineMax="0" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="" Masse="0" OffsetFlotteur="0" OffsetOrganeau="0">
+		</Structure>
+		<Flotteur Name="" Masse="0">
+		</Flotteur>
+		<Equipement Name="VOY_STA_PM_05" Height="0.006" WidthHigh="0.25" WidthLow="0.25" Masse="4.06" />
+		<Equipement Name="" Height="0.015" WidthHigh="0.04" WidthLow="0.04" Masse="0" />
+		<Equipement Name="" Height="0.05" WidthHigh="0.47" WidthLow="0.371" Masse="0" />
+		<Equipement Name="" Height="0.185" WidthHigh="0.099" WidthLow="0.47" Masse="0" />
+		<Equipement Name="" Height="0.185" WidthHigh="0.47" WidthLow="0.099" Masse="0" />
+		<Equipement Name="" Height="0.05" WidthHigh="0.371" WidthLow="0.47" Masse="0" />
+		<Equipement Name="" Height="0.015" WidthHigh="0.04" WidthLow="0.04" Masse="0" />
+		<Equipement Name="" Height="0.006" WidthHigh="0.25" WidthLow="0.25" Masse="0" />
+	</Buoy>
+</Calmar>

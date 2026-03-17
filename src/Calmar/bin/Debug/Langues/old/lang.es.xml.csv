@@ -1,0 +1,250 @@
+﻿MainAccueilTab;Modelos
+MainGroupFichier;gerencia de ficheros 
+MainButtonOuvertureFichier;Abrir
+MainButtonSauvegardeFichier;guardar
+MainGroupBouees;gerencia modelos
+MainButtonNouveauBouee;Nueva Boya
+MainButtonModifierBouee; Modificar Boya
+MainButtonCopierBouee;Copiar Boya
+MainButtonSupprimerBouee;Suprimir Boya
+MainGroupTri; Organizar por
+MainComboBoxListeTri;{Nombre,Volumen}|1
+MainButtonTriListeBoueeCroissant;Orden ascendente
+MainButtonTriListeBoueeDecroissant;Orden Descendente
+MainCalculTab;Calculo Parametro
+MainButtonCalcul;Calculo Parametro
+MainButtonNoLoad;Sin Carga
+MainButtonCurrent;Corriente
+MainButtonVent;Viento
+MainButtonHoule;ola
+MainButtonFullLoad;Carga maxima
+MainButtonCalculHydro;Calculo Hidrico
+MainLangueTab;Lenguas
+MainGroupLangue;Eligir lengua
+MainButtonLangueFr;Frances
+MainButtonLangueEn;Ingles
+MainButtonLangueEs;Español
+MainTextBlockSelectionChaine;Seleccion Cadena
+MainTextBlockParamCalculDN;Parametro Calculo DN
+MainTextBlockParamCalculType;Tipo 
+MainTextBlockParamCalculQualite;Calidad
+MainTextBlockParamCalculLest;Lastre
+MainTextBlockParamCalculMasseEquipement;Pesoequipamento
+MainRadioButtonMasseEquipement;kg
+MainButtonListEquipement;...
+MainTextBlockParamCalculProfondeur;Profundidad
+MainRadioButtonProfondeur;m 
+MainTextBlockParamCalculMarnage;Amplitud marea
+MainRadioButtonMarnage;m
+MainTextBlockParamCalculHouleMax;Altura Max. ola
+MainRadioButtonHouleMax;m
+MainTextBlockParamCalculHouleSignificative;Ola Significante
+MainRadioButtonHouleSignificative;m
+MainTextBlockParamCalculPeriodeHoule;Periodo Hola
+MainRadioButtonPeriodeHoule;Seg
+MainTextBlockParamCalculVitesseCourant;Velocidad Corriente
+MainRadioButtonVitesseCourantMS;m/s
+MainRadioButtonVitesseCourantKts;nudos
+MainTextBlockParamCalculVitesseVent;Velocidad viento
+MainRadioButtonVitesseVentMS;m/s
+MainRadioButtonVitesseVentKmh;km/h
+MainTextBlockParamCalculSelectionDensiteCM;Muerto elecion densidad
+MainComboBoxDensiteCM;{2.4 (Cimento reforcado),2.8 (Cimento reforcado altamente),3.0 (Cimento reforcado hematita),7.3 (Hiero fundido),7.85 (Acero)}|1
+MainTextBlockAideLigne1;Seleccionar el modelo en la lista a la izquierda para cambiar el muerto y obtener el calculo
+MainTextBlockAideLigne2;Clicar el icono para adicionar un modelo a la lista
+MainTextBlockAideLigne3;Clicar el icono modificar para cambiar el modelo seleccionado
+MainTextBlockAideLigne4;Clicar el icono Calculo Parametro para calcular el amarre
+MainTextBlockAideLigne5;Manual y referencia tecnica en 
+ManagerBuoyGeneralTab;Geral
+ManagerBuoyRibbonGroupSaveBuoy; Savin Management What ?
+ManagerBuoyButtonSauvegardeBouee;Guardar  (What?)
+ManagerBuoyRibbonGroupMoveFloatOnStructure;Desplazar el flotador al largo de la estructura
+ManagerBuoyButtonDeplacerFlotteurAuDessus;Desplazar para arriba
+ManagerBuoyButtonDeplacerFlotteurAuDessous;Desplazar para bajo
+ManagerBuoyTextBlockPasDeplacement;Desplazar altura (m)
+ManagerBuoyFlotteurTab;Flotador
+ManagerBuoyRibbonGroupFlotteurFonctionElement;Accion en elemento seleccionado
+ManagerBuoyButtonNouveauFlotteur;Nuevo flotador
+ManagerBuoyButtonAjouterFlotteur;Adicionar
+ManagerBuoyButtonModificationFlotteur;Modificar
+ManagerBuoyButtonSupprimerFlotteur;Suprimir
+ManagerBuoyButtonFlotteurDeplacerElementAuDessus;Desplazar para Arriba
+ManagerBuoyButtonFlotteurDeplacerElementAuDessous;Desplazar para Bajo
+ManagerBuoyStructureTab;Estructura
+ManagerBuoyRibbonGroupStructureFonctionElement;Accion en elemento seleccionado
+ManagerBuoyButtonNouveauStructure;Nueva Estructura
+ManagerBuoyButtonAjouterStructure;Adicionar
+ManagerBuoyButtonModificationStructure;Modificacion
+ManagerBuoyButtonSupprimerStructure;Suprimir
+ManagerBuoyButtonStructureDeplacerElementAuDessus;Desplazar para Arriba
+ManagerBuoyButtonStructureDeplacerElementAuDessous;Desplazar para Bajo
+ManagerBuoyPyloneTab;Torre
+ManagerBuoyRibbonGroupPyloneFonctionElement;Accion en elemento seleccionado
+ManagerBuoyButtonNouveauPylone;Nueva
+ManagerBuoyButtonAjouterPylone;Anadir
+ManagerBuoyButtonModificationPylone;Modificacion
+ManagerBuoyButtonSupprimerPylone;Suprimir
+ManagerBuoyButtonPyloneDeplacerElementAuDessus;Desplazar para Arriba
+ManagerBuoyButtonPyloneDeplacerElementAuDessous;Desplazar para Bajo
+ManagerBuoyVoyantTab;Marca Tope
+ManagerBuoyRibbonGroupVoyantFonctionElement;Accion en elemento seleccionado
+ManagerBuoyButtonNouveauVoyant;Nueva
+ManagerBuoyButtonAjouterVoyant;Adicionar
+ManagerBuoyButtonModificationVoyant;Modificacion
+ManagerBuoyButtonSupprimerVoyant;Suprimir
+ManagerBuoyButtonVoyantDeplacerElementAuDessus;Shift Upward
+ManagerBuoyButtonVoyantDeplacerElementAuDessous;Shift Downward
+ManagerBuoyTextBlockVisualisationGraphique;Graphic display
+ManagerBuoyTextBlockParamGenBouee;Parametros Gerales
+ManagerBuoyTextBlockNomBouee;Nombre boya
+ManagerBuoyTextBlockChaineComp;Cadena Compatible
+ManagerBuoyTextBlockChaineMin;Cadena minima
+ManagerBuoyTextBlockChaineMax;Cadena Maxima
+ManagerBuoyTextBlockBoueeLest;Lastres boya
+ManagerBuoyTextBlockBoueeMasse;Peso (Kg)
+ManagerBuoyTextBlockNombre;Cantidad
+ManagerBuoyTextBlockNombreMin;Min
+ManagerBuoyTextBlockNombreMax;Max
+ManagerBuoyTextBlockFloatToStructBuoy;Altura de parte inferior del flotador sobre la parte inferior de la estructura (m)
+ManagerBuoyTextBlockInfoBouee;informaciones boya
+ManagerBuoyTextBlockMasseBuoy;Peso boya (Kg)
+ManagerBuoyTextBlockVolumeBuoy;Volumen total (m³)
+ManagerBuoyTextBlockParamGenFlotteur;Parametros gerales flotadores
+ManagerBuoyTextBlockNomFlotteur;Nombre de Flotador
+ManagerBuoyButtonCopieFlotteur;...
+ManagerBuoyTextBlockMasseFloat;Peso (Kg)
+ManagerBuoyTextBlockInfoFlotteur;Informes
+ManagerBuoyTextBlockVolumeFloat;Volumen Flotador
+ManagerBuoyTextBlockParametreElementSelectFloat;Parametros de seccion elegida
+ManagerBuoyTextBlockFlotteurHauteur;Altura del flotador (m)
+ManagerBuoyTextBlockFlotteurDiametreH;Diametro superior (m)
+ManagerBuoyTextBlockFlotteurDiametreI;Diemetro interior (m)
+ManagerBuoyTextBlockFlotteurDiametreB;Diametro inferior m
+ManagerBuoyTextBlockFlotteurVolume;Volumen Real (m³)
+ManagerBuoyTextBlockFlotteurVolumeCalcul;Voliumen Calculado (m³)
+ManagerBuoyTextBlockParamGenStructure;Parametros Gerales
+ManagerBuoyTextBlockNomStructure;Nombre estructura
+ManagerBuoyButtonCopieStructure;...
+ManagerBuoyTextBlockMasseStruct;Peso (Kg)
+ManagerBuoyTextBlockProfOrganeauStruct;Profundida ojal anclaje bajo flotador (m)
+ManagerBuoyTextBlockInfoStructure;Informes
+ManagerBuoyTextBlockVolumeStruct;Volumen total (m³)
+ManagerBuoyTextBlockParametreElementSelectStruct;Parametros de seccion elegida de estructura
+ManagerBuoyTextBlockStructureHauteur;Altura (m)
+ManagerBuoyTextBlockStructureDiametreH;Diametro superior estructura
+ManagerBuoyTextBlockStructureDiametreI;Diametro central estructura
+ManagerBuoyTextBlockStructureDiametreB;Diametro inferior estructura
+ManagerBuoyTextBlockStructureVolume;Volumen Real (m³)
+ManagerBuoyTextBlockStructureVolumeCalcul;Volumen Calculado
+ManagerBuoyTextBlockParamGenPylone;Parametros gerales Torres
+ManagerBuoyTextBlockNomPylone;Parametros Torre
+ManagerBuoyButtonCopiePylone;...
+ManagerBuoyTextBlockMassePyl;Peso (Kg)
+ManagerBuoyTextBlockParametreElementSelectPyl;Parametros de seccion de torre elegida
+ManagerBuoyTextBlockPyloneHauteur;Altura (m)
+ManagerBuoyTextBlockPyloneLongueurH;Dimension inferior
+ManagerBuoyTextBlockPyloneLongueurB;Dimension inferior
+ManagerBuoyTextBlockParamGenVoyant;Parametros de marca tope
+ManagerBuoyTextBlockNomVoyant;Nombre marka tope
+ManagerBuoyButtonCopieVoyant;...
+ManagerBuoyTextBlockMasseVoy;Peso (Kg)
+ManagerBuoyTextBlockParametreElementSelectVoy;Parametros de marca tope
+ManagerBuoyTextBlockVoyantHauteur;Altura (m)
+ManagerBuoyTextBlockVoyantLongueurH;dimensioes altura (m)
+ManagerBuoyTextBlockVoyantLongueurB;Dimensiones inferiores (m)
+EquipTextBlockTreeViewEquipement;List a equipos estandardes
+EquipTextBlockListBoxEquipement;Lista equipos selecionados
+EquipButtonAjouterEquipement;anadir
+EquipButtonModifierEquipement;Modificar
+EquipButtonSupprimerEquipement;Suprimir
+EquipButtonValidationEquipement;Visto Bueno
+ResultRibbonTabComparateur;Comparador
+ResultRibbonGroupBuoy;Boya
+ResultTextBlockBouee1;Boya 1
+ResultTextBlockBouee2;Boya 2
+ResultRibbonGroupChaine;Sistema cadena
+ResultTextBlockDN1;ND
+ResultTextBlockDN2;ND
+ResultTextBlockType1;Tipo1
+ResultTextBlockType2;Tipo2
+ResultTextBlockQualite1;Calidad 1
+ResultTextBlockQualite2;Calidad 2
+ResultRibbonGroupLest;Lastre
+ResultRibbonGroupDensiteCM;Densidad del Muerto
+ResultComboBoxDensiteCM1;{2.4 (Cimento reforcado),2.8 (Cimento reforcado altamente),3.0 (Cimento reforcado hematita),7.3 (Hiero fundido),7.85 (Acero)}|1
+ResultComboBoxDensiteCM2;{2.4 (Cimento reforcado),2.8 (Cimento reforcado altamente),3.0 (Cimento reforcado hematita),7.3 (Hiero fundido),7.85 (Acero)}|1
+ResultRibbonGroupPlus;Mas 
+ResultRibbonTabPrintExport;Imprimir y exportar
+ResultRibbonGroupTitleProject;Titulo documento
+ResultRibbonGroupPrint;Imprimir
+ResultButtonImpression;Imprimir
+ResultRibbonGroupExport;Exportar
+ResultButtonExportCSV;Txt
+ResultRibbonTabView;Mostrador Grafico
+ResultRibbonGroupView;Mostrador Grafico
+ResultButtonVisualisation;Mostrador Grafico Apeak
+ResultTextBlockDN;ND
+ResultTextBlockType;Tipo
+ResultTextBlockLest;Lastre
+ResultTextBlockDensite;Densidad del Muerto
+ResultTextBlockProfondeur;Profundidad
+ResultTextBlockMasseEquipement;Peso delequipo
+ResultTextBlockHtMaxVagues;Altura Max. Olas
+ResultTextBlockHtSignifVague;Alturas Holas Significantes
+ResultTextBlockPeriodeVague;Periodo Holas
+ResultTextBlockMarnage;Amplitud Marea
+ResultTextBlockVitVentMS;Velocidad viento (m/s)
+ResultTextBlockVitVentKMH;Velocidad viento (km/h)
+ResultTextBlockParametreChaineCM;Parametros de la cadena y muerto
+ResultTextBlockConditionSiteSaisi;Condiciones locales
+ResultTextBlockProfondeurResultat;Profundidade
+ResultTextBlockProfMin;Minimo
+ResultTextBlockLongueurCat;Largo catenario
+ResultTextBlockTensionMax;Tension maxima
+ResultTextBlockMouillage;Amarre
+ResultTextBlockMasseMinCM;Massa minima del muerto
+ResultTextBlockReserveFlota;Reserva flotacion
+ResultTextBlockFrancBord;Bordo libre
+ResultTextBlockSurfLatImme;Area velica
+ResultTextBlockProfMax;Maxima
+ResultTextBlockRayonEvitage;Borneo maximo
+ResultTextBlockCoefSecuChaine;Factor seguridad cadena
+ResultTextBlockIALACoefSecu;(IALA: ≥5\\Ce)
+ResultTextBlockTraineH;Esfuerzo horizontal
+ResultTextBlockDeplTotBuoy;Desplacamento total
+ResultTextBlockTirantEau;Calado
+ResultTextBlockSurfLatEme;Area submersa
+ResultLinearAxisCatenaire;Borneo (m)
+ResultLinearAxisProfondeur;Profundidad (m)
+ResultTextBlockTitleResultat;Resultado
+ResultTextBlockTitleGraphique;Grafico de catenaria
+ViewTextBlockTitle;Grafico del bordo libre
+ViewRadioButtonPIC;Apeak
+ViewRadioButtonFullLoad;Full Load
+ViewTextBlockBuoy1;Boya 1
+ViewTextBlockBuoy2;Boya 2
+GeneralTitreProjet;Nombre del projecto
+GeneralErreurRepertoire;Error directoria de trabajo inaccesible
+GeneralErreurAjoutBouee;Error impossible adicionar boya
+GeneralErreurModifBouee;Error impossible modificar boya
+GeneralErreurSupprBouee;Error impossible suprimir boya
+GeneralAjoutEquipementCategorie;Categoria de equipo
+GeneralAjoutEquipementNom;Nombre del equipo
+GeneralAjoutEquipementMasse;Massa del equipo (kg)
+GeneralTextBlockProject;Projecto
+GeneralTextBlockParametre;Parametro
+GeneralTextBlockProfondeurMax;Profundidad maxima
+GeneralTextBlockProfondeurMin;Profundidad minima
+GeneralTextBlockTensionMaxMouillage;Tension maxima del amarre
+GeneralTextBlockCoefSecuChaineIALA;Factor seguridad de cadena(IALA: ≥5\\Test Load)
+GeneralTextBlockDiamChaine;Diametro cadena
+GeneralTextBlockTypeChaine;Typo de cadena
+GeneralTextBlockCSVPointVirg;Txt File dot-coma
+GeneralTextBlockCSVVirg;Txt File coma
+GeneralTextBlockCSVTab;Txt File Tabulation
+InfoBulleAddBuoy;Quiere remplacar boya existente ?
+InfoBulleModifyBuoy;Salir sin guardar boya ?
+InfoBulleCopyBuoyText;Nombre de la boya
+InfoBulleDeleteBuoy;Quiere suprimir la boya 
+InfoBulleErreurDeferlement;Aviso: Olas quebrando
+InfoBulleErreurHauteurOrg;Aviso: la estructura superior a profundidad

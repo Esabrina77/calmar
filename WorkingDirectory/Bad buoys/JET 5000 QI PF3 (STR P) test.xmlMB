@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 5000 QI PF3 (STR P) test" ChaineMin="20" ChaineMax="50" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="7">
+		<Structure Name="A_STR_J5QI-P_STD_01" Masse="591" OffsetFlotteur="2.019" OffsetOrganeau="1.936">
+			<ElementDimItem H="0.376" D0="0.045" D1="0.524" DI="0" Volume="0.007916" />
+			<ElementDimItem H="0.015" D0="0.524" D1="0.524" DI="0" Volume="0.000745" />
+			<ElementDimItem H="0.18" D0="0.7" D1="0.7" DI="0" Volume="0.057309" />
+			<ElementDimItem H="0.848" D0="0.324" D1="0.324" DI="0" Volume="0.069783" />
+			<ElementDimItem H="0.03631" D0="0.324" D1="0.712" DI="0" Volume="0.003426" />
+			<ElementDimItem H="0.05334" D0="0.712" D1="0.832" DI="0" Volume="0.005334" />
+			<ElementDimItem H="0.042" D0="0.832" D1="0.832" DI="0" Volume="0.004205" />
+			<ElementDimItem H="0.05334" D0="0.832" D1="0.712" DI="0" Volume="0.005416" />
+			<ElementDimItem H="0.19" D0="0.324" D1="0.324" DI="0" Volume="0.015656" />
+			<ElementDimItem H="0.2" D0="0.336" D1="0.624" DI="0" Volume="0.017103" />
+			<ElementDimItem H="0.01" D0="0.7" D1="0.7" DI="0" Volume="0.003796" />
+			<ElementDimItem H="1.4" D0="0.324" D1="0.324" DI="0" Volume="0.116832" />
+			<ElementDimItem H="0.15" D0="1.732" D1="1.57" DI="0" Volume="0.077539" />
+		</Structure>
+		<Flotteur Name="P_FLT_J5DI324" Masse="620">
+			<ElementDimItem H="0.041" D0="1.23" D1="1.23" DI="0.324" Volume="0.012472" />
+			<ElementDimItem H="0.435" D0="1.23" D1="2.4" DI="0.324" Volume="1.027956" />
+			<ElementDimItem H="0.384" D0="2.4" D1="2.4" DI="0.324" Volume="1.513716" />
+			<ElementDimItem H="0.15" D0="2.33" D1="2.33" DI="0.324" Volume="0.552784" />
+			<ElementDimItem H="0.212" D0="2.4" D1="2.4" DI="0.324" Volume="0.833092" />
+			<ElementDimItem H="0.163" D0="2.4" D1="2.226" DI="0.324" Volume="0.623144" />
+			<ElementDimItem H="0.121" D0="1.37" D1="1.26" DI="0.324" Volume="0.192576" />
+		</Flotteur>
+		<Pylone Name="A_MAT_SUP_2M_SIMP" Height="2.01" WidthHigh="0.31" WidthLow="0.6" Masse="40" />
+		<Equipement Name="SUP_FEUX_1" Height="0.422" WidthHigh="0.31" WidthLow="0.31" Masse="5" />
+		<Equipement Name="SUP_FEUX_2" Height="0.14" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="A_VOY_CYL_MM_ALU" Height="0.69" WidthHigh="0.56" WidthLow="0.56" Masse="14" />
+	</Buoy>
+</Calmar>

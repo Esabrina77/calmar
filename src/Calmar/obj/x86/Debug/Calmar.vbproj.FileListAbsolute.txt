@@ -1,0 +1,220 @@
+C:\Developpement\Calmar\Calmar\bin\Debug\WorkingDirectory\Chains.xmlMB
+C:\Developpement\Calmar\Calmar\bin\Debug\Calmar.exe
+C:\Developpement\Calmar\Calmar\bin\Debug\Calmar.pdb
+C:\Developpement\Calmar\Calmar\bin\Debug\Calmar.xml
+C:\Developpement\Calmar\Calmar\bin\Debug\BuoyLib.dll
+C:\Developpement\Calmar\Calmar\bin\Debug\RibbonControlsLibrary.dll
+C:\Developpement\Calmar\Calmar\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Developpement\Calmar\Calmar\bin\Debug\Microsoft.Windows.Shell.dll
+C:\Developpement\Calmar\Calmar\bin\Debug\WPFToolkit.dll
+C:\Developpement\Calmar\Calmar\bin\Debug\BuoyLib.pdb
+C:\Developpement\Calmar\Calmar\bin\Debug\BuoyLib.xml
+C:\Developpement\Calmar\Calmar\bin\Debug\RibbonControlsLibrary.pdb
+C:\Developpement\Calmar\Calmar\bin\Debug\RibbonControlsLibrary.xml
+C:\Developpement\Calmar\Calmar\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Developpement\Calmar\Calmar\bin\Debug\Microsoft.Windows.Shell.pdb
+C:\Developpement\Calmar\Calmar\bin\Debug\Microsoft.Windows.Shell.xml
+C:\Developpement\Calmar\Calmar\bin\Debug\WPFToolkit.pdb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\ListBuoy.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreBouee.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreEquipement.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreResultatRibbon.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FlowDocumentResultat.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Langues\TextLangue.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreAlert.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreDemande.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInformation.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInput.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Styles\WhistlerBlue.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Application.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\ListBuoy.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreBouee.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreEquipement.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreResultatRibbon.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FlowDocumentResultat.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\MainWindow.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreAlert.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreDemande.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInformation.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInput.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreWait.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Application.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar_Content.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\GeneratedInternalTypeHelper.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar_MarkupCompile.cache
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar_MarkupCompile.lref
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\MainWindow.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreWait.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.g.resources
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.Resources.resources
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.exe
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.xml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.pdb
+C:\Developpement\Calmar\Calmar\bin\Debug\Langues\lang.en.xml
+C:\Developpement\Calmar\Calmar\bin\Debug\Langues\lang.es.xml
+C:\Developpement\Calmar\Calmar\bin\Debug\Langues\lang.fr.xml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreVisualisation.baml
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreVisualisation.g.vb
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.vbprojResolveAssemblyReference.cache
+C:\Developpement\Calmar\Calmar\obj\x86\Debug\Calmar.vbproj.GenerateResource.Cache
+C:\Developpement\Calmar\Calmar\bin\Debug\Langues\lang.jp.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.exe
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\FB-2500l-1.85m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\LT-9000l-3.0m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\SK-2200l-1.9m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\SP-3200l-1.2m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-1000l-1.24m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-1800l-1.24m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-2500l-1.85m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-5000l-2.4m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-7000l-2.6m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-9000l-3.0m.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\IconCalmar.ico
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.ar.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.de.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\Chains.xmlMB
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.en.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.es.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.fr.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.jp.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.exe.manifest
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.application
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.exe
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\BuoyLib.dll
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\RibbonControlsLibrary.dll
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Microsoft.Windows.Shell.dll
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WPFToolkit.dll
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\BuoyLib.pdb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\BuoyLib.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\RibbonControlsLibrary.pdb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\RibbonControlsLibrary.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Microsoft.Windows.Shell.pdb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Microsoft.Windows.Shell.xml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WPFToolkit.pdb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.vbprojResolveAssemblyReference.cache
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\ListBuoy.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreBouee.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreEquipement.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreParametreSite.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreResultatRibbon.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreVisualisation.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FlowDocumentResultat.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Langues\TextLangue.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreAlert.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreDemande.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInformation.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInput.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Styles\WhistlerBlue.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Application.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\ListBuoy.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreBouee.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreEquipement.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreParametreSite.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreResultatRibbon.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreVisualisation.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FlowDocumentResultat.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\MainWindow.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreAlert.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreDemande.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInformation.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInput.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreWait.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Application.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar_Content.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\GeneratedInternalTypeHelper.g.vb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar_MarkupCompile.cache
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar_MarkupCompile.lref
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\MainWindow.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreWait.baml
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.g.resources
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.Resources.resources
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.vbproj.GenerateResource.Cache
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.exe.manifest
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.application
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.pdb
+C:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.pdb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.vbprojResolveAssemblyReference.cache
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\FolderExpand.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\ListBuoy.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreEquipement.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreParametreSite.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreVisualisation.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FlowDocumentResultat.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Langues\TextLangue.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreAlert.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreDemande.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInformation.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInput.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Styles\WhistlerBlue.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Application.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\FolderExpand.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Controle Complementaire\ListBuoy.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreEquipement.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreExplorer.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreParametreSite.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreVisualisation.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FlowDocumentResultat.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreAlert.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreDemande.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInformation.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreInput.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreWait.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Application.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar_Content.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\GeneratedInternalTypeHelper.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar_MarkupCompile.cache
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar_MarkupCompile.lref
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\MainWindow.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreBouee.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreBouee.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreResultatRibbon.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreResultatRibbon.g.vb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\FB-2500l-1.85m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\LT-9000l-3.0m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\SK-2200l-1.9m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\SP-3200l-1.2m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-1000l-1.24m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-1800l-1.24m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-2500l-1.85m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-5000l-2.4m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-7000l-2.6m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\T-9000l-3.0m.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\IconCalmar.ico
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.ar.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.de.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WorkingDirectory\Chains.xmlMB
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.en.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.es.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.fr.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.jp.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.exe.manifest
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.application
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.exe
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.pdb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Calmar.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\BuoyLib.dll
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\system.windows.controls.datavisualization.toolkit.dll
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WPFToolkit.dll
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\BuoyLib.pdb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\BuoyLib.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\system.windows.controls.datavisualization.toolkit.pdb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\WPFToolkit.pdb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreExplorer.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\MainWindow.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Module Commun\FenetreWait.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.g.resources
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.Resources.resources
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.vbproj.GenerateResource.Cache
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.TrustInfo.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.exe.manifest
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.application
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.exe
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Calmar.pdb
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\bin\Debug\Langues\lang.kr.xml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreCopie.baml
+D:\Developpement\IALA-CALMAR\Calmar\Calmar\obj\x86\Debug\Fenetre Complementaire\FenetreCopie.g.vb

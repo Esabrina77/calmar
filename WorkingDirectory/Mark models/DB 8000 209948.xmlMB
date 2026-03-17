@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DB 8000 209948" ChaineMin="30" ChaineMax="45" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Léa ROSSANO">
+		<Structure Name="A_STR_JUPE_8_209948" Masse="1370" OffsetFlotteur="1.293" OffsetOrganeau="1.2">
+			<ElementDimItem H="0.05" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.26" D0="1.152" D1="1.152" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.93" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.03" D1="1.03" DI="0.898" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.55" D1="1.55" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.15" D0="2.144" D1="1.98" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.1" D0="1.424" D1="1.424" DI="0.898" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J9001-DI930" Masse="960">
+			<ElementDimItem H="0.225" D0="1.415" D1="1.884" DI="0.93" Volume="0.3" />
+			<ElementDimItem H="0.168" D0="1.884" D1="2.446" DI="0.93" Volume="0.5" />
+			<ElementDimItem H="0.127" D0="2.446" D1="3.06" DI="0.93" Volume="0.6" />
+			<ElementDimItem H="0.462" D0="3.06" D1="3.06" DI="0.93" Volume="2.8" />
+			<ElementDimItem H="0.06" D0="3.06" D1="2.933" DI="0.93" Volume="0.35" />
+			<ElementDimItem H="0.152" D0="2.933" D1="2.933" DI="0.93" Volume="0.8" />
+			<ElementDimItem H="0.06" D0="2.933" D1="3.06" DI="0.93" Volume="0.35" />
+			<ElementDimItem H="0.23" D0="3.06" D1="3.06" DI="0.93" Volume="1.1" />
+			<ElementDimItem H="0.165" D0="3.06" D1="2.723" DI="0.93" Volume="0" />
+			<ElementDimItem H="0.057" D0="2.723" D1="2.629" DI="0.93" Volume="0" />
+		</Flotteur>
+		<Pylone Name="DB MAT OCTO With equipment" Height="2.296" WidthHigh="1.42" WidthLow="1.42" Masse="635" />
+		<Pylone Name="" Height="0.626" WidthHigh="1.95" WidthLow="1.42" Masse="0" />
+		<Equipement Name="DB STA" Height="0.13" WidthHigh="0.04" WidthLow="0.17" Masse="9" />
+		<Equipement Name="" Height="0.1" WidthHigh="0.04" WidthLow="0.04" Masse="0" />
+		<Equipement Name="" Height="0.13" WidthHigh="0.17" WidthLow="0.04" Masse="0" />
+		<Equipement Name="" Height="0.07" WidthHigh="0.435" WidthLow="0.335" Masse="0" />
+		<Equipement Name="" Height="0.24" WidthHigh="0.1" WidthLow="0.435" Masse="0" />
+		<Equipement Name="" Height="0.24" WidthHigh="0.435" WidthLow="0.1" Masse="0" />
+		<Equipement Name="" Height="0.07" WidthHigh="0.335" WidthLow="0.435" Masse="0" />
+	</Buoy>
+</Calmar>

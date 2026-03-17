@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 8000 JPE" ChaineMin="25" ChaineMax="38" MasseLestUnitaire="100" NombreLestMin="4" NombreLestMax="6" Commentaire="STR=Poids jusqu'à 1650mm (K) reste dans pylone (183kg)" Createur="Marine SACCOMAN">
+		<Structure Name="799_P_KPE_3ker1805500" Masse="369.1" OffsetFlotteur="1.259" OffsetOrganeau="-0.26">
+			<ElementDimItem H="0.04" D0="0.955" D1="0.955" DI="0.8448" Volume="0.006" />
+			<ElementDimItem H="1.168" D0="0.9" D1="0.9" DI="0.8448" Volume="0.09" />
+			<ElementDimItem H="0.04" D0="1.1" D1="1.1" DI="0.8448" Volume="0.015" />
+			<ElementDimItem H="0.502" D0="0.9" D1="0.9" DI="0.8448" Volume="0.04" />
+			<ElementDimItem H="1.159" D0="0.9" D1="0.9" DI="0" Volume="0.744" />
+			<ElementDimItem H="0.04" D0="1.1" D1="1.1" DI="0" Volume="0.038" />
+		</Structure>
+		<Flotteur Name="P_FLT_J9001D1930" Masse="880">
+			<ElementDimItem H="0.2238" D0="1.396" D1="1.879" DI="0.93" Volume="0.26888" />
+			<ElementDimItem H="0.1691" D0="1.879" D1="2.44" DI="0.93" Volume="0.44" />
+			<ElementDimItem H="0.1071" D0="2.44" D1="3.06" DI="0.93" Volume="0.5348" />
+			<ElementDimItem H="0.4893" D0="3.06" D1="3.06" DI="0.93" Volume="2.951" />
+			<ElementDimItem H="0.0382000000000001" D0="3.06" D1="2.94" DI="0.93" Volume="0.233" />
+			<ElementDimItem H="0.185" D0="2.94" D1="2.94" DI="0.93" Volume="1.02492" />
+			<ElementDimItem H="0.0381999999999999" D0="2.94" D1="3.06" DI="0.93" Volume="0.217" />
+			<ElementDimItem H="0.2493" D0="3.06" D1="3.06" DI="0.93" Volume="1.521" />
+			<ElementDimItem H="0.15" D0="3.06" D1="2.732" DI="0.93" Volume="0.845" />
+		</Flotteur>
+		<Pylone Name="P_FLT_Ø1200-WSV_01" Height="2.051" WidthHigh="1.2" WidthLow="1.2" Masse="271.9" />
+		<Pylone Name="A_SUP_TOP-PS31X_799_4300383" Height="0.545" WidthHigh="0.515" WidthLow="0.515" Masse="24.9" />
+		<Pylone Name="" Height="0.272" WidthHigh="0.305" WidthLow="0.515" Masse="10.6" />
+		<Equipement Name="A_VOY_CYL_GM_ALU_01" Height="0.86" WidthHigh="0.6" WidthLow="0.6" Masse="21.3" />
+	</Buoy>
+</Calmar>

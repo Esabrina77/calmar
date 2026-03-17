@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Calmar>
+
+
+  <!-- Main -->
+
+  <Lang Name="MainAccueilTab" Text="모델" />
+  <Lang Name="MainGroupFichier" Text="파일관리" />
+  <Lang Name="MainButtonOuvertureFichier" Text="열기" />
+  <Lang Name="MainButtonSauvegardeFichier" Text="저장" />
+  <Lang Name="MainButtonChangeWorkingDirectory" Text="작업 디렉토리" />
+  <Lang Name="MainGroupBouees" Text="편집기능" />
+  <Lang Name="MainButtonNouveauBouee" Text="새로 만들기" />
+  <Lang Name="MainButtonModifierBouee" Text="편집" />
+  <Lang Name="MainButtonCopierBouee" Text="복사" />
+  <Lang Name="MainButtonCollerBouee" Text="풀" />
+  <Lang Name="MainButtonSupprimerBouee" Text="삭제" />
+  <Lang Name="MainButtonProtectFichier" Text="보호" />
+  <Lang Name="MainGroupTri" Text="정렬" />
+  <Lang Name="MainComboBoxListeTri" Text="{모델명,사이즈}|1" />
+  <Lang Name="MainButtonTriListeBoueeCroissant" Text="오름차순" />
+  <Lang Name="MainButtonTriListeBoueeDecroissant" Text="내림차순" />
+  <Lang Name="MainCalculTab" Text="계산변수" />
+  <Lang Name="MainButtonCalcul" Text="계산하기" />
+  <Lang Name="MainButtonNoLoad" Text="무하중 (No Load)" />
+  <Lang Name="MainButtonCurrent" Text="유속" />
+  <Lang Name="MainButtonVent" Text="바람" />
+  <Lang Name="MainButtonHoule" Text="파도" />
+  <Lang Name="MainButtonFullLoad" Text="완비하중 (Full Load)" />
+  <Lang Name="MainButtonCalculHydro" Text="전력 계산" />
+  <Lang Name="MainLangueTab" Text="언어" />
+  <Lang Name="MainGroupLangue" Text="언어 선택" />
+  <Lang Name="MainButtonLangueFr" Text="프랑스어" />
+  <Lang Name="MainButtonLangueEn" Text="영어" />
+  <Lang Name="MainButtonLangueEs" Text="스페인어" />
+  <Lang Name="MainButtonLangueJp" Text="일본어" />
+  <Lang Name="MainButtonLangueDe" Text="독일어" />
+  <Lang Name="MainButtonLangueAr" Text="아랍어" />
+  <Lang Name="MainButtonLangueKr" Text="한국의" />
+  <Lang Name="MainTextBlockSelectionChaine" Text="체인 선택" />
+  <Lang Name="MainTextBlockParamCalculDN" Text="ND" />
+  <Lang Name="MainTextBlockParamCalculType" Text="종류" />
+  <Lang Name="MainTextBlockParamCalculQualite" Text="품질" />
+  <Lang Name="MainTextBlockParamCalculLest" Text="중추" />
+  <Lang Name="MainTextBlockParamCalculMasseEquipement" Text="추가장비" />
+  <Lang Name="MainRadioButtonMasseEquipement" Text="kg" />
+  <Lang Name="MainButtonListEquipement" Text="..." />
+  <Lang Name="MainTextBlockParamCalculProfondeur" Text="수심" />
+  <Lang Name="MainRadioButtonProfondeur" Text="m" />
+  <Lang Name="MainTextBlockParamCalculMarnage" Text="조차" />
+  <Lang Name="MainRadioButtonMarnage" Text="m" />
+  <Lang Name="MainTextBlockParamCalculHouleMax" Text="최대파고" />
+  <Lang Name="MainRadioButtonHouleMax" Text="m" />
+  <Lang Name="MainTextBlockParamCalculHouleSignificative" Text="유의파고" />
+  <Lang Name="MainRadioButtonHouleSignificative" Text="m" />
+  <Lang Name="MainTextBlockParamCalculPeriodeHoule" Text="파주기" />
+  <Lang Name="MainRadioButtonPeriodeHoule" Text="sec" />
+  <Lang Name="MainTextBlockParamCalculVitesseCourant" Text="유속" />
+  <Lang Name="MainRadioButtonVitesseCourantMS" Text="m/s" />
+  <Lang Name="MainRadioButtonVitesseCourantKts" Text="kn" />
+  <Lang Name="MainTextBlockParamCalculVitesseVent" Text="풍속" />
+  <Lang Name="MainRadioButtonVitesseVentMS" Text="m/s" />
+  <Lang Name="MainRadioButtonVitesseVentKmh" Text="km/h" />
+  <Lang Name="MainTextBlockParamCalculSelectionDensiteCM" Text="침추 선택" />
+  <Lang Name="MainComboBoxDensiteCM" Text="{2.4 (표준 콘크리트),2.8 (고강도 콘크리트),3.0 (적철석 콘크리트),7.3 (주철),7.85 (강철)}|1" />
+  <Lang Name="MainButtonSiteParametre" Text="상세 계산변수" />
+  <Lang Name="MainTextBlockPoidsTotal" Text="질량" />
+  <Lang Name="MainTextBlockVolumeTotal" Text="체적" />
+  <Lang Name="ManagerBuoyTextBlockComment" Text="논평" />
+  <Lang Name="ManagerBuoyTextBlockCreateur" Text="창조자" />
+  <Lang Name="Please specify the name of the new folder" Text="새 폴더의 이름을 지정하십시오" />
+  <Lang Name="New folder name" Text="새 폴더 이름" />
+
+
+  <!-- ManagerBuoy -->
+
+  <Lang Name="ManagerBuoyGeneralTab" Text="일반" />
+  <Lang Name="ManagerBuoyRibbonGroupSaveBuoy" Text="저장관리" />
+  <Lang Name="ManagerBuoyButtonSauvegardeBouee" Text="저장" />
+  <Lang Name="ManagerBuoyRibbonGroupMoveFloatOnStructure" Text="하부 구조물을 따라 표체 이동" />
+  <Lang Name="ManagerBuoyButtonDeplacerFlotteurAuDessus" Text="상향이동" />
+  <Lang Name="ManagerBuoyButtonDeplacerFlotteurAuDessous" Text="하향이동" />
+  <Lang Name="ManagerBuoyTextBlockPasDeplacement" Text="이동 폭(m)" />
+  <Lang Name="ManagerBuoyFlotteurTab" Text="표체" />
+  <Lang Name="ManagerBuoyRibbonGroupFlotteurFonctionElement" Text="실행" />
+  <Lang Name="ManagerBuoyButtonNouveauFlotteur" Text="새 슬라이스" />
+  <Lang Name="ManagerBuoyButtonAjouterFlotteur" Text="추가" />
+  <Lang Name="ManagerBuoyButtonModificationFlotteur" Text="편집" />
+  <Lang Name="ManagerBuoyButtonSupprimerFlotteur" Text="삭제" />
+  <Lang Name="ManagerBuoyButtonFlotteurDeplacerElementAuDessus" Text="상향이동" />
+  <Lang Name="ManagerBuoyButtonFlotteurDeplacerElementAuDessous" Text="하향이동" />
+  <Lang Name="ManagerBuoyStructureTab" Text="하부구조물" />
+  <Lang Name="ManagerBuoyRibbonGroupStructureFonctionElement" Text="실행" />
+  <Lang Name="ManagerBuoyButtonNouveauStructure" Text="새 슬라이스" />
+  <Lang Name="ManagerBuoyButtonAjouterStructure" Text="추가" />
+  <Lang Name="ManagerBuoyButtonModificationStructure" Text="편집" />
+  <Lang Name="ManagerBuoyButtonSupprimerStructure" Text="삭제" />
+  <Lang Name="ManagerBuoyButtonStructureDeplacerElementAuDessus" Text="상향이동" />
+  <Lang Name="ManagerBuoyButtonStructureDeplacerElementAuDessous" Text="하향이동" />
+  <Lang Name="ManagerBuoyPyloneTab" Text="철탑" />
+  <Lang Name="ManagerBuoyRibbonGroupPyloneFonctionElement" Text="실행" />
+  <Lang Name="ManagerBuoyButtonNouveauPylone" Text="새로 만들기" />
+  <Lang Name="ManagerBuoyButtonAjouterPylone" Text="추가" />
+  <Lang Name="ManagerBuoyButtonModificationPylone" Text="편집" />
+  <Lang Name="ManagerBuoyButtonSupprimerPylone" Text="삭제" />
+  <Lang Name="ManagerBuoyButtonPyloneDeplacerElementAuDessus" Text="상향이동" />
+  <Lang Name="ManagerBuoyButtonPyloneDeplacerElementAuDessous" Text="하향이동" />
+  <Lang Name="ManagerBuoyVoyantTab" Text="두표" />
+  <Lang Name="ManagerBuoyRibbonGroupVoyantFonctionElement" Text="실행" />
+  <Lang Name="ManagerBuoyButtonNouveauVoyant" Text="새로 만들기" />
+  <Lang Name="ManagerBuoyButtonAjouterVoyant" Text="추가" />
+  <Lang Name="ManagerBuoyButtonModificationVoyant" Text="편집" />
+  <Lang Name="ManagerBuoyButtonSupprimerVoyant" Text="삭제" />
+  <Lang Name="ManagerBuoyButtonVoyantDeplacerElementAuDessus" Text="상향이동" />
+  <Lang Name="ManagerBuoyButtonVoyantDeplacerElementAuDessous" Text="하향이동" />
+  <Lang Name="ManagerBuoyTextBlockVisualisationGraphique" Text="그래픽 디스플레이" />
+  <Lang Name="ManagerBuoyTextBlockParamGenBouee" Text="일반 변수" />
+  <Lang Name="ManagerBuoyTextBlockNomBouee" Text="이름" />
+  <Lang Name="ManagerBuoyTextBlockChaineComp" Text="지원 체인" />
+  <Lang Name="ManagerBuoyTextBlockChaineMin" Text="최소" />
+  <Lang Name="ManagerBuoyTextBlockChaineMax" Text="최대" />
+  <Lang Name="ManagerBuoyTextBlockBoueeLest" Text="중추" />
+  <Lang Name="ManagerBuoyTextBlockBoueeMasse" Text="질량" />
+  <Lang Name="ManagerBuoyTextBlockNombre" Text="양" />
+  <Lang Name="ManagerBuoyTextBlockNombreMin" Text="최소" />
+  <Lang Name="ManagerBuoyTextBlockNombreMax" Text="최대" />
+  <Lang Name="ManagerBuoyTextBlockFloatToStructBuoy" Text="하부구조물의 가장 낮은 지점에서부터 표체 하부까지의 길이(m)" />
+  <Lang Name="ManagerBuoyTextBlockInfoBouee" Text="정보" />
+  <Lang Name="ManagerBuoyTextBlockMasseBuoy" Text="부이 질량(kg)" />
+  <Lang Name="ManagerBuoyTextBlockVolumeBuoy" Text="총 부피f(m³)" />
+  <Lang Name="ManagerBuoyTextBlockParamGenFlotteur" Text="일반 변수" />
+  <Lang Name="ManagerBuoyTextBlockNomFlotteur" Text="표체 이름" />
+  <Lang Name="ManagerBuoyButtonCopieFlotteur" Text="..." />
+  <Lang Name="ManagerBuoyTextBlockMasseFloat" Text="질량 (kg)" />
+  <Lang Name="ManagerBuoyTextBlockInfoFlotteur" Text="정보" />
+  <Lang Name="ManagerBuoyTextBlockVolumeFloat" Text="총 부피 (m³)" />
+  <Lang Name="ManagerBuoyTextBlockParametreElementSelectFloat" Text="선택한 슬라이스의 변수" />
+  <Lang Name="ManagerBuoyTextBlockFlotteurHauteur" Text="높이 (m)" />
+  <Lang Name="ManagerBuoyTextBlockFlotteurDiametreH" Text="상부 직경 (m)" />
+  <Lang Name="ManagerBuoyTextBlockFlotteurDiametreI" Text="내부 직경 (m)" />
+  <Lang Name="ManagerBuoyTextBlockFlotteurDiametreB" Text="하부 직경 (m)" />
+  <Lang Name="ManagerBuoyTextBlockFlotteurVolume" Text="실제 부피 (m³)" />
+  <Lang Name="ManagerBuoyTextBlockFlotteurVolumeCalcul" Text="계산 부피 (m³)" />
+  <Lang Name="ManagerBuoyTextBlockParamGenStructure" Text="일반 변수" />
+  <Lang Name="ManagerBuoyTextBlockNomStructure" Text="하부구조물 이름" />
+  <Lang Name="ManagerBuoyButtonCopieStructure" Text="..." />
+  <Lang Name="ManagerBuoyTextBlockMasseStruct" Text="질량 (kg)" />
+  <Lang Name="ManagerBuoyTextBlockProfOrganeauStruct" Text="표체하부 아래 앵커 링의 깊이(m)" />
+  <Lang Name="ManagerBuoyTextBlockInfoStructure" Text="정보" />
+  <Lang Name="ManagerBuoyTextBlockVolumeStruct" Text="총 부피 (m³)" />
+  <Lang Name="ManagerBuoyTextBlockParametreElementSelectStruct" Text="선택한 슬라이스의 변수" />
+  <Lang Name="ManagerBuoyTextBlockStructureHauteur" Text="높이 (m)" />
+  <Lang Name="ManagerBuoyTextBlockStructureDiametreH" Text="상부 직경 (m)" />
+  <Lang Name="ManagerBuoyTextBlockStructureDiametreI" Text="내부 직경 (m)" />
+  <Lang Name="ManagerBuoyTextBlockStructureDiametreB" Text="하부 직경 (m)" />
+  <Lang Name="ManagerBuoyTextBlockStructureVolume" Text="실제 부피 (m³)" />
+  <Lang Name="ManagerBuoyTextBlockStructureVolumeCalcul" Text="계산된 부피 (m³)" />
+  <Lang Name="ManagerBuoyTextBlockParamGenPylone" Text="철탑의 변수" />
+  <Lang Name="ManagerBuoyTextBlockNomPylone" Text="철탑의 변수" />
+  <Lang Name="ManagerBuoyButtonCopiePylone" Text="..." />
+  <Lang Name="ManagerBuoyTextBlockMassePyl" Text="질량 (kg)" />
+  <Lang Name="ManagerBuoyTextBlockParametreElementSelectPyl" Text="선택한 요소의 변수" />
+  <Lang Name="ManagerBuoyTextBlockPyloneHauteur" Text="높이 (m)" />
+  <Lang Name="ManagerBuoyTextBlockPyloneLongueurH" Text="상부 폭 (m)" />
+  <Lang Name="ManagerBuoyTextBlockPyloneLongueurB" Text="하부 폭 (m)" />
+  <Lang Name="ManagerBuoyTextBlockParamGenVoyant" Text="두표 구성요소" />
+  <Lang Name="ManagerBuoyTextBlockNomVoyant" Text="두표 요소 이름" />
+  <Lang Name="ManagerBuoyButtonCopieVoyant" Text="..." />
+  <Lang Name="ManagerBuoyTextBlockMasseVoy" Text="질량 (kg)" />
+  <Lang Name="ManagerBuoyTextBlockParametreElementSelectVoy" Text="선택한 요소의 변수" />
+  <Lang Name="ManagerBuoyTextBlockVoyantHauteur" Text="높이 (m)" />
+  <Lang Name="ManagerBuoyTextBlockVoyantLongueurH" Text="상부 폭 (m)" />
+  <Lang Name="ManagerBuoyTextBlockVoyantLongueurB" Text="하부 폭 (m)" />
+
+  <!-- Site parameter -->
+
+  <Lang Name="FenetreParametreSiteTextBlockLatitude" Text="위도" />
+  <Lang Name="FenetreParametreSiteTextBlockLongitude" Text="경도" />
+  <Lang Name="FenetreParametreSiteTextBlockDensité" Text="비중" />
+  <Lang Name="FenetreParametreSiteTextBlockTrainee" Text="항력계수" />
+  <Lang Name="FenetreParametreSiteComboBoxTrainee" Text="{파울링 심함 = 1.4,보통 = 1.2,낮음 = 0.9,담수 파울링이 없는 새 부이 = 0.6}|2" />
+  <Lang Name="FenetreParametreSiteComboBoxDensiteEau" Text="{염수 = 1.025,담수 = 1.0, 기타}|1" />
+
+  <!-- Equip -->
+
+  <Lang Name="EquipTextBlockTreeViewEquipement" Text="기본 장비" />
+  <Lang Name="EquipTextBlockListBoxEquipement" Text="선택 장비" />
+  <Lang Name="EquipButtonAjouterEquipement" Text="추가" />
+  <Lang Name="EquipButtonModifierEquipement" Text="수정" />
+  <Lang Name="EquipButtonSupprimerEquipement" Text="삭제" />
+  <Lang Name="EquipButtonValidationEquipement" Text="확인" />
+
+
+  <!-- Result -->
+
+  <Lang Name="ResultRibbonTabComparateur" Text="비교기" />
+  <Lang Name="ResultRibbonGroupBuoy" Text="부이" />
+  <Lang Name="ResultTextBlockBouee1" Text="부이 1" />
+  <Lang Name="ResultTextBlockBouee2" Text="부이 2" />
+  <Lang Name="ResultRibbonGroupChaine" Text="체인" />
+  <Lang Name="ResultTextBlockDN1" Text="ND" />
+  <Lang Name="ResultTextBlockDN2" Text="ND" />
+  <Lang Name="ResultTextBlockType1" Text="종류" />
+  <Lang Name="ResultTextBlockType2" Text="종류" />
+  <Lang Name="ResultTextBlockQualite1" Text="품질" />
+  <Lang Name="ResultTextBlockQualite2" Text="품질" />
+  <Lang Name="ResultRibbonGroupLest" Text="중추" />
+  <Lang Name="ResultRibbonGroupDensiteCM" Text="침추 밀도" />
+  <Lang Name="ResultComboBoxDensiteCM1" Text="{2.4 (표준 콘크리트),2.8 (고강도 콘크리트),3.0 (적철석 콘크리트),7.3 (주철),7.85 (강철)}|1" />
+  <Lang Name="ResultComboBoxDensiteCM2" Text="{2.4 (표준 콘크리트),2.8 (고강도 콘크리트),3.0 (적철석 콘크리트),7.3 (주철),7.85 (강철)}|1" />
+  <Lang Name="ResultRibbonGroupPlus" Text="더하기" />
+  <Lang Name="ResultRibbonTabPrintExport" Text="인쇄하고 보내기" />
+  <Lang Name="ResultRibbonGroupTitleProject" Text="문서 이름" />
+  <Lang Name="ResultRibbonGroupPrint" Text="인쇄" />
+  <Lang Name="ResultButtonImpression" Text="인쇄" />
+  <Lang Name="ResultRibbonGroupExport" Text="보내기" />
+  <Lang Name="ResultButtonExportCSV" Text="Txt" />
+  <Lang Name="ResultRibbonTabView" Text="그래픽 디스플레이" />
+  <Lang Name="ResultRibbonGroupView" Text="그래픽 디스플레이" />
+  <Lang Name="ResultButtonVisualisation" Text="수직 그래픽 디스플레이" />
+  <Lang Name="ResultTextBlockDN" Text="ND" />
+  <Lang Name="ResultTextBlockType" Text="종류" />
+  <Lang Name="ResultTextBlockLest" Text="중추" />
+  <Lang Name="ResultTextBlockDensite" Text="밀도" />
+  <Lang Name="ResultTextBlockProfondeur" Text="수심" />
+  <Lang Name="ResultTextBlockMasseEquipement" Text="장비무게" />
+  <Lang Name="ResultTextBlockHtMaxVagues" Text="최대파고" />
+  <Lang Name="ResultTextBlockHtSignifVague" Text="유의파고" />
+  <Lang Name="ResultTextBlockPeriodeVague" Text="파주기" />
+  <Lang Name="ResultTextBlockMarnage" Text="조차" />
+  <Lang Name="ResultTextBlockVitVentMS" Text="최대풍속" />
+  <Lang Name="ResultTextBlockVitVentKMH" Text="최대풍속" />
+  <Lang Name="ResultTextBlockVitCourantMS" Text="최대유속" />
+  <Lang Name="ResultTextBlockVitCourantNds" Text="최대유속" />
+  <Lang Name="ResultTextBlockParametreChaineCM" Text="선택한 체인과 침추의 변수" />
+  <Lang Name="ResultTextBlockConditionSiteSaisi" Text="환경변수 입력" />
+  <Lang Name="ResultTextBlockProfondeurResultat" Text="수심" />
+  <Lang Name="ResultTextBlockProfMin" Text="최소" />
+  <Lang Name="ResultTextBlockLongueurCat" Text="현수선 길이" />
+  <Lang Name="ResultTextBlockTensionMax" Text="최대장력" />
+  <Lang Name="ResultTextBlockMouillage" Text="계류구" />
+  <Lang Name="ResultTextBlockMasseMinCM" Text="최소 침추질량" />
+  <Lang Name="ResultTextBlockReserveFlota" Text="예비부력" />
+  <Lang Name="ResultTextBlockFrancBord" Text="부이건현" />
+  <Lang Name="ResultTextBlockSurfLatImme" Text="침수측면" />
+  <Lang Name="ResultTextBlockProfMax" Text="최대" />
+  <Lang Name="ResultTextBlockRayonEvitage" Text="최대 이격거리" />
+  <Lang Name="ResultTextBlockCoefSecuChaine" Text="체인 안전계수" />
+  <Lang Name="ResultTextBlockIALACoefSecu" Text="(IALA: ≥5\\Ce)" />
+  <Lang Name="ResultTextBlockTraineH" Text="수평항력" />
+  <Lang Name="ResultTextBlockDeplTotBuoy" Text="부이 총 변위" />
+  <Lang Name="ResultTextBlockTirantEau" Text="부이 드래프트" />
+  <Lang Name="ResultTextBlockSurfLatEme" Text="부상측면" />
+  <Lang Name="ResultLinearAxisCatenaire" Text="이격거리 (m)" />
+  <Lang Name="ResultLinearAxisProfondeur" Text="수심 (m)" />
+  <Lang Name="ResultTextBlockTitleResultat" Text="결과" />
+  <Lang Name="ResultTextBlockTitleGraphique" Text="현수선의 그래픽 디스플레이" />
+  <Lang Name="ResultTextBlockDensiteEau" Text="비중" />
+  <Lang Name="ResultTextBlockCoefTrainee" Text="항력계수" />
+
+
+  <!-- View -->
+
+  <Lang Name="ViewTextBlockTitle" Text="건현의 그래픽 디스플레이" />
+  <Lang Name="ViewRadioButtonPIC" Text="수직" />
+  <Lang Name="ViewRadioButtonFullLoad" Text="완비하중 (Full Load)" />
+  <Lang Name="ViewTextBlockBuoy1" Text="부이 1" />
+  <Lang Name="ViewTextBlockBuoy2" Text="부이 2" />
+
+
+  <!-- General -->
+
+  <Lang Name="GeneralTitreProjet" Text="파일 이름" />
+  <Lang Name="GeneralErreurRepertoire" Text="오류 작업 엑세스 불가" />
+  <Lang Name="GeneralErreurAjoutBouee" Text="오류 부이 추가 불가" />
+  <Lang Name="GeneralErreurModifBouee" Text="오류 부이 편집 불가" />
+  <Lang Name="GeneralErreurSupprBouee" Text="오류 부이 삭제 불가" />
+  <Lang Name="GeneralAjoutEquipementCategorie" Text="장비 종류" />
+  <Lang Name="GeneralAjoutEquipementNom" Text="장비 이름" />
+  <Lang Name="GeneralAjoutEquipementMasse" Text="장비 단위 질량(kg)" />
+  <Lang Name="GeneralTextBlockProject" Text="프로젝트" />
+  <Lang Name="GeneralTextBlockParametre" Text="변수" />
+  <Lang Name="GeneralTextBlockProfondeurMax" Text="최대수심" />
+  <Lang Name="GeneralTextBlockProfondeurMin" Text="최소수심" />
+  <Lang Name="GeneralTextBlockTensionMaxMouillage" Text="최대 계류 장력" />
+  <Lang Name="GeneralTextBlockCoefSecuChaineIALA" Text="체인 안전 계수(IALA: ≥5\\테스트 하중)" />
+  <Lang Name="GeneralTextBlockDiamChaine" Text="체인의 직경" />
+  <Lang Name="GeneralTextBlockTypeChaine" Text="체인 종류" />
+  <Lang Name="GeneralTextBlockCSVPointVirg" Text="Txt File dot-coma" />
+  <Lang Name="GeneralTextBlockCSVVirg" Text="Txt File coma" />
+  <Lang Name="GeneralTextBlockCSVTab" Text="Txt File Tabulation" />
+  <Lang Name="InfoBulleAddBuoy" Text="기존 부이를 교체하시겠습니까?" />
+  <Lang Name="InfoBulleModifyBuoy" Text="정말 종료하시겠습니까?" />
+  <Lang Name="InfoBulleCopyBuoyText" Text="부이 이름" />
+  <Lang Name="InfoBulleDeleteBuoy" Text="해당 모델을 삭제하시겠습니까?" />
+  <Lang Name="InfoBulleErreurDeferlement" Text="경고: Breaking Sea" />
+  <Lang Name="InfoBulleErreurHauteurOrg" Text="경고: 플랫폼이 수심보다 깊음" />
+  <Lang Name="InfoBulleNouveauNom" Text="당신은 이름을 변경 하시겠습니까" />
+  <Lang Name="InfoBulleCreateur" Text="작성자의 이름을 입력하세요" />
+  <Lang Name="InfoBulleErreurCaractere" Text="입력 오류, 잘못된 문자" />
+  <Lang Name="InfoBulleProtegerBuoy" Text="부표를 보호하려는 " />
+
+</Calmar>

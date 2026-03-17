@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Barge Lafarge" ChaineMin="25" ChaineMax="60" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="Super Structure " Masse="0" OffsetFlotteur="0.01" OffsetOrganeau="0">
+		</Structure>
+		<Flotteur Name="Barge" Masse="100000">
+			<ElementDimItem H="0" D0="0" D1="0" DI="0" Volume="0" />
+			<ElementDimItem H="2" D0="22" D1="22" DI="0" Volume="0" />
+		</Flotteur>
+		<Pylone Name="Super Structure Barge" Height="8" WidthHigh="10" WidthLow="10" Masse="10000" />
+		<Pylone Name="Elements de Levage Barge" Height="9" WidthHigh="1" WidthLow="1" Masse="2000" />
+		<Pylone Name="Elements de Levage 2 Barge" Height="1" WidthHigh="22" WidthLow="22" Masse="1500" />
+	</Buoy>
+</Calmar>

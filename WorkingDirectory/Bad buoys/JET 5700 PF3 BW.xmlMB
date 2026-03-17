@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 5700 PF3 BW" ChaineMin="25" ChaineMax="45" MasseLestUnitaire="100" NombreLestMin="4" NombreLestMax="4">
+		<Structure Name="759-5_P_KPE_3Ker200178" Masse="454" OffsetFlotteur="0.851" OffsetOrganeau="-0.107">
+			<ElementDimItem H="1.46" D0="0.9" D1="0.9" DI="0.8448" Volume="0" />
+			<ElementDimItem H="1" D0="0.9" D1="0.9" DI="0" Volume="0" />
+			<ElementDimItem H="0.04" D0="1.1" D1="1.1" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J7DI930" Masse="680">
+			<ElementDimItem H="0.157" D0="1.1" D1="1.8" DI="0.93" Volume="0.14" />
+			<ElementDimItem H="0.457" D0="1.8" D1="2.6" DI="0.93" Volume="1.332" />
+			<ElementDimItem H="0.37" D0="2.6" D1="2.6" DI="0.93" Volume="1.604" />
+			<ElementDimItem H="0.032" D0="2.6" D1="2.48" DI="0.93" Volume="0.136" />
+			<ElementDimItem H="0.176" D0="2.48" D1="2.48" DI="0.93" Volume="0.68" />
+			<ElementDimItem H="0.032" D0="2.48" D1="2.6" DI="0.93" Volume="0.128" />
+			<ElementDimItem H="0.385" D0="2.6" D1="2.6" DI="0.93" Volume="1.7" />
+		</Flotteur>
+		<Pylone Name="Mast 2M BW" Height="1.85" WidthHigh="0.954" WidthLow="1.036" Masse="68" />
+	</Buoy>
+</Calmar>

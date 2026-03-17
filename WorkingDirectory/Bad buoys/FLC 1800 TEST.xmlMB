@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="FLC 1800 TEST" ChaineMin="10" ChaineMax="40" MasseLestUnitaire="50" NombreLestMin="3" NombreLestMax="3" Commentaire="" Createur="Mark Fitter">
+		<Structure Name=" " Masse="0" OffsetFlotteur="0" OffsetOrganeau="-0.315">
+		</Structure>
+		<Flotteur Name="GCF 1800" Masse="150">
+			<ElementDimItem H="0.4" D0="1.2" D1="1.501" DI="1.1" Volume="0.19" />
+			<ElementDimItem H="0.15" D0="1.501" D1="1.8" DI="0.913" Volume="0.2185" />
+			<ElementDimItem H="0.4" D0="1.8" D1="1.8" DI="0.75" Volume="0.849" />
+			<ElementDimItem H="0.15" D0="1.8" D1="1.56" DI="0.58" Volume="0.28" />
+			<ElementDimItem H="0.12" D0="1.56" D1="0.85" DI="0.55" Volume="0.1" />
+			<ElementDimItem H="0" D0="0" D1="0" DI="0" Volume="0" />
+		</Flotteur>
+		<Pylone Name="Mast PE" Height="0.03" WidthHigh="0.75" WidthLow="0.75" Masse="33" />
+		<Pylone Name="" Height="0.1" WidthHigh="0.63" WidthLow="0.75" Masse="0" />
+		<Pylone Name="" Height="2" WidthHigh="0.63" WidthLow="0.63" Masse="45" />
+		<Equipement Name="" Height="0.3" WidthHigh="0.25" WidthLow="0.25" Masse="5" />
+	</Buoy>
+</Calmar>

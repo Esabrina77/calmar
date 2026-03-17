@@ -1,0 +1,489 @@
+﻿<Window
+    x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:Calmar"
+    Name="MainWindow"
+    Title="Calmar"
+    MinWidth="800" MinHeight="610"
+    WindowStartupLocation="CenterScreen"
+    Background="#FFDFE9F5">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- LISTE DE TOUTES LES BOUEES -->
+        <TreeView Name="TreeViewExplorer" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="{x:Null}" AllowDrop="True" />
+
+        <!-- CADRE POUR LA SAISIE -->
+        <Border Name="CadreSaisie" Grid.Row="1" Grid.Column="2" BorderBrush="LightGray" BorderThickness="0.5,0,0,0" CornerRadius="5,0,0,5" Visibility="Collapsed">
+            <Border Margin="5,0,5,0">
+                <StackPanel>
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Name="MainTextBlockSelectionChaine" Text="Selection de la Chaine" VerticalAlignment="Center" />
+
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculDN" Text="DN" TextAlignment="Center" />
+                                <TextBlock Grid.Row="0" Grid.Column="1" Name="MainTextBlockParamCalculType" Text="Type" TextAlignment="Center" />
+                                <ComboBox Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" Name="ComboBoxChaineSelectionDN" TabIndex="80" SelectionChanged="ComboBoxChaineSelectionDN_SelectionChanged" />
+                                <ComboBox Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" Name="ComboBoxChaineSelectionType" TabIndex="81" SelectionChanged="ComboBoxChaineSelectionType_SelectionChanged" />
+                            </Grid>
+
+                            <Grid Grid.Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Name="MainTextBlockParamCalculQualite" Text="Qualité" TextAlignment="Center" VerticalAlignment="Center" />
+                                <ComboBox Grid.Row="1" Name="ComboBoxChaineQualite" Margin="5,0,0,0" TabIndex="82" >
+                                    <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                </ComboBox>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Name="MainTextBlockParamCalculLest" Text="Lest" VerticalAlignment="Center" />
+                            <ComboBox Grid.Column="1" Name="ComboBoxSelectionLest" TabIndex="83" SelectionChanged="ComboBoxSelectionLest_SelectionChanged" />
+                            <Button Grid.Column="2" Width="18" Height="18" Name="ButtonSelectionLest" HorizontalAlignment="Left" Margin="5,0,5,0" Click="ButtonSelectionLest_Click">
+                                <Image Source="/Calmar;component/Images/ko.png" />
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculMasseEquipement" Text="Masse équipement" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxMasseEquipement" Text="0" TabIndex="200" IsReadOnly="True" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonMasseEquipement" GroupName="GroupNameMasseEquipement" VerticalAlignment="Center" Content="kg" TabIndex="100" />
+                                <Button Name="MainButtonListEquipement" Margin="10,0,5,0" Width="18" Height="18" Content="..." VerticalAlignment="Center" Click="ButtonListEquipement_Click" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculProfondeur" Text="Profondeur" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxProfondeur" TabIndex="86" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonProfondeur" GroupName="GroupNameProfondeur" Content="m" TabIndex="101" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculMarnage" Text="Marnage" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxMarnage" TabIndex="87" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonMarnage" GroupName="GroupNameMarnage" Content="m" TabIndex="102" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="2" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculHouleMax" Text="Hauteur houle max." VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxHouleMax" TabIndex="88" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonHouleMax" GroupName="GroupNameHouleMax" Content="m" TabIndex="103" />
+                            </StackPanel>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Name="MainTextBlockParamCalculHouleSignificative" Text="Houle significative" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="2" Grid.Column="1" Name="TextBoxHouleSignificative" TabIndex="89" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonHouleSignificative" GroupName="GroupNameHouleSignificative" Content="m" TabIndex="104" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculPeriodeHoule" Text="Période de la houle" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxPeriodeHoule" TabIndex="90" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonPeriodeHoule" GroupName="GroupNamePeriodeHoule" Content="sec" TabIndex="105" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculVitesseCourant" Text="Vit. courant" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxVitesseCourant" TabIndex="93" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonVitesseCourantMS" GroupName="GroupNameVitesseCourant" Content="m/s" TabIndex="91" Checked="RadioButtonCourant_Checked" />
+                                <RadioButton Name="MainRadioButtonVitesseCourantKts" GroupName="GroupNameVitesseCourant" Content="kn" TabIndex="92" Checked="RadioButtonCourant_Checked" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculVitesseVent" Text="Vit. vent" VerticalAlignment="Center" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Name="TextBoxVitesseVent" TabIndex="96" VerticalAlignment="Center" TextChanged="TextBoxCheckValue_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                <RadioButton Name="MainRadioButtonVitesseVentMS" GroupName="GroupNameVitesseVent" Content="m/s" TabIndex="94" Checked="RadioButtonVent_Checked" />
+                                <RadioButton Name="MainRadioButtonVitesseVentKmh" GroupName="GroupNameVitesseVent" Content="km/h" TabIndex="95" Checked="RadioButtonVent_Checked" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="0,2.5,0,2.5" BorderBrush="LightGray" BorderThickness="0.5" CornerRadius="5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Name="MainTextBlockParamCalculSelectionDensiteCM" Text="Sélection de la densité du corps mort" VerticalAlignment="Center" />
+                            <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Name="MainComboBoxDensiteCM" TabIndex="97">
+                                <ComboBoxItem Content="2.4 (Béton Armé Norme Std)" />
+                                <ComboBoxItem Content="2.8 (Béton Armé Chargé)" />
+                                <ComboBoxItem Content="3.0 (Béton Armé Hématite)" />
+                                <ComboBoxItem Content="7.3 (Fonte d'Acier)" />
+                                <ComboBoxItem Content="7.85 (Acier)" />
+                            </ComboBox>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Border>
+
+        <!-- CADRE POUR L'AFFICHAGE DE LA BOUEE -->
+        <Border Name="CadrePrincipale" Grid.Row="1" Grid.Column="1" BorderBrush="LightGray" BorderThickness="1,0,0,0">
+            <Grid Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Name="TextBlockBuoyName" TextAlignment="Center" FontSize="18" FontWeight="Bold" Visibility="Collapsed" />
+                    <Border Grid.Row="1" Name="CadreDessinBouee" Visibility="Collapsed">
+                    </Border>
+                </Grid>
+                <my:ListBuoy x:Name="ListBuoyMenu" SelectedChange="SelectionBouee" BorderThickness="0" />
+            </Grid>
+        </Border>
+
+        <!-- MENU POUR LES COMMANDES -->
+        <Ribbon Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,-20,0,0" Name="MenuRibbonResultat"
+                       SelectionChanged="MenuRibbonResultat_SelectionChanged"
+                       ContextMenuOpening="MenuRibbon_ContextMenuOpening"
+                       SizeChanged="MenuRibbonResultat_SizeChanged"
+                       MouseDoubleClick="MenuRibbonResultat_MouseDoubleClick">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed" />
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="Modèles" Name="MainAccueilTab" IsSelected="True">
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR L'OUVERTURE ET LA SAUVEGARDE DES DONNEES -->
+                <RibbonGroup Name="MainGroupDossier"
+                                Header="Dossier et fichier">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        
+                        <RibbonButton Name="MainButtonNouveauDossier"
+                                      Grid.Row="0" Grid.Column="0"
+                                        SmallImageSource="Images\32\new_folder.png"
+                                        Label="Nouveau" Click="MainButtonNouveauDossier_Click"  IsEnabled="True" />
+
+                        <RibbonButton Name="MainButtonSuppressionDossier"
+                                      Grid.Row="1" Grid.Column="0"
+                                         SmallImageSource="Images\32\delete_folder.png"
+                                         Label="Supprimer" Click="MainButtonSuppressionDossier_Click"  IsEnabled="False" />
+
+                        <RibbonButton Name="MainButtonOuvertureFichier"
+                                      Grid.Row="0" Grid.Column="1"
+                                         SmallImageSource="Images\32\Open.png"
+                                         Label="Ouvrir" Click="OuvrirBase_Click" />
+
+                        <RibbonButton Name="MainButtonSauvegardeFichier"
+                                      Grid.Row="1" Grid.Column="1"
+                                         SmallImageSource="Images\32\Save.png"
+                                         Label="Enregistrer" Click="SaveBase_Click" IsEnabled="False" />
+                    </Grid>
+
+                </RibbonGroup>
+
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR LA LISTE DES BOUEES -->
+                <RibbonGroup Name="MainGroupBouees"
+                                    Header="Gestion des bouées">
+
+                    <RibbonButton Name="MainButtonNouveauBouee"
+                                         LargeImageSource="Images\32\documents.png"
+                                         Label="Nouveau" Click="AjoutBouee_Click" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <RibbonButton Name="MainButtonModifierBouee"
+                                      Grid.Row="0" Grid.Column="0"
+                                         SmallImageSource="Images\32\configure.png"
+                                         Label="Modifier" Click="ModificationBouee_Click" IsEnabled="False" />
+
+                        <RibbonButton Name="MainButtonSupprimerBouee"
+                                      Grid.Row="1" Grid.Column="0"
+                                         SmallImageSource="Images\32\close.png"
+                                         Label="Supprimer" Click="SuppressionBouee_Click" IsEnabled="False" />
+
+                        <RibbonButton Name="MainButtonCopierBouee"
+                                      Grid.Row="0" Grid.Column="1"
+                                         SmallImageSource="Images\32\import.png"
+                                         Label="Copier" Click="ButtonCopierBouee_Click" IsEnabled="False" />
+
+                        <RibbonButton Name="MainButtonCollerBouee"
+                                      Grid.Row="1" Grid.Column="1"
+                                         SmallImageSource="Images\32\export.png"
+                                         Label="Coller" Click="MainButtonCollerBouee_Click"  IsEnabled="False" />
+                    </Grid>
+
+                </RibbonGroup>
+                <RibbonGroup Name="MainGroupDetails"
+                                    Header="Détails">
+                    <StackPanel Width="60">
+                        <TextBlock Name="MainTextBlockPoidsTotal" Text="Poids" HorizontalAlignment="Center" />
+                        <TextBlock Name="MainTextBlockPoidsTotalValue" Text="" HorizontalAlignment="Center" />
+                        <TextBlock Name="MainTextBlockVolumeTotal" Text="Volume" HorizontalAlignment="Center"  />
+                        <TextBlock Name="MainTextBlockVolumeTotalValue" Text="" HorizontalAlignment="Center"  />
+                    </StackPanel>
+                </RibbonGroup>
+
+                <RibbonGroup Name="MainGroupTri"
+                                    Header="Tri de la liste">
+                        
+
+                    <ComboBox Name="MainComboBoxListeTri" Width="110" >
+                        <ComboBoxItem Content="Nom" IsSelected="True" />
+                        <ComboBoxItem Content="Volume" />
+                    </ComboBox>
+
+                    <RibbonButton Name="MainButtonTriListeBoueeCroissant"
+                                         SmallImageSource="Images\32\sort-ascending.png"
+                                         Label="Tri croissant" Click="TriBoueeAsc_Click" />
+
+                    <RibbonButton Name="MainButtonTriListeBoueeDecroissant"
+                                         SmallImageSource="Images\32\sort_descending.png"
+                                         Label="Tri décroissant" Click="TriBoueeDesc_Click" />
+
+                </RibbonGroup>
+                
+            </RibbonTab>
+
+            <!-- GROUPE POUR LA GESTION DES COMMANDES POUR LA LISTE DES BOUEES -->
+            <RibbonTab Header="Paramètre de calcul" Name="MainCalculTab" IsEnabled="False">
+
+                <RibbonGroup Name="MainGroupBoutonCalcul">
+
+                    <RibbonButton Name="MainButtonSiteParametre"
+                                         LargeImageSource="Images\32\Compass-icon.png"
+                                         Label="Parametres du site"
+                                         IsEnabled="True" Opacity="0.5" />
+                    
+                    <RibbonButton Name="MainButtonCalcul"
+                                         LargeImageSource="Images\32\application.png"
+                                         Label="Calcul" Click="ButtonCalcul_Click"
+                                         IsEnabled="False" />
+                    
+                    <RibbonButton Name="MainButtonCalculWeb"
+                                         LargeImageSource="Images\32\application.png"
+                                         Label="Calcul Web" Click="MainButtonCalculWeb_Click"
+                                         IsEnabled="True" />
+
+                    <RibbonButton Name="MainButtonOpenInput"
+                                         LargeImageSource="Images\32\Open.png"
+                                         Label="Load parameters" Click="MainButtonOpenInput_Click"
+                                         IsEnabled="True" />
+                    
+                    <RibbonButton Name="MainButtonSaveInput"
+                                         LargeImageSource="Images\32\Save.png"
+                                         Label="Save parameters" Click="MainButtonSaveInput_Click"
+                                         IsEnabled="False" />
+
+                    <RibbonButton Name="MainButtonNoLoad"
+                                         LargeImageSource="Images\32\chart.png"
+                                         Label="No load" Click="ButtonNoLoad_Click"
+                                         IsEnabled="True" Visibility="Visible" />
+
+                    <RibbonButton Name="MainButtonCurrent"
+                                         LargeImageSource="Images\32\chart.png"
+                                         Label="Courant" Click="ButtonCurrent_Click"
+                                         IsEnabled="True" Visibility="Visible" />
+
+                    <RibbonButton Name="MainButtonVent"
+                                         LargeImageSource="Images\32\chart.png"
+                                         Label="Vent" Click="ButtonVent_Click"
+                                         IsEnabled="True" Visibility="Visible" />
+
+                    <RibbonButton Name="MainButtonHoule"
+                                         LargeImageSource="Images\32\chart.png"
+                                         Label="Vague" Click="ButtonHoule_Click"
+                                         IsEnabled="True" Visibility="Visible" />
+
+                    <RibbonButton Name="MainButtonCalculHydro"
+                                         LargeImageSource="Images\32\application.png"
+                                         Label="Calcul hydro" Click="ButtonCalculHydro_Click"
+                                         IsEnabled="True" />
+
+                    <RibbonButton Name="MainButtonCalculIALA1066"
+                                         LargeImageSource="Images\32\application.png"
+                                         Label="Calcul IALA 1066" Click="MainButtonCalculIALA1066_Click"
+                                         IsEnabled="True" />
+
+                </RibbonGroup>
+                
+            </RibbonTab>
+
+            <!-- GROUPE POUR LA GESTION DES COMMANDES POUR LA LISTE DES BOUEES -->
+            <RibbonTab Header="Langues" Name="MainLangueTab">
+
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR LA LISTE DES BOUEES -->
+                <RibbonGroup Name="MainGroupLangue"
+                                    Header="Sélection de la langue">
+
+                    <RibbonToggleButton Name="MainButtonLangueFr"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_FR.png"
+                                         Label="Français" Click="ButtonLangueFr_Click" />
+
+                    <RibbonToggleButton Name="MainButtonLangueEn"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_UK.png"
+                                         Label="Anglais" Click="ButtonLangueEn_Click" />
+
+                    <RibbonToggleButton Name="MainButtonLangueEs"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_SP.png"
+                                         Label="Espagnol" Click="ButtonLangueEs_Click" />
+
+                    <RibbonToggleButton Name="MainButtonLangueDe"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_DE.png"
+                                         Label="Allemand" Click="MainButtonLangueDe_Click" />
+
+                    <RibbonToggleButton Name="MainButtonLangueAr"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_AR.png"
+                                         Label="Arabe" Click="MainButtonLangueAr_Click" />
+
+                    <RibbonToggleButton Name="MainButtonLangueJp"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_JP.png"
+                                         Label="Japonais" Click="MainButtonLangueJp_Click" />
+
+                    <RibbonToggleButton Name="MainButtonLangueKr"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\flag_KR.png"
+                                         Label="Coréen" Click="MainButtonLangueKr_Click" />
+
+                    <RibbonButton Name="ButtonLangueExportXAML"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\export.png"
+                                         Label="Export XAML" Click="ButtonLangueExportXAML_Click" />
+
+                    <RibbonButton Name="ButtonLangueExportCSV"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\export.png"
+                                         Label="Export CSV" Click="ButtonLangueExportCSV_Click" />
+                    
+                    <RibbonButton Name="ButtonLangueChangeCSV"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="Images\32\export.png"
+                                         Label="CSV2XML" Click="ButtonLangueChangeCSV_Click" />
+                </RibbonGroup>
+            </RibbonTab>
+
+        </Ribbon>
+
+    </Grid>
+    
+</Window>

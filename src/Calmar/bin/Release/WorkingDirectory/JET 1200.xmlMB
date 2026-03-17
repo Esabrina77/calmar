@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 1200" ChaineMin="20" ChaineMax="30" MasseLestUnitaire="50" NombreLestMin="1" NombreLestMax="5">
+		<Structure Name="JET 2000 JPE" Masse="100" OffsetFlotteur="0.5" OffsetOrganeau="-0.092">
+			<ElementDimItem H="1.77" D0="0.63" D1="0.63" DI="0.625" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J25" Masse="200">
+			<ElementDimItem H="0.5" D0="0.7" D1="1.5" DI="0.273" Volume="0.58" />
+			<ElementDimItem H="0.27" D0="1.5" D1="1.5" DI="0.273" Volume="0.68" />
+			<ElementDimItem H="0.15" D0="1.5" D1="1.5" DI="0.273" Volume="0.34" />
+			<ElementDimItem H="0.18" D0="1.5" D1="1.5" DI="0.273" Volume="0.454" />
+			<ElementDimItem H="0.1" D0="1.5" D1="1.5" DI="0.273" Volume="0.186" />
+		</Flotteur>
+		<Pylone Name="Mat Superieur 2M" Height="1.3" WidthHigh="0.5" WidthLow="0.5" Masse="20" />
+		<Pylone Name="SUPPORT TOP MARK" Height="0.5" WidthHigh="0.017" WidthLow="0.031" Masse="5" />
+		<Equipement Name="St ANdre Cross Moyen" Height="0.59" WidthHigh="0.59" WidthLow="0.59" Masse="10" />
+	</Buoy>
+</Calmar>

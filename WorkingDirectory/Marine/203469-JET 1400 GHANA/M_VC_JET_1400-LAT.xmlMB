@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="M_VC_JET_1400-LAT" ChaineMin="10" ChaineMax="35" MasseLestUnitaire="35" NombreLestMin="8" NombreLestMax="8" Commentaire="Bouée equip cf 203469" Createur="Marine SACCOMAN">
+		<Structure Name="J14J-45" Masse="266.25" OffsetFlotteur="0.26" OffsetOrganeau="0.1116">
+			<ElementDimItem H="0.225" D0="1.09769" D1="1.09769" DI="0.86769" Volume="0.00763" />
+			<ElementDimItem H="0.01" D0="0.87769" D1="0.87769" DI="0.86769" Volume="0.000155" />
+			<ElementDimItem H="0.005" D0="1.2" D1="1.2" DI="0.86769" Volume="0.002476" />
+			<ElementDimItem H="0.72" D0="0.87769" D1="0.87769" DI="0.86769" Volume="0.01283" />
+			<ElementDimItem H="0.008" D0="1.48" D1="1.48" DI="0.86769" Volume="0.008691" />
+		</Structure>
+		<Flotteur Name="FD20" Masse="260">
+			<ElementDimItem H="0.7" D0="2" D1="2" DI="0.97" Volume="0" />
+		</Flotteur>
+		<Pylone Name="203469_P_MAT_2Mât1443" Height="0.006" WidthHigh="0.7671" WidthLow="0.7671" Masse="84.08" />
+		<Pylone Name="" Height="0.30759" WidthHigh="0.7371" WidthLow="0.7371" Masse="0" />
+		<Pylone Name="" Height="0.13569" WidthHigh="0.6674" WidthLow="0.7371" Masse="0" />
+		<Pylone Name="" Height="0.16725" WidthHigh="0.4703" WidthLow="0.6674" Masse="0" />
+		<Pylone Name="" Height="0.0704" WidthHigh="0.31688" WidthLow="0.4703" Masse="0" />
+		<Pylone Name="" Height="0.05511" WidthHigh="0.05" WidthLow="0.31688" Masse="0" />
+		<Equipement Name="P_TOP_brosse-cylindrique-PM" Height="0.029" WidthHigh="0.05" WidthLow="0.05" Masse="1.47" />
+		<Equipement Name="" Height="0.01" WidthHigh="0.04" WidthLow="0.04" Masse="0" />
+		<Equipement Name="" Height="0.3" WidthHigh="0.25" WidthLow="0.25" Masse="0" />
+		<Equipement Name="" Height="0.01" WidthHigh="0.04" WidthLow="0.04" Masse="0" />
+	</Buoy>
+</Calmar>
