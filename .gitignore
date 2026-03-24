@@ -4,18 +4,24 @@ backend/.env
 *.exe
 *.dll
 *.log
+*.bak
 
 # --- Next.js Frontend ---
 node_modules/
+**/node_modules/
 frontend/.next/
 frontend/out/
 frontend/build/
 .next/
 
-# --- Environnement & Divers ---
+# --- fichiers de données Calmar ---
+*.prtMB
+
+# --- Environnement & Caches ---
 .env
 .env.local
 .env.*
 .DS_Store
 _gsdata_/
 Thumbs.db
+old-calmar/
