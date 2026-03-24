@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="FB 1500" ChaineMin="14" ChaineMax="30" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="Dossier 201933 (structure avec pieds)" Createur="Marine SACCOMAN">
+		<Structure Name=" A_STR_FB-15_STD_1806" Masse="280" OffsetFlotteur="0.41" OffsetOrganeau="0.335">
+			<ElementDimItem H="0.1676" D0="0.03" D1="0.03" DI="0" Volume="0.00345" />
+			<ElementDimItem H="0.0047" D0="0.035" D1="0.24" DI="0" Volume="0.00015" />
+			<ElementDimItem H="0.0401" D0="0.24" D1="0.7304" DI="0" Volume="0.00262" />
+			<ElementDimItem H="0.0044" D0="0.7304" D1="0.7652" DI="0" Volume="0.00049" />
+			<ElementDimItem H="0.1347" D0="0.7652" D1="1.4436" DI="0" Volume="0.01281" />
+			<ElementDimItem H="0.0534" D0="1.4436" D1="1.5" DI="0" Volume="0.00374" />
+			<ElementDimItem H="0.029" D0="1.5" D1="1.5" DI="0" Volume="0.00123" />
+			<ElementDimItem H="0.7861" D0="0.2191" D1="0.2191" DI="0.2065" Volume="0.00337" />
+			<ElementDimItem H="0.14" D0="0.6" D1="0.6" DI="0.2065" Volume="0.00672" />
+		</Structure>
+		<Flotteur Name="STD_P_FLT_3Flo764-2" Masse="131">
+			<ElementDimItem H="0.81" D0="1.5" D1="1.5" DI="0.28" Volume="1.25492" />
+		</Flotteur>
+		<Pylone Name="A_VC_VPE-CYL-BI-CO 01" Height="0.025" WidthHigh="0.57" WidthLow="0.57" Masse="28" />
+		<Pylone Name="A_VC_VPE-CYL-BI-CO 02" Height="0.12" WidthHigh="0.4" WidthLow="0.57" Masse="0" />
+		<Pylone Name="A_VC_VPE-CYL-BI-CO 03" Height="0.06582" WidthHigh="0.4" WidthLow="0.4" Masse="0" />
+		<Pylone Name="A_VC_VPE-CYL-BI-CO 04" Height="0.6882" WidthHigh="0.93392" WidthLow="1" Masse="0" />
+		<Pylone Name="A_VC_VPE-CYL-BI-CO 05" Height="0.14599" WidthHigh="0.416" WidthLow="0.416" Masse="0" />
+	</Buoy>
+</Calmar>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 14000 HV PF4" ChaineMin="30" ChaineMax="50" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="4" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="DB 14000" Masse="1130" OffsetFlotteur="1.234" OffsetOrganeau="0.8">
+			<ElementDimItem H="0.07" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.26" D0="1.154" D1="1.154" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.845" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.03" D1="1.03" DI="0.898" Volume="0" />
+			<ElementDimItem H="2.065" D0="0.914" D1="0.914" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.65" D1="1.65" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.15" D0="2.14" D1="1.98" DI="0.898" Volume="0" />
+			<ElementDimItem H="0.1" D0="1.423" D1="1.423" DI="0.898" Volume="0" />
+		</Structure>
+		<Flotteur Name="DB 14000" Masse="1120">
+			<ElementDimItem H="0.25" D0="2.016" D1="2.486" DI="0.93" Volume="0.78" />
+			<ElementDimItem H="0.224" D0="2.485" D1="3.024" DI="0.93" Volume="1.1" />
+			<ElementDimItem H="0.183" D0="3.024" D1="3.6" DI="0.93" Volume="1.35" />
+			<ElementDimItem H="0.332" D0="3.6" D1="3.6" DI="0.93" Volume="2.8" />
+			<ElementDimItem H="0.068" D0="3.6" D1="3.492" DI="0.93" Volume="0.6" />
+			<ElementDimItem H="0.142" D0="3.492" D1="3.492" DI="0.93" Volume="1" />
+			<ElementDimItem H="0.068" D0="3.492" D1="3.6" DI="0.93" Volume="0.6" />
+			<ElementDimItem H="0.478" D0="3.6" D1="3.6" DI="0.93" Volume="3.9" />
+			<ElementDimItem H="0.15" D0="3.6" D1="3.296" DI="0.93" Volume="0" />
+			<ElementDimItem H="0.106" D0="3.296" D1="3.264" DI="0.93" Volume="0" />
+		</Flotteur>
+		<Pylone Name="A_MAT_3M_HV" Height="0.01" WidthHigh="1.44" WidthLow="1.44" Masse="174" />
+		<Pylone Name="SUP_FEUX_1" Height="0.08" WidthHigh="1.14" WidthLow="1.32" Masse="5" />
+		<Pylone Name="" Height="3.018" WidthHigh="1.14" WidthLow="1.14" Masse="0" />
+		<Pylone Name="" Height="0.417" WidthHigh="0.31" WidthLow="0.31" Masse="0" />
+		<Pylone Name="" Height="0.145" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="A_VOY_CYL_GM_ALU" Height="0.86" WidthHigh="0.5" WidthLow="0.5" Masse="21.34" />
+	</Buoy>
+</Calmar>

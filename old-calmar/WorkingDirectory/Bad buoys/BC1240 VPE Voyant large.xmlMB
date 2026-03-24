@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="BC1240 VPE Voyant large" ChaineMin="16" ChaineMax="25" MasseLestUnitaire="50" NombreLestMin="1" NombreLestMax="3">
+		<Structure Name="Structure BC1240" Masse="184.28" OffsetFlotteur="0.859" OffsetOrganeau="1.063">
+			<ElementDimItem H="1.713" D0="0.219" D1="0.219" DI="0.206" Volume="0.02" />
+		</Structure>
+		<Flotteur Name="ES4000" Masse="92">
+			<ElementDimItem H="0.81" D0="1.24" D1="1.24" DI="0.22" Volume="0.932" />
+		</Flotteur>
+		<Pylone Name="Voyant PE Large Conique 1m" Height="1" WidthHigh="0.4" WidthLow="1" Masse="35" />
+	</Buoy>
+</Calmar>

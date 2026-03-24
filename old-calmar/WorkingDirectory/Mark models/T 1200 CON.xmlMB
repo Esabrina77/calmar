@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="T 1200 CON" ChaineMin="14" ChaineMax="25" MasseLestUnitaire="25" NombreLestMin="1" NombreLestMax="2" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="T1200_STR" Masse="61" OffsetFlotteur="0.58" OffsetOrganeau="0.54">
+			<ElementDimItem H="0.1" D0="0.07" D1="0.16" DI="0" Volume="0" />
+			<ElementDimItem H="0.02" D0="0.16" D1="0.16" DI="0.142" Volume="0" />
+			<ElementDimItem H="0.1" D0="0.347" D1="0.347" DI="0.142" Volume="0" />
+			<ElementDimItem H="0.33" D0="0.152" D1="0.152" DI="0.142" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.25" D1="0.25" DI="0.142" Volume="0" />
+			<ElementDimItem H="1.43" D0="0.152" D1="0.152" DI="0.142" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.24" D1="0.24" DI="0.142" Volume="0" />
+			<ElementDimItem H="0.2" D0="0.152" D1="0.152" DI="0.142" Volume="0" />
+		</Structure>
+		<Flotteur Name="FLT_T1200_CLY" Masse="60">
+			<ElementDimItem H="0.415" D0="0.375" D1="1.2" DI="0.167" Volume="0.2" />
+			<ElementDimItem H="0.265" D0="1.2" D1="1.2" DI="0.26" Volume="0.3" />
+			<ElementDimItem H="0.09" D0="1.2" D1="0.896" DI="0.26" Volume="0.04" />
+			<ElementDimItem H="0.68" D0="0.896" D1="0.41" DI="0.26" Volume="0.22" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

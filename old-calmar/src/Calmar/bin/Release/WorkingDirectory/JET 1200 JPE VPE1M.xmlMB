@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 1200 JPE VPE1M" ChaineMin="14" ChaineMax="20" MasseLestUnitaire="40" NombreLestMin="0" NombreLestMax="6">
+		<Structure Name="Jet 2000 PE rm" Masse="134" OffsetFlotteur="0.72" OffsetOrganeau="0.12">
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.61" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="1.1" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.15" D0="0.63" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+		</Structure>
+		<Flotteur Name="Jet1200" Masse="150">
+			<ElementDimItem H="0.4" D0="0.9" D1="1.485" DI="0.45" Volume="0" />
+			<ElementDimItem H="0.64" D0="1.485" D1="1.485" DI="0.45" Volume="0" />
+		</Flotteur>
+		<Pylone Name="VPE" Height="1" WidthHigh="0.4" WidthLow="0.4" Masse="25" />
+		<Equipement Name="SUP_VOY" Height="0.46" WidthHigh="0.01" WidthLow="0.01" Masse="1" />
+		<Equipement Name="CAR_SUD_MOY" Height="0.46" WidthHigh="0.46" WidthLow="0.01" Masse="5" />
+		<Equipement Name="CARD_SUD_MOY" Height="0.46" WidthHigh="0.46" WidthLow="0.01" Masse="5" />
+	</Buoy>
+</Calmar>

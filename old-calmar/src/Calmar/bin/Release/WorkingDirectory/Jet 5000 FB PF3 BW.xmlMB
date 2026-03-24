@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 5000 FB PF3 BW" ChaineMin="20" ChaineMax="35" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="Jet 5000 FB" Masse="435" OffsetFlotteur="0.619" OffsetOrganeau="0.55">
+			<ElementDimItem H="0.241" D0="0.05" D1="0.05" DI="0" Volume="0" />
+			<ElementDimItem H="0.059" D0="0.05" D1="1.11" DI="0" Volume="0" />
+			<ElementDimItem H="0.186" D0="1.11" D1="1.925" DI="0" Volume="0" />
+			<ElementDimItem H="0.063" D0="1.925" D1="2" DI="0" Volume="0" />
+			<ElementDimItem H="0.03" D0="2" D1="2" DI="0" Volume="0" />
+			<ElementDimItem H="0.075" D0="0.323" D1="0.323" DI="0.31" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.54" D1="0.54" DI="0.31" Volume="0" />
+			<ElementDimItem H="1.39" D0="0.323" D1="0.323" DI="0.31" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.6" D1="0.6" DI="0.31" Volume="0" />
+			<ElementDimItem H="0.11" D0="0.323" D1="0.323" DI="0.31" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.6" D1="0.6" DI="0.31" Volume="0" />
+		</Structure>
+		<Flotteur Name="Jet 5000 FB" Masse="620">
+			<ElementDimItem H="0.048" D0="2.188" D1="2.225" DI="0.324" Volume="0" />
+			<ElementDimItem H="0.174" D0="2.225" D1="2.4" DI="0.324" Volume="0" />
+			<ElementDimItem H="0.197" D0="2.4" D1="2.4" DI="0.324" Volume="0" />
+			<ElementDimItem H="0.15" D0="2.33" D1="2.33" DI="0.324" Volume="0" />
+			<ElementDimItem H="0.36" D0="2.4" D1="2.4" DI="0.324" Volume="0" />
+			<ElementDimItem H="0.46" D0="2.4" D1="1.255" DI="0.324" Volume="0" />
+			<ElementDimItem H="0.041" D0="1.255" D1="1.198" DI="0.324" Volume="0" />
+		</Flotteur>
+		<Pylone Name="Mast 2m Bat wings" Height="1.85" WidthHigh="0.954" WidthLow="1.036" Masse="65" />
+		<Pylone Name="" Height="0.15" WidthHigh="0.31" WidthLow="0.33" Masse="0" />
+		<Pylone Name="" Height="0.464" WidthHigh="0.31" WidthLow="0.31" Masse="4.7" />
+		<Pylone Name="" Height="0.097" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="CYL M" Height="0.68" WidthHigh="0.395" WidthLow="0.395" Masse="14" />
+	</Buoy>
+</Calmar>

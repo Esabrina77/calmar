@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 3000 SQ" ChaineMin="25" ChaineMax="30" MasseLestUnitaire="100" NombreLestMin="1" NombreLestMax="3" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="A_STR_J25Q-P_STD_01" Masse="281" OffsetFlotteur="0.703" OffsetOrganeau="0.632">
+			<ElementDimItem H="0.165" D0="0.042" D1="0.523" DI="0" Volume="0" />
+			<ElementDimItem H="0.12" D0="0.7" D1="0.7" DI="0.26" Volume="0" />
+			<ElementDimItem H="0.228" D0="0.273" D1="0.273" DI="0" Volume="0" />
+			<ElementDimItem H="0.067" D0="0.46" D1="0.54" DI="0" Volume="0" />
+			<ElementDimItem H="0.073" D0="0.54" D1="0.54" DI="0" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.6" D1="0.6" DI="0" Volume="0" />
+			<ElementDimItem H="1.24" D0="0.273" D1="0.273" DI="0" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.8" D1="0.8" DI="0" Volume="0" />
+			<ElementDimItem H="0.125" D0="0.6" D1="0.6" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="FLT_3000" Masse="357">
+			<ElementDimItem H="0.41" D0="0.965" D1="2.08" DI="0.34" Volume="0" />
+			<ElementDimItem H="0.24" D0="2.08" D1="2.08" DI="0.34" Volume="0" />
+			<ElementDimItem H="0.035" D0="2.08" D1="2.02" DI="0.34" Volume="0" />
+			<ElementDimItem H="0.105" D0="2.02" D1="2.02" DI="0.34" Volume="0" />
+			<ElementDimItem H="0.035" D0="2.02" D1="2.08" DI="0.34" Volume="0" />
+			<ElementDimItem H="0.24" D0="2.08" D1="2.08" DI="0.34" Volume="0" />
+			<ElementDimItem H="0.082" D0="2.08" D1="1.877" DI="0.34" Volume="0.056" />
+			<ElementDimItem H="0.053" D0="1.877" D1="1.845" DI="1.79" Volume="0" />
+		</Flotteur>
+		<Pylone Name="A_MAT_SUP_2M_SIMP_01" Height="2.01" WidthHigh="0.31" WidthLow="0.6" Masse="39" />
+		<Pylone Name="A_SUP_1FX_01" Height="0.417" WidthHigh="0.31" WidthLow="0.31" Masse="4.63" />
+		<Pylone Name="" Height="0.145" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="A_VOY_CYL_MM_ALU_01" Height="0.69" WidthHigh="0.4" WidthLow="0.4" Masse="13.83" />
+	</Buoy>
+</Calmar>

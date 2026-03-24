@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 9000 QA  PF5.5 HV" ChaineMin="28" ChaineMax="45" MasseLestUnitaire="100" NombreLestMin="3" NombreLestMax="7">
+		<Structure Name="Jet 9 7000 QA" Masse="650" OffsetFlotteur="3.524" OffsetOrganeau="3.519">
+			<ElementDimItem H="0.376" D0="0.129" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.524" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="3.14" D0="0.324" D1="0.324" DI="0.309" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.7" D1="0.7" DI="0.309" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.324" D1="0.324" DI="0.309" Volume="0" />
+			<ElementDimItem H="0.15" D0="1.729" D1="1.568" DI="0.309" Volume="0" />
+			<ElementDimItem H="0.097" D0="1.423" D1="1.423" DI="0.309" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J9DI320" Masse="880">
+			<ElementDimItem H="0.2" D0="1.188" D1="2.198" DI="0.32" Volume="0.44" />
+			<ElementDimItem H="0.38" D0="2.198" D1="2.998" DI="0.32" Volume="1.84" />
+			<ElementDimItem H="0.45" D0="3" D1="3" DI="0.32" Volume="2.88" />
+			<ElementDimItem H="0.23" D0="3" D1="3" DI="0.32" Volume="1.36" />
+			<ElementDimItem H="0.216" D0="3" D1="3" DI="0.32" Volume="1.4" />
+			<ElementDimItem H="0.18" D0="3" D1="2.584" DI="0.32" Volume="1" />
+			<ElementDimItem H="0.256" D0="2.584" D1="1.504" DI="0.32" Volume="0.2" />
+		</Flotteur>
+		<Pylone Name="Mast HV 4 M" Height="4.105" WidthHigh="1.31" WidthLow="1.31" Masse="207.35" />
+		<Pylone Name="Top mark support FX1" Height="0.416" WidthHigh="0.4" WidthLow="0.4" Masse="5" />
+		<Pylone Name="" Height="0.219" WidthHigh="0.219" WidthLow="0.4" Masse="0" />
+		<Equipement Name="CYL GM" Height="0.86" WidthHigh="0.7" WidthLow="0.7" Masse="21.34" />
+	</Buoy>
+</Calmar>

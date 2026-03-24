@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Boya marina tipo II-B" ChaineMin="20" ChaineMax="30" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="4" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="II-B" Masse="930" OffsetFlotteur="0.64" OffsetOrganeau="0.1">
+			<ElementDimItem H="1.89" D0="0.91" D1="0.91" DI="0.8" Volume="0" />
+		</Structure>
+		<Flotteur Name="II-B" Masse="1000">
+			<ElementDimItem H="1.03" D0="2.25" D1="2.25" DI="0" Volume="0" />
+			<ElementDimItem H="0.05" D0="2.25" D1="2.43" DI="0" Volume="0" />
+			<ElementDimItem H="0.02" D0="2.43" D1="2.43" DI="0" Volume="0" />
+			<ElementDimItem H="0.05" D0="2.43" D1="2.25" DI="0" Volume="0" />
+			<ElementDimItem H="0.1" D0="2.25" D1="2.25" DI="0" Volume="0" />
+		</Flotteur>
+		<Pylone Name="II-B" Height="2" WidthHigh="0.37" WidthLow="0.75" Masse="50" />
+		<Equipement Name="II-B" Height="0.75" WidthHigh="0.05" WidthLow="0.05" Masse="20" />
+		<Equipement Name="" Height="0.37" WidthHigh="0.0025" WidthLow="0.37" Masse="0" />
+	</Buoy>
+</Calmar>

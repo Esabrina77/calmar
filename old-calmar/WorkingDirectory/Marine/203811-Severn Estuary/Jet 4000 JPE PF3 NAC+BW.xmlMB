@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 4000 JPE PF3 NAC+BW" ChaineMin="30" ChaineMax="45" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Marine SACCOMAN">
+		<Structure Name="Jet 4000 PE" Masse="670" OffsetFlotteur="0.73" OffsetOrganeau="-0.25">
+			<ElementDimItem H="0.42" D0="1.005" D1="1.005" DI="0.845" Volume="0" />
+			<ElementDimItem H="0.24" D0="0.9" D1="0.9" DI="0.845" Volume="0" />
+			<ElementDimItem H="0.03" D0="1.1" D1="1.1" DI="0.845" Volume="0" />
+			<ElementDimItem H="1.43" D0="0.9" D1="0.9" DI="0.845" Volume="0" />
+			<ElementDimItem H="0.03" D0="1" D1="1" DI="0.845" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J5DI930" Masse="480">
+			<ElementDimItem H="0.041" D0="1.23" D1="1.23" DI="0.93" Volume="0.001" />
+			<ElementDimItem H="0.435" D0="1.23" D1="2.4" DI="0.93" Volume="0.8" />
+			<ElementDimItem H="0.384" D0="2.4" D1="2.4" DI="0.93" Volume="1.4" />
+			<ElementDimItem H="0.15" D0="2.33" D1="2.33" DI="0.93" Volume="0.5" />
+			<ElementDimItem H="0.212" D0="2.4" D1="2.4" DI="0.93" Volume="0.8" />
+			<ElementDimItem H="0.163" D0="2.4" D1="2.226" DI="0.93" Volume="0.5" />
+		</Flotteur>
+		<Pylone Name="A_MAT_2M_NAC" Height="0.01" WidthHigh="1.039" WidthLow="1.039" Masse="114" />
+		<Pylone Name="BW" Height="1.983" WidthHigh="1.445" WidthLow="1.545" Masse="0" />
+		<Pylone Name="SUP_1FX" Height="0.417" WidthHigh="0.31" WidthLow="0.31" Masse="4.62" />
+		<Pylone Name="" Height="0.145" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="A_VOY_CYL_GM_ALU" Height="0.86" WidthHigh="0.5" WidthLow="0.5" Masse="21.34" />
+	</Buoy>
+</Calmar>

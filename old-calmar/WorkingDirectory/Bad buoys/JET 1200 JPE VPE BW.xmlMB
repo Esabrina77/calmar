@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="JET 1200 JPE VPE BW" ChaineMin="14" ChaineMax="30" MasseLestUnitaire="40" NombreLestMin="2" NombreLestMax="6">
+		<Structure Name="STR Roto Ø630" Masse="152" OffsetFlotteur="0.73" OffsetOrganeau="-0.15">
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.21" D0="0.814" D1="0.814" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.4" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="1.1" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.15" D0="0.63" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.87" D1="0.87" DI="0.6" Volume="0" />
+		</Structure>
+		<Flotteur Name="FLT Jet1200 As Built" Masse="155">
+			<ElementDimItem H="0.4" D0="0.82" D1="1.485" DI="0.645" Volume="0.310972" />
+			<ElementDimItem H="0.23" D0="1.485" D1="1.485" DI="0.645" Volume="0.308106" />
+			<ElementDimItem H="0.13" D0="1.435" D1="1.435" DI="0.645" Volume="0.165058" />
+			<ElementDimItem H="0.28" D0="1.485" D1="1.485" DI="0.645" Volume="0.350756" />
+		</Flotteur>
+		<Pylone Name="VOY J12 BW" Height="0.03" WidthHigh="0.87" WidthLow="0.87" Masse="65" />
+		<Pylone Name="" Height="0.12" WidthHigh="0.63" WidthLow="0.87" Masse="0" />
+		<Pylone Name="" Height="0.095" WidthHigh="0.63" WidthLow="0.63" Masse="0" />
+		<Pylone Name="" Height="1.155" WidthHigh="1.272" WidthLow="1.348" Masse="0" />
+	</Buoy>
+</Calmar>

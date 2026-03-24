@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DB 2500 Q PF2" ChaineMin="20" ChaineMax="35" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="2">
+		<Structure Name="A_STR_J25" Masse="335.6" OffsetFlotteur="1.703" OffsetOrganeau="1.653">
+			<ElementDimItem H="0.18" D0="0.086" D1="0.523" DI="0" Volume="0.003" />
+			<ElementDimItem H="1.333" D0="0.273" D1="0.273" DI="0" Volume="0.078" />
+			<ElementDimItem H="0.15" D0="0.54" D1="0.6" DI="0" Volume="0.012" />
+			<ElementDimItem H="1.24" D0="0.273" D1="0.273" DI="0" Volume="0.073" />
+			<ElementDimItem H="0.13" D0="0.8" D1="0.819" DI="0" Volume="0.019" />
+		</Structure>
+		<Flotteur Name="P_FLT_J25" Masse="270">
+			<ElementDimItem H="0.5" D0="0.599" D1="1.85" DI="0.273" Volume="0.58" />
+			<ElementDimItem H="0.27" D0="1.85" D1="1.85" DI="0.273" Volume="0.68" />
+			<ElementDimItem H="0.15" D0="1.8" D1="1.8" DI="0.273" Volume="0.34" />
+			<ElementDimItem H="0.18" D0="1.85" D1="1.85" DI="0.273" Volume="0.454" />
+			<ElementDimItem H="0.1" D0="1.85" D1="1.85" DI="0.273" Volume="0.186" />
+		</Flotteur>
+		<Pylone Name="Mat HV 1M STD" Height="1.1" WidthHigh="0.977" WidthLow="0.977" Masse="66.2" />
+		<Equipement Name="SUP FX 1" Height="0.417" WidthHigh="0.404" WidthLow="0.404" Masse="2.3" />
+		<Equipement Name="SUP FX 2" Height="0.145" WidthHigh="0.213" WidthLow="0.404" Masse="2.3" />
+		<Equipement Name="VOY_STA 1" Height="0.16" WidthHigh="0.04" WidthLow="0.04" Masse="7.3" />
+		<Equipement Name="VOY_STA 2" Height="0.239" WidthHigh="0.141" WidthLow="0.62" Masse="0" />
+		<Equipement Name="VOY_STA 3" Height="0.239" WidthHigh="0.62" WidthLow="0.141" Masse="0" />
+		<Equipement Name="VOY_STA 4" Height="0.117" WidthHigh="0.04" WidthLow="0.04" Masse="0" />
+	</Buoy>
+</Calmar>

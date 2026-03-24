@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Trinity House Old Class 2" ChaineMin="32" ChaineMax="38" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="Trinity House Old C2" Masse="2000" OffsetFlotteur="0.722" OffsetOrganeau="3">
+			<ElementDimItem H="0.06" D0="1.9" D1="1.9" DI="1.7" Volume="0" />
+			<ElementDimItem H="0.66" D0="1.8" D1="1.8" DI="1.7" Volume="0" />
+			<ElementDimItem H="2.43" D0="0.01" D1="0.01" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="Trinity House Old C2" Masse="3000">
+			<ElementDimItem H="0.39" D0="1.8" D1="3" DI="0" Volume="0" />
+			<ElementDimItem H="1.6" D0="3" D1="3" DI="0" Volume="0" />
+			<ElementDimItem H="0.44" D0="3" D1="1.6" DI="0" Volume="0" />
+		</Flotteur>
+		<Pylone Name="Trinity House Lateral" Height="1.9" WidthHigh="0.554" WidthLow="2.5" Masse="420" />
+		<Equipement Name="TH C2 Lat" Height="1" WidthHigh="0.83" WidthLow="0.83" Masse="50" />
+		<Equipement Name="TH C2 Lat" Height="0.39" WidthHigh="0.554" WidthLow="0.4" Masse="2" />
+	</Buoy>
+</Calmar>

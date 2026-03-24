@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DB 4000 Small mast test" ChaineMin="20" ChaineMax="35" MasseLestUnitaire="100" NombreLestMin="0" NombreLestMax="4" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="A_STR_JUPEØ914-DB4000_150945_1321" Masse="870" OffsetFlotteur="1.265" OffsetOrganeau="0.851">
+			<ElementDimItem H="1.24" D0="0.914" D1="0.914" DI="0.898" Volume="0.03296" />
+			<ElementDimItem H="0.01" D0="1.03" D1="1.03" DI="0.898" Volume="0.00188" />
+			<ElementDimItem H="1.4" D0="0.914" D1="0.914" DI="0.898" Volume="0.03377" />
+			<ElementDimItem H="0.01" D0="1.5" D1="1.5" DI="0.898" Volume="0.012" />
+			<ElementDimItem H="0.15" D0="1.719" D1="1.546" DI="0.86" Volume="0.01018" />
+			<ElementDimItem H="0.1" D0="1.4235" D1="1.4235" DI="1.0235" Volume="0.00302" />
+		</Structure>
+		<Flotteur Name="P_FLT_J5DI930" Masse="480">
+			<ElementDimItem H="0.041" D0="1.234" D1="1.234" DI="1.136" Volume="0.00912" />
+			<ElementDimItem H="0.435" D0="1.234" D1="2.4" DI="0.93" Volume="0.80464" />
+			<ElementDimItem H="0.384" D0="2.4" D1="2.4" DI="0.93" Volume="1.34596" />
+			<ElementDimItem H="0.15" D0="2.33" D1="2.33" DI="0.93" Volume="0.49068" />
+			<ElementDimItem H="0.212" D0="2.4" D1="2.4" DI="0.93" Volume="0.74532" />
+			<ElementDimItem H="0.163" D0="2.4" D1="2.226" DI="0.93" Volume="0.54176" />
+		</Flotteur>
+		<Pylone Name="M_MAT_bosk 4x50+1x90Ah" Height="0.006" WidthHigh="1.1" WidthLow="1.1" Masse="120.47" />
+		<Pylone Name="M_MAT_bosk 4x50+1x90Ah" Height="0.689" WidthHigh="0.775" WidthLow="0.775" Masse="0" />
+		<Equipement Name="P_MCS_2Sup1167-00" Height="0.006" WidthHigh="0.416" WidthLow="0.416" Masse="4.25" />
+		<Equipement Name="P_MCS_2Sup1167-01" Height="0.322" WidthHigh="0.2934" WidthLow="0.2934" Masse="0" />
+		<Equipement Name="P_MCS_2Sup1167-02" Height="0.126" WidthHigh="0.1566" WidthLow="0.2934" Masse="0" />
+		<Equipement Name="P_MCS_2Sup1167-03" Height="0.006" WidthHigh="0.17" WidthLow="0.17" Masse="0" />
+		<Equipement Name="202179_VOY_STA_MM_ALU_02_00" Height="0.006" WidthHigh="0.17" WidthLow="0.17" Masse="7.87" />
+		<Equipement Name="202179_VOY_STA_MM_ALU_02_01" Height="0.084" WidthHigh="0.06" WidthLow="0.06" Masse="0" />
+		<Equipement Name="202179_VOY_STA_MM_ALU_02_02" Height="0.31" WidthHigh="0.117" WidthLow="0.459" Masse="0" />
+		<Equipement Name="202179_VOY_STA_MM_ALU_02_03" Height="0.31" WidthHigh="0.459" WidthLow="0.117" Masse="0" />
+		<Equipement Name="202179_VOY_STA_MM_ALU_02_04" Height="0.046" WidthHigh="0.06" WidthLow="0.06" Masse="0" />
+	</Buoy>
+</Calmar>

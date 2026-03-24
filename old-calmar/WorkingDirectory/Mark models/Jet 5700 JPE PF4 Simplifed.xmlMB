@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 5700 JPE PF4 Simplifed" ChaineMin="30" ChaineMax="45" MasseLestUnitaire="100" NombreLestMin="4" NombreLestMax="6" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="JPE 8000" Masse="383" OffsetFlotteur="1.431" OffsetOrganeau="-0.1">
+			<ElementDimItem H="0.41" D0="1.05" D1="1.05" DI="0.845" Volume="0" />
+			<ElementDimItem H="0.9" D0="0.9" D1="0.9" DI="0.845" Volume="0" />
+			<ElementDimItem H="0.03" D0="1.1" D1="1.1" DI="0.845" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.9" D1="0.9" DI="0.845" Volume="0" />
+			<ElementDimItem H="0.03" D0="1" D1="1" DI="0.845" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J7DI330_01" Masse="680">
+			<ElementDimItem H="0.154" D0="1.012" D1="1.81" DI="0.93" Volume="0.14" />
+			<ElementDimItem H="0.463" D0="1.81" D1="2.6" DI="0.93" Volume="1.4" />
+			<ElementDimItem H="0.347" D0="2.6" D1="2.6" DI="0.93" Volume="1.5" />
+			<ElementDimItem H="0.056" D0="2.6" D1="2.48" DI="0.93" Volume="0.2" />
+			<ElementDimItem H="0.152" D0="2.48" D1="2.48" DI="0.93" Volume="0.6" />
+			<ElementDimItem H="0.056" D0="2.48" D1="2.6" DI="0.93" Volume="0.2" />
+			<ElementDimItem H="0.369" D0="2.6" D1="2.6" DI="0.93" Volume="1.7" />
+			<ElementDimItem H="0.062" D0="2.6" D1="2.47" DI="0.345" Volume="0.001" />
+		</Flotteur>
+		<Pylone Name="MAT_3M_SIMP" Height="2.98" WidthHigh="0.46" WidthLow="0.889" Masse="86" />
+		<Pylone Name="" Height="0.417" WidthHigh="0.31" WidthLow="0.31" Masse="4.63" />
+		<Pylone Name="" Height="0.145" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="A_VOY_CYL_GM_ALU" Height="0.86" WidthHigh="0.5" WidthLow="0.5" Masse="21.34" />
+	</Buoy>
+</Calmar>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DB 24000 IDS" ChaineMin="30" ChaineMax="60" MasseLestUnitaire="100" NombreLestMin="12" NombreLestMax="0" Commentaire="" Createur="Marine SACCOMAN">
+		<Structure Name="test DB24000 " Masse="7600" OffsetFlotteur="1.16214" OffsetOrganeau="0.95414">
+			<ElementDimItem H="3.178" D0="2" D1="2" DI="1.988" Volume="2" />
+			<ElementDimItem H="0.118" D0="2.85" D1="2.39" DI="1.988" Volume="0.06417" />
+		</Structure>
+		<Flotteur Name="flt db24" Masse="2022.58">
+			<ElementDimItem H="0.248" D0="3.176" D1="3.6429" DI="2.09" Volume="1.3913" />
+			<ElementDimItem H="0.224" D0="3.6429" D1="4.176" DI="2.09" Volume="1.94889" />
+			<ElementDimItem H="0.186" D0="4.176" D1="4.76" DI="2.09" Volume="2.31467" />
+			<ElementDimItem H="0.3325" D0="4.76" D1="4.76" DI="2.09" Volume="4.61407" />
+			<ElementDimItem H="0.068" D0="4.76" D1="4.6414" DI="2.09" Volume="0.94893" />
+			<ElementDimItem H="0.1419" D0="4.6414" D1="4.6414" DI="2.09" Volume="1.92217" />
+			<ElementDimItem H="0.068" D0="4.6414" D1="4.76" DI="2.09" Volume="0.94049" />
+			<ElementDimItem H="0.4575" D0="4.76" D1="4.76" DI="2.09" Volume="6.4131" />
+			<ElementDimItem H="0.1555" D0="4.76" D1="4.4738" DI="2.09" Volume="2.08349" />
+			<ElementDimItem H="0.08119" D0="4.4738" D1="4.26114" DI="2.09" Volume="0.98091" />
+			<ElementDimItem H="0.0527" D0="4.26114" D1="3.0618" DI="2.09" Volume="0.42257" />
+		</Flotteur>
+		<Pylone Name="pieds" Height="0.088" WidthHigh="2.24" WidthLow="2.388" Masse="0" />
+		<Pylone Name="MAT TEST DB2400" Height="2.315" WidthHigh="2.24" WidthLow="2.24" Masse="1580" />
+		<Pylone Name="Couronne" Height="0.43" WidthHigh="2.965" WidthLow="2.24" Masse="0" />
+	</Buoy>
+</Calmar>

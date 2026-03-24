@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 2500 Light Sénégal" ChaineMin="16" ChaineMax="30" MasseLestUnitaire="40" NombreLestMin="4" NombreLestMax="6">
+		<Structure Name="Jet 2000 PE rm" Masse="80" OffsetFlotteur="0.72" OffsetOrganeau="0.1">
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.61" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="1.1" D0="0.63" D1="0.63" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.15" D0="0.63" D1="0.76" DI="0.6" Volume="0" />
+			<ElementDimItem H="0.03" D0="0.76" D1="0.76" DI="0.6" Volume="0" />
+		</Structure>
+		<Flotteur Name="JET 2000" Masse="293">
+			<ElementDimItem H="0.355" D0="0.99" D1="1.9" DI="0.74" Volume="0" />
+			<ElementDimItem H="0.69" D0="1.9" D1="1.9" DI="0.74" Volume="0" />
+		</Flotteur>
+		<Pylone Name="Mast PE" Height="0.03" WidthHigh="0.87" WidthLow="0.87" Masse="36" />
+		<Pylone Name="" Height="0.1" WidthHigh="0.4" WidthLow="0.87" Masse="0" />
+		<Pylone Name="" Height="0.4" WidthHigh="0.4" WidthLow="0.4" Masse="0" />
+		<Pylone Name="" Height="0.6" WidthHigh="0.9" WidthLow="1" Masse="0" />
+		<Pylone Name="" Height="0.4" WidthHigh="0.4" WidthLow="0.4" Masse="0" />
+	</Buoy>
+</Calmar>

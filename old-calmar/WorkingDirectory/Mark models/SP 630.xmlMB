@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="SP 630" ChaineMin="10" ChaineMax="30" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="" Masse="0" OffsetFlotteur="0" OffsetOrganeau="0">
+		</Structure>
+		<Flotteur Name="SP 630" Masse="200">
+			<ElementDimItem H="0.4" D0="0.26" D1="0.26" DI="0" Volume="0" />
+			<ElementDimItem H="0.55" D0="0.26" D1="0.63" DI="0" Volume="0" />
+			<ElementDimItem H="0.35" D0="0.63" D1="0.63" DI="0" Volume="0" />
+			<ElementDimItem H="0.159" D0="0.63" D1="0.63" DI="0" Volume="0.04" />
+			<ElementDimItem H="0.15" D0="0.63" D1="0.4" DI="0" Volume="0.03" />
+			<ElementDimItem H="0.459" D0="0.4" D1="0.4" DI="0" Volume="0.055" />
+			<ElementDimItem H="0.708" D0="0.4" D1="0.4" DI="0" Volume="0.0643" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

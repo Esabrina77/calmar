@@ -1,0 +1,733 @@
+﻿<Window x:Class="FenetreBouee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calmar"
+        WindowStartupLocation="CenterScreen"
+        Width="800" Height="600"
+        ResizeMode="CanMinimize"
+        Background="#FFDFE9F5"
+        ShowInTaskbar="False">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- MENU POUR LES COMMANDES -->
+        <Ribbon Grid.Row="0" Grid.Column="1" Margin="0,-20,0,0" Name="MenuBouee"
+                       SelectionChanged="Ribbon_SelectionChanged"
+                       ContextMenuOpening="MenuRibbon_ContextMenuOpening"
+                       SizeChanged="MenuRibbon_SizeChanged">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed" >
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="General" Name="ManagerBuoyGeneralTab" IsSelected="True">
+                
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR L'OUVERTURE ET LA SAUVEGARDE DES DONNEES -->
+                <RibbonGroup Name="ManagerBuoyRibbonGroupSaveBuoy" Header="Gestion de l'enregistrement">
+                    <Grid Width="160">
+                        <RibbonButton Name="ManagerBuoyButtonSauvegardeBouee"
+                                             Margin="5,0,5,0"
+                                             HorizontalAlignment="Center"
+                                             LargeImageSource="..\Images\32\Save.png"
+                                             Label="Enregistrer" Click="RetourOK" />
+                    </Grid>
+                </RibbonGroup>
+                <RibbonGroup Name="ManagerBuoyRibbonGroupMoveFloatOnStructure" Header="Déplacement du flotteur sur la structure">
+
+                    <RibbonButton Name="ManagerBuoyButtonDeplacerFlotteurAuDessus"
+                                            LargeImageSource="..\Images\32\up.png"
+                                            Label="Déplacer au-dessus" HorizontalAlignment="Center"
+                                            Click="ButtonDeplacerFlotteurAuDessus_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonDeplacerFlotteurAuDessous"
+                                            LargeImageSource="..\Images\32\down.png"
+                                            Label="Déplacer au-dessous" HorizontalAlignment="Center"
+                                            Click="ButtonDeplacerFlotteurAuDessous_Click" />
+                    
+                    <Grid Height="70">
+                        <Grid VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Name="ManagerBuoyTextBlockPasDeplacement" Text="Pas de déplacement (m)" TextWrapping="Wrap" />
+                            <TextBox Name="TextBoxPasDeplacement" Grid.Row="1" Text="0.001" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        </Grid>
+                    </Grid>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Flotteur" Name="ManagerBuoyFlotteurTab">
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR L'OUVERTURE ET LA SAUVEGARDE DES DONNEES -->
+                <RibbonGroup Name="ManagerBuoyRibbonGroupFlotteurFonctionElement" Header="Fonction pour la tranche sélectionnée">
+                    <RibbonToggleButton Name="ManagerBuoyButtonNouveauFlotteur"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\documents.png"
+                                         Label="Nouvelle Tranche" Click="NouveauFlotteur_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonAjouterFlotteur"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\Add1.png"
+                                         Label="Ajouter" Click="AddFlotteur_Click" />
+
+                    <RibbonToggleButton Name="ManagerBuoyButtonModificationFlotteur"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\configure.png"
+                                         Label="Modification" IsHitTestVisible="False" />
+
+                    <RibbonButton Name="ManagerBuoyButtonSupprimerFlotteur"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\close.png"
+                                         Label="Supprimer" Click="SupprimerFlotteur_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonFlotteurDeplacerElementAuDessus"
+                                            LargeImageSource="..\Images\32\up.png"
+                                            Label="Déplacer au-dessus" HorizontalAlignment="Center"
+                                            Click="ButtonFlotteurDeplacerElementAuDessus_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonFlotteurDeplacerElementAuDessous"
+                                            LargeImageSource="..\Images\32\down.png"
+                                            Label="Déplacer au-dessous" HorizontalAlignment="Center"
+                                            Click="ButtonFlotteurDeplacerElementAuDessous_Click" />
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Structure" Name="ManagerBuoyStructureTab">
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR L'OUVERTURE ET LA SAUVEGARDE DES DONNEES -->
+                <RibbonGroup Name="ManagerBuoyRibbonGroupStructureFonctionElement" Header="Fonction pour la tranche sélectionnée">
+                    <RibbonToggleButton Name="ManagerBuoyButtonNouveauStructure"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\documents.png"
+                                         Label="Nouvelle Tranche" Click="NouveauStructure_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonAjouterStructure"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\Add1.png"
+                                         Label="Ajouter" Click="AddStructure_Click" />
+
+                    <RibbonToggleButton Name="ManagerBuoyButtonModificationStructure"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\configure.png"
+                                         Label="Modification" IsHitTestVisible="False" />
+
+                    <RibbonButton Name="ManagerBuoyButtonSupprimerStructure"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\close.png"
+                                         Label="Supprimer" Click="SupprimerStructure_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonStructureDeplacerElementAuDessus"
+                                            LargeImageSource="..\Images\32\up.png"
+                                            Label="Déplacer au-dessus" HorizontalAlignment="Center"
+                                            Click="ButtonStructureDeplacerElementAuDessus_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonStructureDeplacerElementAuDessous"
+                                            LargeImageSource="..\Images\32\down.png"
+                                            Label="Déplacer au-dessous" HorizontalAlignment="Center"
+                                            Click="ButtonStructureDeplacerElementAuDessous_Click" />
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Pylône" Name="ManagerBuoyPyloneTab">
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR L'OUVERTURE ET LA SAUVEGARDE DES DONNEES -->
+                <RibbonGroup Name="ManagerBuoyRibbonGroupPyloneFonctionElement" Header="Fonction pour l'élément sélectionné">
+                    <RibbonToggleButton Name="ManagerBuoyButtonNouveauPylone"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\documents.png"
+                                         Label="Nouveau" Click="NouveauPylone_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonAjouterPylone"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\Add1.png"
+                                         Label="Ajouter" Click="AddPylone_Click" />
+
+                    <RibbonToggleButton Name="ManagerBuoyButtonModificationPylone"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\configure.png"
+                                         Label="Modification" IsHitTestVisible="False" />
+
+                    <RibbonButton Name="ManagerBuoyButtonSupprimerPylone"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\close.png"
+                                         Label="Supprimer" Click="SupprimerPylone_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonPyloneDeplacerElementAuDessus"
+                                            LargeImageSource="..\Images\32\up.png"
+                                            Label="Déplacer au-dessus" HorizontalAlignment="Center"
+                                            Click="ButtonPyloneDeplacerElementAuDessus_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonPyloneDeplacerElementAuDessous"
+                                            LargeImageSource="..\Images\32\down.png"
+                                            Label="Déplacer au-dessous" HorizontalAlignment="Center"
+                                            Click="ButtonPyloneDeplacerElementAuDessous_Click" />
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Voyant" Name="ManagerBuoyVoyantTab">
+                <!-- GROUPE POUR LA GESTION DES COMMANDES POUR L'OUVERTURE ET LA SAUVEGARDE DES DONNEES -->
+                <RibbonGroup Name="ManagerBuoyRibbonGroupVoyantFonctionElement" Header="Fonction pour l'élément sélectionné">
+                    <RibbonToggleButton Name="ManagerBuoyButtonNouveauVoyant"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\documents.png"
+                                         Label="Nouveau" Click="NouveauVoyant_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonAjouterVoyant"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\Add1.png"
+                                         Label="Ajouter" Click="AddVoyant_Click" />
+
+                    <RibbonToggleButton Name="ManagerBuoyButtonModificationVoyant"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\configure.png"
+                                         Label="Modification" IsHitTestVisible="False" />
+
+                    <RibbonButton Name="ManagerBuoyButtonSupprimerVoyant"
+                                         Margin="5,0,5,0"
+                                         LargeImageSource="..\Images\32\close.png"
+                                         Label="Supprimer" Click="SupprimerVoyant_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonVoyantDeplacerElementAuDessus"
+                                            LargeImageSource="..\Images\32\up.png"
+                                            Label="Déplacer au-dessus" HorizontalAlignment="Center"
+                                            Click="ButtonVoyantDeplacerElementAuDessus_Click" />
+
+                    <RibbonButton Name="ManagerBuoyButtonVoyantDeplacerElementAuDessous"
+                                            LargeImageSource="..\Images\32\down.png"
+                                            Label="Déplacer au-dessous" HorizontalAlignment="Center"
+                                            Click="ButtonVoyantDeplacerElementAuDessous_Click" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+
+        <!-- CADRE DE LA BOUEE -->
+        <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Background="LightGray" Margin="4,4,4,0" CornerRadius="5,5,0,0" VerticalAlignment="Top">
+                <TextBlock Name="ManagerBuoyTextBlockVisualisationGraphique" Text="Visualisation graphique" VerticalAlignment="Center" />
+            </Border>
+
+            <Border Grid.Row="1" Name="VisuBuoy" Margin="5" />
+            <Border Grid.RowSpan="2" Margin="2" BorderThickness="1" BorderBrush="LightGray" CornerRadius="5" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown" />
+            <ListBox Grid.Row="1" Name="ListBoxElement" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Background="{x:Null}" BorderThickness="0" SelectionChanged="ListBoxElement_SelectionChanged" />
+            <Canvas Grid.Row="1" Name="OrganeauView" />
+
+        </Grid>
+
+        <!-- CADRE SAISIE -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="0">
+
+            <Grid Grid.Row="2" Margin="2,0,2,0" Name="GridBouee" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParamGenBouee" Text="Paramètres généraux" VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="2,0,2,0" VerticalAlignment="Center">
+                    <TextBlock Name="ManagerBuoyTextBlockNomBouee" Text="Nom" Margin="2" TextAlignment="Center" />
+                    <TextBox Name="TextBoxNomBouee" TextAlignment="Center" FontSize="14" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                </StackPanel>
+
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,0.1,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="28" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Name="ManagerBuoyTextBlockChaineComp" Text="Chaine compatible" TextAlignment="Center" />
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Name="ManagerBuoyTextBlockChaineMin" Text="Min" TextAlignment="Center" VerticalAlignment="Center" />
+                        <ComboBox Name="ComboBoxChaineMin" Grid.Row="2" Grid.Column="0" Margin="2" SelectionChanged="ComboBoxChaine_SelectionChanged">
+                            <ComboBoxItem Content="10" />
+                            <ComboBoxItem Content="12" />
+                            <ComboBoxItem Content="14" />
+                            <ComboBoxItem Content="16" />
+                            <ComboBoxItem Content="18" />
+                            <ComboBoxItem Content="20" />
+                            <ComboBoxItem Content="22" />
+                            <ComboBoxItem Content="25" />
+                            <ComboBoxItem Content="28" />
+                            <ComboBoxItem Content="30" />
+                            <ComboBoxItem Content="32" />
+                            <ComboBoxItem Content="35" />
+                            <ComboBoxItem Content="38" />
+                            <ComboBoxItem Content="40" />
+                            <ComboBoxItem Content="45" />
+                            <ComboBoxItem Content="50" />
+                            <ComboBoxItem Content="55" />
+                            <ComboBoxItem Content="60" />
+                            <ComboBoxItem Content="100" />
+                            <ComboBoxItem Content="120" />
+                        </ComboBox>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Name="ManagerBuoyTextBlockChaineMax" Text="Max" TextAlignment="Center" VerticalAlignment="Center" />
+                        <ComboBox Name="ComboBoxChaineMax" Grid.Row="2" Grid.Column="1" Margin="2" SelectionChanged="ComboBoxChaine_SelectionChanged">
+                            <ComboBoxItem Content="10" />
+                            <ComboBoxItem Content="12" />
+                            <ComboBoxItem Content="14" />
+                            <ComboBoxItem Content="16" />
+                            <ComboBoxItem Content="18" />
+                            <ComboBoxItem Content="20" />
+                            <ComboBoxItem Content="22" />
+                            <ComboBoxItem Content="25" />
+                            <ComboBoxItem Content="28" />
+                            <ComboBoxItem Content="30" />
+                            <ComboBoxItem Content="32" />
+                            <ComboBoxItem Content="35" />
+                            <ComboBoxItem Content="38" />
+                            <ComboBoxItem Content="40" />
+                            <ComboBoxItem Content="45" />
+                            <ComboBoxItem Content="50" />
+                            <ComboBoxItem Content="55" />
+                            <ComboBoxItem Content="60" />
+                            <ComboBoxItem Content="100" />
+                            <ComboBoxItem Content="120" />
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0.1,0,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="28" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.ColumnSpan="3" Grid.Row="0" Name="ManagerBuoyTextBlockBoueeLest" Text="Définition des lests" TextAlignment="Center" />
+
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Name="ManagerBuoyTextBlockBoueeMasse" Text="Masse" TextAlignment="Center" VerticalAlignment="Center" />
+                        <ComboBox Name="ComboBoxPoidsLest" Grid.Row="2" Grid.ColumnSpan="3" Margin="2" SelectionChanged="ComboBoxPoidsLest_SelectionChanged">
+                            <ComboBoxItem Content="0 kg" IsSelected="True" />
+                            <ComboBoxItem Content="2.5 kg" />
+                            <ComboBoxItem Content="5 kg" />
+                            <ComboBoxItem Content="10 kg" />
+                            <ComboBoxItem Content="15 kg" />
+                            <ComboBoxItem Content="20 kg" />
+                            <ComboBoxItem Content="25 kg" />
+                            <ComboBoxItem Content="35 kg" />
+                            <ComboBoxItem Content="40 kg" />
+                            <ComboBoxItem Content="50 kg" />
+                            <ComboBoxItem Content="75 kg" />
+                            <ComboBoxItem Content="100 kg" />
+                        </ComboBox>
+
+                        <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Name="ManagerBuoyTextBlockNombre" Text="Nombre" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="4" Grid.Column="0" Name="ManagerBuoyTextBlockNombreMin" Text="Min" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="4" Grid.Column="1" Name="ManagerBuoyTextBlockNombreMax" Text="Max" TextAlignment="Center" VerticalAlignment="Center" />
+                        <ComboBox Name="ComboBoxNombreLestMin" Grid.Row="5" Grid.Column="0" Margin="2" SelectionChanged="ComboBoxNombreLestMin_SelectionChanged">
+                            <ComboBoxItem Content="0x" IsSelected="True" />
+                            <ComboBoxItem Content="1x" />
+                            <ComboBoxItem Content="2x" />
+                            <ComboBoxItem Content="3x" />
+                            <ComboBoxItem Content="4x" />
+                            <ComboBoxItem Content="5x" />
+                            <ComboBoxItem Content="6x" />
+                            <ComboBoxItem Content="7x" />
+                            <ComboBoxItem Content="8x" />
+                            <ComboBoxItem Content="9x" />
+                            <ComboBoxItem Content="10x" />
+                            <ComboBoxItem Content="11x" />
+                            <ComboBoxItem Content="12x" />
+                            <ComboBoxItem Content="13x" />
+                            <ComboBoxItem Content="14x" />
+                            <ComboBoxItem Content="15x" />
+                            <ComboBoxItem Content="16x" />
+                            <ComboBoxItem Content="17x" />
+                            <ComboBoxItem Content="18x" />
+                            <ComboBoxItem Content="19x" />
+                            <ComboBoxItem Content="20x" />
+                        </ComboBox>
+                        <ComboBox Name="ComboBoxNombreLestMax" Grid.Row="5" Grid.Column="1" Margin="2" SelectionChanged="ComboBoxNombreLestMax_SelectionChanged">
+                            <ComboBoxItem Content="0x" IsSelected="True" />
+                            <ComboBoxItem Content="1x" />
+                            <ComboBoxItem Content="2x" />
+                            <ComboBoxItem Content="3x" />
+                            <ComboBoxItem Content="4x" />
+                            <ComboBoxItem Content="5x" />
+                            <ComboBoxItem Content="6x" />
+                            <ComboBoxItem Content="7x" />
+                            <ComboBoxItem Content="8x" />
+                            <ComboBoxItem Content="9x" />
+                            <ComboBoxItem Content="10x" />
+                        </ComboBox>
+                    </Grid>
+                </Border>
+                
+                <Border Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0,0.5,0,0">
+                    <StackPanel>
+                        <TextBlock Name="ManagerBuoyTextBlockFloatToStructBuoy" Text="Hauteur du bas du flotteur au dessus du bas de la structure (m)" Margin="2" TextAlignment="Center" />
+                        <TextBox Name="TextBoxOffsetFlotteur" TextAlignment="Center" FontSize="14" TextChanged="TextBoxOffsetFlotteur_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="4" Grid.ColumnSpan="3" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockInfoBouee" Text="Informations" VerticalAlignment="Center" />
+                </Border>
+                
+                <Border Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0,0.5,0,0">
+                    <StackPanel>
+                        <TextBlock Name="ManagerBuoyTextBlockMasseBuoy" Text="Masse de la bouée (kg)" Margin="2" TextAlignment="Center" />
+                        <TextBox Name="TextBoxBoueeMasse" TextAlignment="Center" FontSize="14" IsReadOnly="True" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <TextBlock Name="ManagerBuoyTextBlockVolumeBuoy" Text="Volume total de la bouée (m³)" Margin="2" TextAlignment="Center" />
+                        <TextBox Name="TextBoxBoueeVolume" TextAlignment="Center" FontSize="14" IsReadOnly="True" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="2,0,2,0" Name="GridFlotteur" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="145" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParamGenFlotteur" Text="Paramètres généraux" VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockNomFlotteur" Text="Nom du flotteur" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxNomFlotteur" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <Button Name="ManagerBuoyButtonCopieFlotteur" Content="..." Grid.Column="1" Margin="4" Width="18" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click">
+                            <Button.ContextMenu>
+                                <ContextMenu Name="MenuCopieFlotteur">
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </Grid>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockMasseFloat" Text="Masse (kg)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxFlotteurMasse" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxFlotteurMasse_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+
+                    <Border Background="LightGray" CornerRadius="5,5,0,0">
+                        <TextBlock Name="ManagerBuoyTextBlockInfoFlotteur" Text="Informations" VerticalAlignment="Center" />
+                    </Border>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockVolumeFloat" Text="Volume total (m³)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxFlotteurVolume" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" IsReadOnly="True" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+                </StackPanel>
+                
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="LightGray" BorderThickness="0,0.5,0,0" CornerRadius="5,5,0,0" />
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParametreElementSelectFloat" Text="Paramètres de la tranche sélectionnée" VerticalAlignment="Center" />
+                </Border>
+
+                <Border Grid.Row="3" Grid.Column="0" Margin="5" Name="DessineElementFlotteurSelectionner" />
+
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <TextBlock Name="ManagerBuoyTextBlockFlotteurHauteur" Text="Hauteur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxFloatHauteur" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxFloatHauteur_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockFlotteurDiametreH" Text="Diamètre haut (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxFloatDiametreH" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxFloatDiametreH_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockFlotteurDiametreI" Text="Diamètre interieur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxFloatDiametreI" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxFloatDiametreI_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    <TextBlock Name="ManagerBuoyTextBlockFlotteurDiametreB" Text="Diamètre bas (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxFloatDiametreB" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxFloatDiametreB_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Name="ManagerBuoyTextBlockFlotteurVolume" Text="Volume réel (m³)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Name="ManagerBuoyTextBlockFlotteurVolumeCalcul" Text="Volume Calculé (m³)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+
+                        <TextBox Grid.Row="1" Grid.Column="0" Name="TextBoxFloatVolume" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxFloatVolume_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Name="TextBoxFloatVolumeCalcul" IsReadOnly="True" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="2,0,2,0" Name="GridStructure" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="145" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParamGenStructure" Text="Paramètres généraux" VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockNomStructure" Text="Nom de la structure" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxNomStructure" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <Button Name="ManagerBuoyButtonCopieStructure" Content="..." Grid.Column="1" Margin="4" Width="18" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click">
+                            <Button.ContextMenu>
+                                <ContextMenu Name="MenuCopieStructure">
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </Grid>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockMasseStruct" Text="Masse (kg)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxStructureMasse" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructureMasse_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockProfOrganeauStruct" Text="Profondeur organeau sous le bas du flotteur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxStructureOffset" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructureOffset_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+
+                    <Border Background="LightGray" CornerRadius="5,5,0,0">
+                        <TextBlock Name="ManagerBuoyTextBlockInfoStructure" Text="Informations" VerticalAlignment="Center" />
+                    </Border>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockVolumeStruct" Text="Volume total (m³)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxStructureVolume" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" IsReadOnly="True" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+
+                </StackPanel>
+
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="LightGray" BorderThickness="0,0.5,0,0" CornerRadius="5,5,0,0" />
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParametreElementSelectStruct" Text="Paramètres de la tranche sélectionnée" VerticalAlignment="Center" />
+                </Border>
+
+                <Border Grid.Row="3" Grid.Column="0" Margin="5" Name="DessineElementStructureSelectionner" />
+
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <TextBlock Name="ManagerBuoyTextBlockStructureHauteur" Text="Hauteur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxStructHauteur" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructHauteur_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockStructureDiametreH" Text="Diamètre haut (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxStructDiametreH" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructDiametreH_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockStructureDiametreI" Text="Diamètre interieur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxStructDiametreI" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructDiametreI_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    <TextBlock Name="ManagerBuoyTextBlockStructureDiametreB" Text="Diamètre bas (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxStructDiametreB" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructDiametreB_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Name="ManagerBuoyTextBlockStructureVolume" Text="Volume réel (m³)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Name="ManagerBuoyTextBlockStructureVolumeCalcul" Text="Volume Calculé (m³)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+
+                        <TextBox Grid.Row="1" Grid.Column="0" Name="TextBoxStructVolume" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxStructVolume_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Name="TextBoxStructVolumeCalcul" IsReadOnly="True" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="2,0,2,0" Name="GridPylone" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="145" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParamGenPylone" Text="Parametres d'un élément pylône" VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockNomPylone" Text="Nom de l'élément pylône" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxNomPylone" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <Button Name="ManagerBuoyButtonCopiePylone" Content="..." Grid.Column="1" Margin="4" Width="18" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click">
+                            <Button.ContextMenu>
+                                <ContextMenu Name="MenuCopiePylone">
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockMassePyl" Text="Masse (kg)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxPyloneMasse" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxPyloneMasse_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+                </StackPanel>
+
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="LightGray" BorderThickness="0,0.5,0,0" CornerRadius="5,5,0,0" />
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParametreElementSelectPyl" Text="Paramètres de l'élement sélectionné" VerticalAlignment="Center" />
+                </Border>
+
+                <Border Grid.Row="3" Grid.Column="0" Margin="5" Name="DessineElementPyloneSelectionner" />
+
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <TextBlock Name="ManagerBuoyTextBlockPyloneHauteur" Text="Hauteur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxPyloneHauteur" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxPyloneHauteur_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockPyloneLongueurH" Text="Largeur haut (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxPyloneDiametreH" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxPyloneDiametreH_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockPyloneLongueurB" Text="Largeur bas (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxPyloneDiametreB" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxPyloneDiametreB_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="2,0,2,0" Name="GridVoyant" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="145" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParamGenVoyant" Text="Paramètres d'un élément voyant" VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockNomVoyant" Text="Nom de l'élément voyant" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxNomVoyant" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                        <Button Name="ManagerBuoyButtonCopieVoyant" Content="..." Grid.Column="1" Margin="4" Width="18" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click">
+                            <Button.ContextMenu>
+                                <ContextMenu Name="MenuCopieVoyant">
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="ManagerBuoyTextBlockMasseVoy" Text="Masse (kg)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Name="TextBoxVoyantMasse" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxVoyantMasse_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                    </Grid>
+                </StackPanel>
+
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="LightGray" BorderThickness="0,0.5,0,0" CornerRadius="5,5,0,0" />
+                <Border Grid.Row="2" Grid.ColumnSpan="2" Background="LightGray" Margin="2,2,2,0" CornerRadius="5,5,0,0">
+                    <TextBlock Name="ManagerBuoyTextBlockParametreElementSelectVoy" Text="Paramètres de l'élement sélectionné" VerticalAlignment="Center" />
+                </Border>
+
+                <Border Grid.Row="3" Grid.Column="0" Margin="5" Name="DessineElementVoyantSelectionner" />
+
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <TextBlock Name="ManagerBuoyTextBlockVoyantHauteur" Text="Hauteur (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxVoyantHauteur" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxVoyantHauteur_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockVoyantLongueurH" Text="Largeur haut (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxVoyantDiametreH" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxVoyantDiametreH_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+
+                    <TextBlock Name="ManagerBuoyTextBlockVoyantLongueurB" Text="Largeur bas (m)" Margin="2" TextAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Name="TextBoxVoyantDiametreB" TextAlignment="Center" FontSize="14" Margin="2" VerticalAlignment="Center" TextChanged="TextBoxVoyantDiametreB_TextChanged" GotMouseCapture="TextBox_GotMouseCapture" GotKeyboardFocus="TextBox_GotKeyboardFocus" />
+                </StackPanel>
+            </Grid>
+
+            <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="LightGray" />
+        </Grid>
+
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="LightGray" CornerRadius="5" />
+    </Grid>
+</Window>

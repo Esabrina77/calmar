@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="AMR-5000l-2.4m" ChaineMin="28" ChaineMax="100" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0">
+		<Structure Name="STR_AMR5000" Masse="998.8" OffsetFlotteur="0.877" OffsetOrganeau="0.7805">
+			<ElementDimItem H="0.266" D0="0.092" D1="0.354" DI="0" Volume="0.009663" />
+			<ElementDimItem H="0.415" D0="0.354" D1="0.354" DI="0" Volume="0.028597" />
+			<ElementDimItem H="0.171" D0="0.324" D1="0.324" DI="0" Volume="0.014175" />
+			<ElementDimItem H="0.01" D0="1.05" D1="1.05" DI="0" Volume="0.008633" />
+			<ElementDimItem H="1.1" D0="0.324" D1="0.324" DI="0" Volume="0.090693" />
+			<ElementDimItem H="0.3" D0="0.324" D1="0.724" DI="0" Volume="0.026136" />
+			<ElementDimItem H="0.15" D0="1.729" D1="1.556" DI="0" Volume="0.070729" />
+			<ElementDimItem H="0.01" D0="0.73" D1="0.73" DI="0" Volume="0.003477" />
+			<ElementDimItem H="0.195" D0="0.324" D1="0.324" DI="0" Volume="0.017912" />
+			<ElementDimItem H="0.415" D0="0.354" D1="0.354" DI="0" Volume="0.031386" />
+			<ElementDimItem H="0.266" D0="0.354" D1="0.092" DI="0" Volume="0.010105" />
+		</Structure>
+		<Flotteur Name="FLT_AMR5000" Masse="588">
+			<ElementDimItem H="0.041" D0="1.227" D1="1.256" DI="1.137" Volume="0.013" />
+			<ElementDimItem H="0.474" D0="1.256" D1="2.4" DI="0.324" Volume="1.182" />
+			<ElementDimItem H="0.36" D0="2.4" D1="2.4" DI="0.324" Volume="1.423" />
+			<ElementDimItem H="0.15" D0="2.33" D1="2.33" DI="0.324" Volume="0.55" />
+			<ElementDimItem H="0.198" D0="2.4" D1="2.4" DI="0.324" Volume="0.78" />
+			<ElementDimItem H="0.174" D0="2.4" D1="2.223" DI="0.324" Volume="0.653" />
+			<ElementDimItem H="0.11" D0="2.223" D1="2.173" DI="0.324" Volume="0.154" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

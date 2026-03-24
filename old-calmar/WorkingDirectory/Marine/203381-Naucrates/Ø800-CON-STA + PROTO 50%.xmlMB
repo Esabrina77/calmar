@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Ø800-CON-STA + PROTO 50%" ChaineMin="10" ChaineMax="16" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Marine SACCOMAN">
+		<Structure Name="proto poisson 50%" Masse="0" OffsetFlotteur="1" OffsetOrganeau="0">
+			<ElementDimItem H="1" D0="1" D1="1" DI="0" Volume="1E-07" />
+		</Structure>
+		<Flotteur Name="Ø800-CON" Masse="17.42">
+			<ElementDimItem H="0.249" D0="0.14" D1="0.223" DI="0" Volume="0.00283" />
+			<ElementDimItem H="0.351" D0="0.223" D1="0.8" DI="0" Volume="0.07969" />
+			<ElementDimItem H="0.09" D0="0.8" D1="0.8" DI="0" Volume="0.04524" />
+			<ElementDimItem H="0.365" D0="0.8" D1="0.2" DI="0" Volume="0.08017" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

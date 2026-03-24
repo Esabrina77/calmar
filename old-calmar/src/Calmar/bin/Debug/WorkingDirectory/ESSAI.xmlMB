@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="ESSAI" ChaineMin="25" ChaineMax="40" MasseLestUnitaire="100" NombreLestMin="2" NombreLestMax="6">
+		<Structure Name="STR ESSAI" Masse="360" OffsetFlotteur="1.105" OffsetOrganeau="0.3">
+			<ElementDimItem H="1.46" D0="0.9" D1="0.9" DI="0.855" Volume="0.09" />
+			<ElementDimItem H="1" D0="0.9" D1="0.9" DI="0" Volume="0.64" />
+		</Structure>
+		<Flotteur Name="FLT ESSAI" Masse="700">
+			<ElementDimItem H="0.1" D0="1.8" D1="2.2" DI="0.9" Volume="0.2" />
+			<ElementDimItem H="0.3" D0="2.2" D1="2.6" DI="0.93" Volume="1.055" />
+			<ElementDimItem H="0.75" D0="2.6" D1="2.6" DI="0.93" Volume="3.12" />
+			<ElementDimItem H="0.2" D0="2.6" D1="2.5" DI="0.93" Volume="0.82" />
+		</Flotteur>
+		<Pylone Name="PYL ESSAI" Height="1.7" WidthHigh="1.525" WidthLow="1.725" Masse="97" />
+		<Equipement Name="VOYANT ESSAI" Height="0.3" WidthHigh="0.45" WidthLow="0.6" Masse="90" />
+		<Equipement Name="SUPPORT MARQUE DE JOUR ESSAI" Height="0.1" WidthHigh="0.01" WidthLow="0.01" Masse="2" />
+		<Equipement Name="MARQUE 1 DE JOUR ESSAI" Height="0.2" WidthHigh="0" WidthLow="0.2" Masse="5" />
+		<Equipement Name="MARQUE DE JOUR 2 ESSAI" Height="0.2" WidthHigh="0" WidthLow="0.2" Masse="5" />
+	</Buoy>
+</Calmar>

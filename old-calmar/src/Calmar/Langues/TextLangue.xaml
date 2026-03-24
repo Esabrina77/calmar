@@ -1,0 +1,34 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    ColumnWidth="400" FontSize="14" FontFamily="Georgia">
+    
+    <Paragraph>
+
+        <TextBlock Name="GeneralTitreProjet" Text="Nom du projet" />
+        <TextBlock Name="GeneralErreurRepertoire" Text="Erreur répertoire de travail inaccessible" />
+        <TextBlock Name="GeneralErreurAjoutBouee" Text="Erreur impossible d'ajouter la bouée" />
+        <TextBlock Name="GeneralErreurModifBouee" Text="Erreur impossible de modifier la bouée" />
+        <TextBlock Name="GeneralErreurSupprBouee" Text="Erreur impossible de supprimer la bouée" />
+        <TextBlock Name="GeneralAjoutEquipementCategorie" Text="Catégorie de l'équipement" />
+        <TextBlock Name="GeneralAjoutEquipementNom" Text="Nom de l'équipement" />
+        <TextBlock Name="GeneralAjoutEquipementMasse" Text="Masse unitaire de l'équipement (kg)" />
+        <TextBlock Name="GeneralTextBlockProject" Text="Projet" />
+        <TextBlock Name="GeneralTextBlockParametre" Text="Paramètre" />
+        <TextBlock Name="GeneralTextBlockProfondeurMax" Text="Profondeur maximale" />
+        <TextBlock Name="GeneralTextBlockProfondeurMin" Text="Profondeur minimale" />
+        <TextBlock Name="GeneralTextBlockTensionMaxMouillage" Text="Tension maximale mouillage" />
+        <TextBlock Name="GeneralTextBlockCoefSecuChaineIALA" Text="Coef. securite chaîne (IALA: ≥5\\Ce)" />
+        <TextBlock Name="GeneralTextBlockDiamChaine" Text="Diametre chaîne" />
+        <TextBlock Name="GeneralTextBlockTypeChaine" Text="Type de chaîne" />
+        <TextBlock Name="GeneralTextBlockCSVPointVirg" Text="Fichier Txt point-virgule" />
+        <TextBlock Name="GeneralTextBlockCSVVirg" Text="Fichier Txt virgule" />
+        <TextBlock Name="GeneralTextBlockCSVTab" Text="Fichier Txt Tabulation" />
+
+        <TextBlock Name="InfoBulleAddBuoy" Text="Voulez-vous remplacer la bouée existante" />
+        <TextBlock Name="InfoBulleModifyBuoy" Text="Quitter sans enregistrer le modéle ?" />
+        <TextBlock Name="InfoBulleCopyBuoyText" Text="Saisir le nom de la bouée" />
+        <TextBlock Name="InfoBulleDeleteBuoy" Text="Voulez-vous supprimer la bouée " />
+        <TextBlock Name="InfoBulleErreurDeferlement" Text="Erreur : Deferlement detecté" />
+        <TextBlock Name="InfoBulleErreurHauteurOrg" Text="Erreur : la hauteur de la structure est superieur à la profondeur" />
+        
+    </Paragraph>
+</FlowDocument>

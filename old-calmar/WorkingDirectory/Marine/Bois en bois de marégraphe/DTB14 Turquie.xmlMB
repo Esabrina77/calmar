@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="DTB14 Turquie" ChaineMin="28" ChaineMax="40" MasseLestUnitaire="100" NombreLestMin="6" NombreLestMax="6" Commentaire="Full equip - plus précis que version turkish" Createur="Marine SACCOMAN">
+		<Structure Name="DB 14000 MO" Masse="3585" OffsetFlotteur="1.895127" OffsetOrganeau="1.689127">
+			<ElementDimItem H="0.01" D0="1.38" D1="1.38" DI="1.208" Volume="0" />
+			<ElementDimItem H="0.4" D0="1.22" D1="1.22" DI="1.208" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.38" D1="1.38" DI="1.208" Volume="0" />
+			<ElementDimItem H="0.208" D0="1.22" D1="1.22" DI="1.208" Volume="0" />
+			<ElementDimItem H="0.792" D0="1.22" D1="1.22" DI="1.077" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.38" D1="1.38" DI="1.077" Volume="0" />
+			<ElementDimItem H="0.4" D0="1.22" D1="1.22" DI="1.077" Volume="0" />
+			<ElementDimItem H="0.01" D0="1.38" D1="1.38" DI="1.077" Volume="0" />
+			<ElementDimItem H="1.800837" D0="1.22" D1="1.22" DI="1.077" Volume="0" />
+			<ElementDimItem H="0.25" D0="2.335" D1="2.561936" DI="1.077" Volume="0.099" />
+			<ElementDimItem H="0.0026" D0="2.561936" D1="2.561936" DI="1.077" Volume="0" />
+			<ElementDimItem H="0.099" D0="2.27" D1="2.27" DI="1.077" Volume="0" />
+		</Structure>
+		<Flotteur Name="731_P_FLT_3Flo132" Masse="1329">
+			<ElementDimItem H="0.25" D0="1.9746" D1="2.48743" DI="1.24" Volume="0.634995096" />
+			<ElementDimItem H="0.223" D0="2.48743" D1="3.02448" DI="1.24" Volume="0.986988672" />
+			<ElementDimItem H="0.168" D0="3.02448" D1="3.6" DI="1.24" Volume="1.152222588" />
+			<ElementDimItem H="0.414" D0="3.6" D1="3.6" DI="1.24" Volume="3.475207456" />
+			<ElementDimItem H="0.05" D0="3.6" D1="3.48" DI="1.24" Volume="0.416210504000001" />
+			<ElementDimItem H="0.17" D0="3.48" D1="3.48" DI="1.24" Volume="1.328767924" />
+			<ElementDimItem H="0.05" D0="3.48" D1="3.6" DI="1.24" Volume="0.399694656000001" />
+			<ElementDimItem H="0.4138" D0="3.6" D1="3.6" DI="1.24" Volume="3.473466484" />
+			<ElementDimItem H="0.15" D0="3.6" D1="3.30919" DI="1.24" Volume="1.095903436" />
+			<ElementDimItem H="0.1015" D0="3.30919" D1="3.26785" DI="1.24" Volume="0.588804212000001" />
+		</Flotteur>
+		<Pylone Name="DB 14000 MO" Height="2.261" WidthHigh="2.886581" WidthLow="2.886581" Masse="879" />
+		<Equipement Name="DB 14000 MO" Height="0.391869" WidthHigh="3.720735" WidthLow="2.886581" Masse="60.67" />
+	</Buoy>
+</Calmar>

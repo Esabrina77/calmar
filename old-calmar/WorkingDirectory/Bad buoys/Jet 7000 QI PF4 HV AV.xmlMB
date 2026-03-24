@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="Jet 7000 QI PF4 HV AV" ChaineMin="28" ChaineMax="45" MasseLestUnitaire="100" NombreLestMin="3" NombreLestMax="7" Commentaire="" Createur="Mark Fitter">
+		<Structure Name="A_STR_J79QI-P_STD_01" Masse="619" OffsetFlotteur="2.328" OffsetOrganeau="2.245">
+			<ElementDimItem H="0.376" D0="0.042" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.015" D0="0.524" D1="0.524" DI="0" Volume="0" />
+			<ElementDimItem H="0.24" D0="0.7" D1="0.7" DI="0.309" Volume="0" />
+			<ElementDimItem H="1.454" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.037" D0="0.324" D1="0.708" DI="0" Volume="0" />
+			<ElementDimItem H="0.053" D0="0.708" D1="0.83" DI="0" Volume="0" />
+			<ElementDimItem H="0.042" D0="0.83" D1="0.83" DI="0" Volume="0" />
+			<ElementDimItem H="0.053" D0="0.83" D1="0.708" DI="0" Volume="0" />
+			<ElementDimItem H="0.01" D0="0.7" D1="0.7" DI="0" Volume="0" />
+			<ElementDimItem H="1.7" D0="0.324" D1="0.324" DI="0" Volume="0" />
+			<ElementDimItem H="0.15" D0="1.73" D1="1.57" DI="0" Volume="0" />
+			<ElementDimItem H="0.105" D0="1.423" D1="1.423" DI="1.023" Volume="0" />
+		</Structure>
+		<Flotteur Name="P_FLT_J7DI330_01" Masse="680">
+			<ElementDimItem H="0.205" D0="0.788" D1="1.81" DI="0.345" Volume="0.24" />
+			<ElementDimItem H="0.463" D0="1.81" D1="2.6" DI="0.345" Volume="1.6" />
+			<ElementDimItem H="0.347" D0="2.6" D1="2.6" DI="0.345" Volume="0" />
+			<ElementDimItem H="0.056" D0="2.6" D1="2.48" DI="0.345" Volume="0.07" />
+			<ElementDimItem H="0.152" D0="2.48" D1="2.48" DI="0.33" Volume="0" />
+			<ElementDimItem H="0.056" D0="2.48" D1="2.6" DI="0.345" Volume="0.129" />
+			<ElementDimItem H="0.369" D0="2.6" D1="2.6" DI="0.345" Volume="0" />
+			<ElementDimItem H="0.062" D0="2.6" D1="2.47" DI="0.345" Volume="0.099" />
+			<ElementDimItem H="0.081" D0="1.76" D1="1.59" DI="0.345" Volume="0" />
+		</Flotteur>
+		<Pylone Name="A_MAT_4M_HV_AV" Height="3.098" WidthHigh="1.3" WidthLow="1.3" Masse="210" />
+		<Pylone Name="" Height="0.418" WidthHigh="0.31" WidthLow="0.31" Masse="0" />
+		<Pylone Name="" Height="0.144" WidthHigh="0.17" WidthLow="0.31" Masse="0" />
+		<Equipement Name="Card" Height="0.13" WidthHigh="0.06" WidthLow="0.17" Masse="18" />
+		<Equipement Name="" Height="0.06" WidthHigh="0.06" WidthLow="0.06" Masse="0" />
+		<Equipement Name="" Height="0.6" WidthHigh="0.06" WidthLow="0.41" Masse="0" />
+		<Equipement Name="" Height="0.3" WidthHigh="0.06" WidthLow="0.06" Masse="0" />
+		<Equipement Name="" Height="0.6" WidthHigh="0.06" WidthLow="0.41" Masse="0" />
+	</Buoy>
+</Calmar>

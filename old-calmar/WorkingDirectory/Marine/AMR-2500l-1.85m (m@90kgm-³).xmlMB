@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="AMR-2500l-1.85m (m@90kgm-³)" ChaineMin="20" ChaineMax="50" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="" Createur="Marine SACCOMAN">
+		<Structure Name="STR_AMR2500_T" Masse="331.9" OffsetFlotteur="1.092" OffsetOrganeau="1.032">
+			<ElementDimItem H="0.265" D0="0.12" D1="0.28" DI="0" Volume="0.00202" />
+			<ElementDimItem H="0.137" D0="0.28" D1="0.28" DI="0" Volume="0.00232" />
+			<ElementDimItem H="0.63" D0="0.274" D1="0.274" DI="0.261" Volume="0.01064" />
+			<ElementDimItem H="0.01" D0="0.6" D1="0.6" DI="0.261" Volume="0.00227" />
+			<ElementDimItem H="1.25" D0="0.274" D1="0.274" DI="0.261" Volume="0.00662" />
+			<ElementDimItem H="0.01" D0="0.6" D1="0.6" DI="0.261" Volume="0.00446" />
+			<ElementDimItem H="0.251" D0="0.274" D1="0.274" DI="0.261" Volume="0.00134" />
+			<ElementDimItem H="0.159" D0="0.974" D1="0.974" DI="0.261" Volume="0.00512" />
+			<ElementDimItem H="0.191" D0="0.274" D1="0.274" DI="0.261" Volume="0.0018" />
+			<ElementDimItem H="0.15" D0="0.28" D1="0.28" DI="0" Volume="0.00082" />
+		</Structure>
+		<Flotteur Name="FLT_AMR2500_T" Masse="478.6">
+			<ElementDimItem H="0.538" D0="0.664" D1="1.85" DI="0.404" Volume="0.66" />
+			<ElementDimItem H="0.244" D0="1.85" D1="1.85" DI="0.404" Volume="0.605" />
+			<ElementDimItem H="0.147" D0="1.834" D1="1.834" DI="0.404" Volume="0.358" />
+			<ElementDimItem H="0.231" D0="1.85" D1="1.85" DI="0.404" Volume="0.58" />
+			<ElementDimItem H="0.04" D0="1.85" D1="1.69" DI="0.404" Volume="0.047" />
+		</Flotteur>
+	</Buoy>
+</Calmar>

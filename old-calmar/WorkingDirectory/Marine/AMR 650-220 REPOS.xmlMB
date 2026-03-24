@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Calmar version="1.0.0.0">
+	<Buoy Name="AMR 650-220 REPOS" ChaineMin="12" ChaineMax="20" MasseLestUnitaire="0" NombreLestMin="0" NombreLestMax="0" Commentaire="TEST EN BOIS" Createur="Marine SACCOMAN">
+		<Structure Name="STR AMR650-220" Masse="10" OffsetFlotteur="0.23" OffsetOrganeau="0.2">
+			<ElementDimItem H="0.23" D0="0.03" D1="0.03" DI="0" Volume="0" />
+		</Structure>
+		<Flotteur Name="FLT 650-220" Masse="20">
+			<ElementDimItem H="0.25" D0="0.65" D1="0.65" DI="0" Volume="0" />
+			<ElementDimItem H="0.398" D0="0.65" D1="0.12" DI="0" Volume="0" />
+		</Flotteur>
+	</Buoy>
+</Calmar>
