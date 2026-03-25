@@ -91,3 +91,71 @@ func CalculateSwingRadius(effortHorizontalKg float64, poidsLineique float64, hau
 	return forceRatio * ACosh((hauteurCatenaire/forceRatio)+1.0)
 }
 
+// --- CALCULS IALA FINAUX ---
+
+// CalculateMinAnchorMass calcule la Masse Minimale du Corps Mort (en kg).
+// Traduction VB: CoefficientSecuriteMasseCorpsMort * EFFORT_HORIZONTALE * (DensiteCM / (DensiteCM - DensiteEau)) / Tan(45°)
+// SeaBedFrictionAngle = 45° (standard IALA pour fond sableux)
+// SafetyFactor = 1.5 (coefficient de sécurité IALA)
+func CalculateMinAnchorMass(effortHorizontalKg float64, densiteCM float64) float64 {
+	const seaBedFrictionAngle = 45.0 // degrés (valeur standard IALA)
+	const safetyFactor = 1.5         // CoefficientSecuriteMasseCorpsMort IALA
+
+	if densiteCM <= WaterDensity {
+		return 0 // Corps mort trop léger (impossible)
+	}
+
+	angleRad := seaBedFrictionAngle * math.Pi / 180.0
+	return safetyFactor * effortHorizontalKg * (densiteCM / (densiteCM - WaterDensity)) / math.Tan(angleRad)
+}
+
+// CalculateSubmergedAnchorWeight calcule le Poids Immergé du Corps Mort (en kg).
+// Traduction VB: MASSE_MIN_CORPS_MORT / DensiteCM * (DensiteCM - DensiteEau)
+func CalculateSubmergedAnchorWeight(massCorpsMort float64, densiteCM float64) float64 {
+	return massCorpsMort / densiteCM * (densiteCM - WaterDensity)
+}
+
+// CalculateChainSafetyCoefficient calcule le Coefficient de Sécurité de la Chaîne.
+// Traduction VB: CHAIN.CHARGE_EPREUVE / ((HAUTEUR_CATENAIRE * POIDS_LINEIQUE / 1000) + EFFORT_HORIZONTALE)
+func CalculateChainSafetyCoefficient(chargeEpreuve float64, hauteurCatenaire float64, poidsLineique float64, effortHorizontalKg float64) float64 {
+	tensionVerticale := (hauteurCatenaire * poidsLineique) / 1000.0
+	if (tensionVerticale + effortHorizontalKg) == 0 {
+		return 0
+	}
+	return chargeEpreuve / (tensionVerticale + effortHorizontalKg)
+}
+
+// CalculateTangencyAngle calcule l'Angle de Tangence de la chaîne à l'organeau (en degrés).
+// Traduction VB: DEGREE(Math.Acos(POIDS_CATENAIRE_IMMERGE / (TENSION_CHAINE * 1000)))
+func CalculateTangencyAngle(poidsCatenaireImmerge float64, tensionChaine float64) float64 {
+	if tensionChaine <= 0 {
+		return 0
+	}
+	cosAngle := poidsCatenaireImmerge / (tensionChaine * 1000.0)
+	cosAngle = math.Max(-1.0, math.Min(1.0, cosAngle)) // Clamping anti-NaN
+	return math.Acos(cosAngle) * 180.0 / math.Pi       // Conversion radians → degrés
+}
+
+// CalculateDraught calcule le Tirant d'Eau de la bouée (en mètres).
+// Traduction VB: FlotteurBouee.HAUTEUR_IMMERGEE + StructureBouee.OffsetFlotteur
+func CalculateDraught(enfoncement float64, offsetFlotteur float64) float64 {
+	return enfoncement + offsetFlotteur
+}
+
+// CalculateOrganeanDepth calcule la profondeur de l'organeau (point d'attache de la chaîne).
+// Traduction VB: -(FlotteurBouee.HAUTEUR_IMMERGEE + StructureBouee.OffsetOrganeau)
+func CalculateOrganeanDepth(enfoncement float64, offsetOrganeau float64) float64 {
+	return -1.0 * (enfoncement + offsetOrganeau)
+}
+
+// CalculateMaxDepth calcule la Profondeur Maximum avec marnage et houle.
+// Traduction VB: Profondeur + Marnage + HouleMax / 2
+func CalculateMaxDepth(profondeur float64, marnage float64, houleMax float64) float64 {
+	return profondeur + marnage + (houleMax / 2.0)
+}
+
+// CalculateMinDepth calcule la Profondeur Minimum (pendant le creux de la houle).
+// Traduction VB: Profondeur - (HouleMax / 2)
+func CalculateMinDepth(profondeur float64, houleMax float64) float64 {
+	return profondeur - (houleMax / 2.0)
+}
