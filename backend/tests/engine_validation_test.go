@@ -63,7 +63,7 @@ func TestEngineWithRealDatabase(t *testing.T) {
 
 	// 7. ASSERTIONS DE VALIDATION (IALA)
 	log.Printf("📊 RÉSULTAT TEST [Bouée 800] : Enfoncement=%.3fm, Tension=%.2ft, Franc-Bord=%.2fm", 
-		result.Enfoncement, result.TensionMaxMouillage, result.FrancBordBouee)
+		result.Enfoncement, result.TensionMaxMouillage, result.FrancBord)
 
 	if result.Enfoncement <= 0 {
 		t.Error("❌ Erreur : La bouée ne s'enfonce pas du tout !")
@@ -73,7 +73,7 @@ func TestEngineWithRealDatabase(t *testing.T) {
 		t.Error("❌ Erreur : Aucune tension détectée sur la chaîne !")
 	}
 
-	if result.FrancBordBouee < 0 {
+	if result.FrancBord < 0 {
 		t.Error("❌ Erreur : La bouée est coulée (Franc-Bord négatif) !")
 	}
 }

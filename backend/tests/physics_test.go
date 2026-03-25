@@ -30,9 +30,9 @@ func TestPhysicsIALA(t *testing.T) {
 	t.Run("WindDrag", func(t *testing.T) {
 		// Vent 20m/s, Surface 2m2, Cd 1.2
 		// Force (N) = 0.5 * 1.225 * 400 * 1.2 * 2.0 = 588 N
-		// Effort (kgf) = 588 / 9.81 = 59.9388...
+		// Effort (kgf) = 588 / 9.81 = 59.938...
 		got := calc.CalculateWindDrag(20.0, 2.0)
-		if math.Abs(got-59.9388) > 0.1 {
+		if math.Abs(got-59.94) > 0.1 {
 			t.Errorf("WindDrag(20m/s, 2m2) = %f; voulu ~59.94kgf", got)
 		}
 	})

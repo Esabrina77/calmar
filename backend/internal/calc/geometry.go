@@ -1,108 +1,102 @@
 /*
  * CALMAR GEOMETRY ENGINE - VOLUMETRIC MODULE
- * --------------------------------------------
- * Ce fichier gère la modélisation mathématique des segments
- * de bouées (Troncs de cônes pleins ou creux).
- *
- * Concepts clés :
- * - Calcul précis du volume par hauteur (H).
- * - Application du "Volumetric Ratio" VB.NET pour l'ajustement réel.
- * - Modélisation des surfaces horizontales et verticales (Trapèzes).
  */
 package calc
 
-import "math"
+import (
+	"backend/internal/models"
+	"math"
+)
 
-// --- STRUCTURES GÉOMÉTRIQUES ---
-
-// TroncConeElement correspond à un segment de bouée (Flotteur ou Structure).
-// Équivalent à la classe VB.NET CDimensionElementTroncCone.vb
-type TroncConeElement struct {
-	DiameterLow    float64 // _Diameter_L (Mètres)
-	DiameterHigh   float64 // _Diameter_H (Mètres)
-	DiameterInter  float64 // _Diameter_I (Mètres) - Partie Creuse (Tube)
-	HauteurElement float64 // Hauteur totale du segment (Mètres)
-	VolumeReel     float64 // _Volume (Spécifié/Ajusté si disponible)
-}
-
-// --- FONCTIONS GÉOMÉTRIQUES PURES ---
-
-// GetSurfaceDiameterLow calcule la surface du diamètre bas (B1).
-func (e *TroncConeElement) GetSurfaceDiameterLow() float64 {
-	return math.Pi * math.Pow(e.DiameterLow/2, 2)
-}
-
-// GetSurfaceDiameterHigh calcule la surface du diamètre haut (B2).
-func (e *TroncConeElement) GetSurfaceDiameterHigh() float64 {
-	return math.Pi * math.Pow(e.DiameterHigh/2, 2)
-}
-
-// GetSurfaceDiameterInter calcule la surface du diamètre creux (Inter).
-func (e *TroncConeElement) GetSurfaceDiameterInter() float64 {
-	return math.Pi * math.Pow(e.DiameterInter/2, 2)
-}
-
-// CalculVolumeTroncDeCone calcule le volume géométrique d'un tronc de cône.
-// Formule : H / 3 * (B1 + Sqrt(B1 * B2) + B2)
-func CalculVolumeTroncDeCone(h float64, b1 float64, b2 float64) float64 {
-	if h <= 0 {
+// CalculateComponentSubmergedVolume calcule le volume immergé d'un composant (Flotteur ou Structure)
+func CalculateComponentSubmergedVolume(comp models.ComponentData, immersion float64) float64 {
+	if immersion <= 0 {
 		return 0
 	}
-	return (h / 3.0) * (b1 + math.Sqrt(b1*b2) + b2)
+	totalVol := 0.0
+	currentH := 0.0
+
+	for _, el := range comp.Elements {
+		if immersion <= currentH {
+			break // La flottaison est en dessous de cette tranche
+		}
+
+		// Hauteur de flottaison DANS cette tranche
+		hInElement := immersion - currentH
+		if hInElement > el.Hauteur {
+			hInElement = el.Hauteur
+		}
+
+		// Calcul du volume de cette tranche (tronc de cône)
+		b1 := math.Pi * math.Pow(el.DiametreBas/2, 2)
+		// Diamètre à la flottaison dans la tranche
+		dInter := el.DiametreBas + (hInElement * (el.DiametreHaut - el.DiametreBas) / el.Hauteur)
+		b2 := math.Pi * math.Pow(dInter/2, 2)
+
+		volTranche := (hInElement / 3.0) * (b1 + math.Sqrt(b1*b2) + b2)
+		
+		// Retrait de la partie creuse (DI)
+		bInt := math.Pi * math.Pow(el.DiametreInt/2, 2)
+		volCreux := bInt * hInElement
+
+		totalVol += (volTranche - volCreux)
+		currentH += el.Hauteur
+	}
+	return totalVol
 }
 
-// GetVolumeCalcule calcule le Volume Théorique (Plein - Creux).
-func (e *TroncConeElement) GetVolumeCalcule() float64 {
-	volPlein := CalculVolumeTroncDeCone(e.HauteurElement, e.GetSurfaceDiameterLow(), e.GetSurfaceDiameterHigh())
-	volVide := CalculVolumeTroncDeCone(e.HauteurElement, e.GetSurfaceDiameterInter(), e.GetSurfaceDiameterInter())
-	return volPlein - volVide
+// CalculateComponentSurfaceImmergee calcule la surface de traînée courant (sous l'eau)
+func CalculateComponentSurfaceImmergee(comp models.ComponentData, immersion float64) float64 {
+	if immersion <= 0 { return 0 }
+	totalSurf := 0.0
+	currentH := 0.0
+
+	for _, el := range comp.Elements {
+		if immersion <= currentH { break }
+		hInElement := math.Min(immersion-currentH, el.Hauteur)
+		
+		// Diamètre moyen de la partie immergée de la tranche
+		dInter := el.DiametreBas + (hInElement * (el.DiametreHaut - el.DiametreBas) / el.Hauteur)
+		dmoy := (el.DiametreBas + dInter) / 2.0
+		totalSurf += dmoy * hInElement
+		
+		currentH += el.Hauteur
+	}
+	return totalSurf
 }
 
-// GetVolume retourne le volume effectif (Réel si renseigné, sinon Calculé).
-func (e *TroncConeElement) GetVolume() float64 {
-	if e.VolumeReel > 0 {
-		return e.VolumeReel
+// CalculateComponentSurfaceEmergee calcule la surface de traînée vent (hors de l'eau)
+func CalculateComponentSurfaceEmergee(comp models.ComponentData, immersion float64) float64 {
+	totalHeight := 0.0
+	for _, el := range comp.Elements { totalHeight += el.Hauteur }
+	
+	if immersion >= totalHeight { return 0 }
+	
+	totalSurf := 0.0
+	currentH := 0.0
+	for _, el := range comp.Elements {
+		elementTop := currentH + el.Hauteur
+		if immersion >= elementTop {
+			currentH += el.Hauteur
+			continue
+		}
+
+		// Partie émergée de la tranche
+		hStart := math.Max(0, immersion-currentH)
+		hEmergent := el.Hauteur - hStart
+		
+		dStart := el.DiametreBas + (hStart * (el.DiametreHaut - el.DiametreBas) / el.Hauteur)
+		dmoy := (dStart + el.DiametreHaut) / 2.0
+		totalSurf += dmoy * hEmergent
+		
+		currentH += el.Hauteur
 	}
-	return e.GetVolumeCalcule()
+	return totalSurf
 }
 
-// GetRatioVolume calcule le coefficient correcteur de volume pour les tranches d'immersion.
-// Équivalent VB.NET : Volume / VolumeCalcule
-func (e *TroncConeElement) GetRatioVolume() float64 {
-	volCalc := e.GetVolumeCalcule()
-	if volCalc <= 0 {
-		return 1.0
-	}
-	// On applique le volume effectif sur le volume théorique
-	return e.GetVolume() / volCalc
-}
-
-// VolumeByHauteur calcule le volume immergé d'un segment à une hauteur H donnée.
-// Équivalent à VolumeByHauteur(H) de CDimensionElementTroncCone.vb
-func (e *TroncConeElement) VolumeByHauteur(h float64) float64 {
-	// 1. Protection contre les hauteurs invalides ou supérieures
-	if h <= 0 {
-		return 0
-	}
-	if h >= e.HauteurElement {
-		return e.GetVolume() // Retourner le volume maximum du segment
-	}
-
-	// 2. Calcul du Diamètre Intermédiaire (L_Inter) à la hauteur H
-	// Formule : D_bas + (H * (D_haut - D_bas) / HauteurTotale)
-	L_Inter := e.DiameterLow + (h * (e.DiameterHigh - e.DiameterLow) / e.HauteurElement)
-
-	// 3. Calcul de la Surface intermédiaire au point de flottaison
-	surfaceInter := math.Pi * math.Pow(L_Inter/2, 2)
-
-	// 4. Volume immergé de la partie "Pleine"
-	volPleinImmerge := CalculVolumeTroncDeCone(h, e.GetSurfaceDiameterLow(), surfaceInter)
-
-	// 5. Volume immergé de la partie "Creuse" (Cylindre classique)
-	surfaceCreuse := e.GetSurfaceDiameterInter()
-	volCreuxImmerge := CalculVolumeTroncDeCone(h, surfaceCreuse, surfaceCreuse)
-
-	// 6. Application du Ratio de correction d'ajustement VB.NET
-	volImmergeStandard := volPleinImmerge - volCreuxImmerge
-	return volImmergeStandard * e.GetRatioVolume()
+// GetComponentTotalHeight calcul la hauteur totale d'un empilement de tranches
+func GetComponentTotalHeight(comp models.ComponentData) float64 {
+	h := 0.0
+	for _, el := range comp.Elements { h += el.Hauteur }
+	return h
 }
