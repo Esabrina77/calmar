@@ -6,17 +6,21 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 
-	"backend/internal/models"
 	"backend/internal/db"
+	"backend/internal/models"
+
+	"github.com/joho/godotenv"
 )
 
 // --- Structures XML intermédiaires ---
-// Celles-ci servent uniquement à lire les balises XML exactes de vos fichiers (.xmlMB)
+
 type XMLCalmar struct {
 	XMLName xml.Name `xml:"Calmar"`
 	Buoy    XMLBuoy  `xml:"Buoy"`
+	Chain   XMLChain `xml:"Chain"`
 }
 
 type XMLBuoy struct {
@@ -56,24 +60,35 @@ type XMLTopmark struct {
 	Masse     float64 `xml:"Masse,attr"`
 }
 
+type XMLChain struct {
+	Items []XMLChainItem `xml:"ChainElementItem"`
+}
+
+type XMLChainItem struct {
+	Type     string `xml:"Type,attr"`
+	DN       string `xml:"DN,attr"`       // String pour gérer les virgules (ex: 12,5)
+	MasseLin string `xml:"MasseLin,attr"` // String pour gérer les virgules
+	Q1_CE    string `xml:"Q1_CE,attr"`
+	Q2_CE    string `xml:"Q2_CE,attr"`
+	Q3_CE    string `xml:"Q3_CE,attr"`
+}
+
 func main() {
-	// On initialise la connexion PostgreSQL et la table
+	// 1. Chargement des variables .env
+	_ = godotenv.Load("../.env")
+
+	// 2. Initialisation DB
 	db.InitDatabase()
 
-	fmt.Println("🚀 Démarrage du Parser de Bouées Calmar...")
-	
-	// Chemin vers vos fichiers de tests
+	fmt.Println("🚀 Démarrage du Parser Calmar (Bouées & Chaînes)...")
+
 	dirPath := filepath.Join("tests", "fixtures")
-	
 	files, err := os.ReadDir(dirPath)
 	if err != nil {
 		log.Fatalf("❌ Impossible de lire le dossier %s : %v", dirPath, err)
 	}
 
-	successCount := 0
-
 	for _, file := range files {
-		// On ignore les dossiers ou les fichiers cryptés pour le moment
 		if file.IsDir() || !strings.HasSuffix(file.Name(), ".xmlMB") {
 			continue
 		}
@@ -92,36 +107,48 @@ func main() {
 			continue
 		}
 
-		// --- MAPPING ---
-		buoyModel := models.Buoy{
-			Name:              doc.Buoy.Name,
-			ChaineMin:         doc.Buoy.ChaineMin,
-			ChaineMax:         doc.Buoy.ChaineMax,
-			MasseLestUnitaire: doc.Buoy.MasseLestUnitaire,
-			NombreLestMin:     doc.Buoy.NombreLestMin,
-			NombreLestMax:     doc.Buoy.NombreLestMax,
-			StructureData:     mapComponent(doc.Buoy.Structure),
-			FlotteurData:      mapComponent(doc.Buoy.Flotteur),
-			PyloneData:        mapTopmark(doc.Buoy.Pylone),
-			EquipementData:    mapTopmark(doc.Buoy.Equipement),
-		}
+		fmt.Printf("🔍 Traitement de %s (Buoy: '%s', ChainItems: %d)\n", file.Name(), doc.Buoy.Name, len(doc.Chain.Items))
 
-		// --- SAUVEGARDE EN BDD ---
-		// On sauvegarde magiquement en un appel dans la DB Postgres !
-		result := db.DB.Create(&buoyModel)
-		if result.Error != nil {
-			log.Printf("❌ Impossible de sauvegarder la bouée [%s] : %v", buoyModel.Name, result.Error)
+		// --- CAS 1 : C'est un de fichier de CHAÎNES ---
+		if len(doc.Chain.Items) > 0 {
+			fmt.Printf("⛓️  Parsing du catalogue de chaînes [%s]...\n", file.Name())
+			for _, ci := range doc.Chain.Items {
+				chain := models.Chain{
+					Type:            ci.Type,
+					DN:              parseFloat(ci.DN),
+					MasseLineique:   parseFloat(ci.MasseLin),
+					ChargeEpreuveQ1: parseFloat(ci.Q1_CE),
+					ChargeEpreuveQ2: parseFloat(ci.Q2_CE),
+					ChargeEpreuveQ3: parseFloat(ci.Q3_CE),
+				}
+				db.DB.Where(models.Chain{Type: chain.Type, DN: chain.DN}).FirstOrCreate(&chain)
+			}
+			fmt.Printf("✅ %d chaînes traitées.\n", len(doc.Chain.Items))
 			continue
 		}
-		
-		fmt.Printf("✅ DB Succès : L'objet Go de la bouée [%s] a été sauvegardé en Base de Données ! 🎉\n", buoyModel.Name)
-		successCount++
+
+		// --- CAS 2 : C'est un fichier de BOUÉE ---
+		if doc.Buoy.Name != "" {
+			buoyModel := models.Buoy{
+				Name:              doc.Buoy.Name,
+				ChaineMin:         doc.Buoy.ChaineMin,
+				ChaineMax:         doc.Buoy.ChaineMax,
+				MasseLestUnitaire: doc.Buoy.MasseLestUnitaire,
+				NombreLestMin:     doc.Buoy.NombreLestMin,
+				NombreLestMax:     doc.Buoy.NombreLestMax,
+				StructureData:     mapComponent(doc.Buoy.Structure),
+				FlotteurData:      mapComponent(doc.Buoy.Flotteur),
+				PyloneData:        mapTopmark(doc.Buoy.Pylone),
+				EquipementData:    mapTopmark(doc.Buoy.Equipement),
+			}
+			db.DB.Where(models.Buoy{Name: buoyModel.Name}).FirstOrCreate(&buoyModel)
+			fmt.Printf("✅ Bouée [%s] synchronisée en BDD.\n", buoyModel.Name)
+		}
 	}
 
-	fmt.Printf("🎉 Fin du script ! %d modèles XML ont été parsés avec succès et sont prêts à rejoindre la BD.\n", successCount)
+	fmt.Println("🎉 Fin du parsing !")
 }
 
-// mapComponent convertit un composant XML en ComponentData de notre Modèle GORM
 func mapComponent(xmlComp XMLComponent) models.ComponentData {
 	comp := models.ComponentData{
 		Name:           xmlComp.Name,
@@ -129,7 +156,6 @@ func mapComponent(xmlComp XMLComponent) models.ComponentData {
 		OffsetFlotteur: xmlComp.OffsetFlotteur,
 		OffsetOrganeau: xmlComp.OffsetOrganeau,
 	}
-	
 	for _, el := range xmlComp.Elements {
 		comp.Elements = append(comp.Elements, models.ElementDimItem{
 			Hauteur:      el.H,
@@ -142,7 +168,6 @@ func mapComponent(xmlComp XMLComponent) models.ComponentData {
 	return comp
 }
 
-// mapTopmark convertit un XMLTopmark en TopmarkData de notre Modèle GORM
 func mapTopmark(xmlTop XMLTopmark) models.TopmarkData {
 	return models.TopmarkData{
 		Name:      xmlTop.Name,
@@ -151,4 +176,10 @@ func mapTopmark(xmlTop XMLTopmark) models.TopmarkData {
 		WidthLow:  xmlTop.WidthLow,
 		Masse:     xmlTop.Masse,
 	}
+}
+
+func parseFloat(s string) float64 {
+	s = strings.ReplaceAll(s, ",", ".")
+	val, _ := strconv.ParseFloat(s, 64)
+	return val
 }

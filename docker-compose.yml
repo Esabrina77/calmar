@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  # --- Base de Données PostgreSQL 15 ---
+  postgres:
+    image: postgres:15-alpine
+    container_name: calmar_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - calmar_pgdata:/var/lib/postgresql/data
+    networks:
+      - calmar_network
+
+  # --- Interface d'administration pgAdmin ---
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: calmar_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - calmar_network
+
+volumes:
+  calmar_pgdata:
+    driver: local
+
+networks:
+  calmar_network:
+    driver: bridge
