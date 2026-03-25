@@ -8,8 +8,8 @@ import (
 // Ces données seront stockées en base dans nos champs JSONB.
 type ElementDimItem struct {
 	Hauteur      float64 `json:"H"`
-	DiametreHaut float64 `json:"D0"`
-	DiametreBas  float64 `json:"D1"`
+	DiametreBas  float64 `json:"D0"` // D0 = Diamètre Bas (Low)
+	DiametreHaut float64 `json:"D1"` // D1 = Diamètre Haut (High)
 	DiametreInt  float64 `json:"DI"`
 	Volume       float64 `json:"Volume"`
 }

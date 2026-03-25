@@ -1,3 +1,15 @@
+/*
+ * CALMAR EQUILIBRIUM ENGINE - CORE COMPILATION
+ * --------------------------------------------
+ * Ce fichier implémente l'algorithme itératif d'équilibre statique
+ * pour determiner l'enfoncement (Draft) et la tension de mouillage.
+ *
+ * Algorithme :
+ * 1. Incrémentation de l'enfoncement (submersion step 5mm).
+ * 2. Calcul du volume immergé cumulé Structure + Flotteur.
+ * 3. Évaluation des efforts de traînées environnementales (IALA).
+ * 4. Convergence vers l'équilibre : Poussée d'Archimède >= Poids Totaux.
+ */
 package calc
 
 import (
@@ -17,58 +29,46 @@ type SiteConditions struct {
 	Marnage         float64 // Amplitude de marée (marnage) en mètres
 }
 
-// SimulationParams regroupe les choix de configuration de l'utilisateur pour un calcul donné
+// SimulationParams regroupe les choix de configuration de l'utilisateur
 type SimulationParams struct {
-	Buoy        models.Buoy
-	Chain       models.Chain
-	NumBallast  int     // Nombre de lests choisis
-	LestDensity float64 // Densité du lest (ex: 7.0 pour fonte, 2.4 pour béton)
-	AnchorDensity float64 // Densité du corps mort (ex: 2.4 pour béton)
+	Buoy          models.Buoy
+	Chain         models.Chain
+	NumBallast    int     // Nombre de lests
+	LestDensity   float64 // kg/m³
+	AnchorDensity float64 // kg/m³
 }
 
-// FindEquilibrium fait tourner la boucle d'équilibre pas-à-pas (Simulation d'Ancrage)
+// FindEquilibrium fait tourner la boucle d'équilibre pas-à-pas
 func FindEquilibrium(params SimulationParams, conditions SiteConditions) (SimulationResult, error) {
-	fmt.Printf("🔬 Simulation d'équilibre IALA pour la bouée : %s (Chaîne: %s DN%.1f)\n", 
+	fmt.Printf("🔬 Simulation IALA : %s (Chaîne: %s DN%.1f)\n", 
 		params.Buoy.Name, params.Chain.Type, params.Chain.DN)
 
 	startTime := time.Now()
 	var result SimulationResult
 
-	// --- 1. CONFIGURATION DE BASE ---
-	submersionStep := 0.005 // Pas de 5 millimètres conforme VB et PHP
-	currentDepth := 0.0     // Enfoncement du FLOTTEUR (m)
-	maxDepthAllowed := 20.0 // Sécurité anti-boucle infinie
+	// 1. Paramètres caténaires
+	submersionStep := 0.005 
+	currentDepth := 0.0     
+	maxDepthAllowed := 25.0 
 
-	// --- 2. PARAMÈTRES CATÉNAIRES DYNAMIQUES ---
 	poidsLineicImmerge := CalculateLineicWeight(params.Chain.MasseLineique)
 	hauteurCatenaire := conditions.WaterDepth 
 
-	// Rayon de la chaîne pour calcul de traînée (approximation cylindrique IALA)
-	// DN est en mm, on convertit en m. On multiplie par un facteur de forme (souvent 2.65 pour Studless)
-	const chainDragFactor = 2.65
 	diametreChaineM := params.Chain.DN / 1000.0
-	surfaceChaineRef := hauteurCatenaire * (diametreChaineM * chainDragFactor)
+	surfaceChaineRef := hauteurCatenaire * (diametreChaineM * 2.65)
 
-	// --- 3. CALCUL DES MASSES FIXES ---
+	// 2. Masses Fixes
 	masseBoueeFixe := calculateTotalMass(params.Buoy)
 	masseLestTotale := float64(params.NumBallast) * params.Buoy.MasseLestUnitaire
-	
-	// Poids du lest dans l'eau
-	poidsLestImmerge := 0.0
-	if params.LestDensity > WaterDensity {
-		poidsLestImmerge = masseLestTotale * (1.0 - (WaterDensity / params.LestDensity))
-	}
+	poidsLestImmerge := CalculateSubmergedBallastWeight(masseLestTotale)
 
-	// --- 4. LA BOUCLE PROPRE "CALMAR" ---
+	// 3. Boucle d'Équilibre
 	for currentDepth < maxDepthAllowed {
-		// A. Calculer le volume immergé Total (Stack Flotteur + Structure)
 		submergedVol := calculateTotalSubmergedVolume(params.Buoy, currentDepth)
 
-		// B. Calcul des efforts du site (Vent, Courant)
 		surfaceWind := calculateTotalSurfaceEmergee(params.Buoy, currentDepth)
 		windForce := CalculateWindDrag(conditions.WindVelocity, surfaceWind)
 
-		// Vitesse courant combinée (IALA)
 		vitesseWave := 0.0
 		if conditions.WavePeriod > 0 {
 			vitesseWave = math.Pi * (conditions.WaveHeight / 1.85) / conditions.WavePeriod
@@ -85,8 +85,6 @@ func FindEquilibrium(params SimulationParams, conditions SiteConditions) (Simula
 		longueurCatenaire := math.Sqrt(CalculateCatenaryLength(hauteurCatenaire, totalHorizontalEffort, poidsLineicImmerge))
 		poidsCatenaireImmergee := longueurCatenaire * poidsLineicImmerge
 
-		// D. CONDITION D'ÉQUILIBRE (Archimède vs Poids Totaux)
-		// Volume Déplacé = (MasseFixe + PoidsLestImmergé + PoidsChaîneLevée) / DensitéEau
 		poidsTotauxImmerges := masseBoueeFixe + poidsLestImmerge + poidsCatenaireImmergee
 		volumeQuiDoitEtreImmerge := poidsTotauxImmerges / WaterDensity
 
@@ -94,88 +92,71 @@ func FindEquilibrium(params SimulationParams, conditions SiteConditions) (Simula
 			// --- RÉSULTAT TROUVÉ ---
 			result.Enfoncement = currentDepth
 			result.VolumeDeplacer = submergedVol
-			result.DeplacementTotal = poidsTotauxImmerges / 1000.0 // t
+			result.DeplacementTotal = poidsTotauxImmerges / 1000.0 // Conversion Tonnes
 			result.EffortHorizontalKg = totalHorizontalEffort
 			result.LongueurCatenaire = longueurCatenaire
 			
-			// Tension (T2 = H2 + V2)
-			result.TensionMaxMouillage = math.Sqrt(math.Pow(poidsCatenaireImmergee/1000.0, 2) + math.Pow(totalHorizontalEffort, 2))
+			// Tension en TONNES
+			result.TensionMaxMouillage = math.Sqrt(math.Pow(poidsCatenaireImmergee/1000.0, 2) + math.Pow(totalHorizontalEffort/1000.0, 2))
 
 			// Franc-Bord
 			hFlotteur := 0.0
 			for _, el := range params.Buoy.FlotteurData.Elements { hFlotteur += el.Hauteur }
 			result.FrancBordBouee = hFlotteur - currentDepth
 
-			// Réserve Flottabilité
 			volTotal := calculateTotalVolume(params.Buoy)
 			if volTotal > 0 {
 				result.ReserveFlotabilite = math.Round(((volTotal - submergedVol)/volTotal)*10000) / 100
 			}
 
-			// Coefficients de Sécurité
 			result.CoefSecChaine = CalculateChainSafetyCoefficient(params.Chain.ChargeEpreuveQ2*1000.0, hauteurCatenaire, poidsLineicImmerge, totalHorizontalEffort)
-			
-			// Corps Mort
-			result.MasseMinimaleCM = CalculateMinAnchorMass(totalHorizontalEffort, params.AnchorDensity)
-			result.CoefSecCM = CalculateSubmergedAnchorWeight(result.MasseMinimaleCM, params.AnchorDensity) / totalHorizontalEffort
+			result.MasseMinimaleCM = CalculateMinAnchorMass(totalHorizontalEffort, params.AnchorDensity/1000.0)
+			result.CoefSecCM = CalculateSubmergedAnchorWeight(result.MasseMinimaleCM, params.AnchorDensity/1000.0) / totalHorizontalEffort
 
-			// Données du site
 			result.ProfondeurMax = CalculateMaxDepth(conditions.WaterDepth, conditions.Marnage, conditions.WaveHeight)
 			result.ProfondeurMin = CalculateMinDepth(conditions.WaterDepth, conditions.WaveHeight)
 			result.RayonEvitage = CalculateSwingRadius(totalHorizontalEffort, poidsLineicImmerge, hauteurCatenaire)
 			result.AngleTangence = CalculateTangencyAngle(poidsCatenaireImmergee, result.TensionMaxMouillage)
 			result.TirantEau = CalculateDraught(currentDepth, params.Buoy.StructureData.OffsetFlotteur)
 
-			// Métadonnées
 			result.TimeCalcul = time.Since(startTime)
 			result.ChainType = fmt.Sprintf("%s DN%.0f", params.Chain.Type, params.Chain.DN)
 			result.DiametreChaine = params.Chain.DN / 1000.0
 			
-			break
+			return result, nil
 		}
-
 		currentDepth += submersionStep
 	}
 
-	return result, nil
+	return result, fmt.Errorf("❌ Équilibre non trouvé (Bouée dépasse maxDepth %.1f)", maxDepthAllowed)
 }
-
-// --- LOGIQUE GÉOMÉTRIQUE DE STACKING ---
 
 func calculateTotalSubmergedVolume(buoy models.Buoy, currentFloatDepth float64) float64 {
 	vol := 0.0
-
-	// 1. Volume du Flotteur
 	hSoFar := 0.0
 	for _, el := range buoy.FlotteurData.Elements {
 		seg := TroncConeElement{DiameterLow: el.DiametreBas, DiameterHigh: el.DiametreHaut, DiameterInter: el.DiametreInt, HauteurElement: el.Hauteur, VolumeReel: el.Volume}
-		if currentFloatDepth > hSoFar {
+		if currentFloatDepth >= hSoFar {
 			immersion := math.Min(el.Hauteur, currentFloatDepth-hSoFar)
 			vol += seg.VolumeByHauteur(immersion)
 		}
 		hSoFar += el.Hauteur
 	}
-
-	// 2. Volume de la Structure (Offset par rapport au bas du flotteur)
-	// draughtStructure = currentFloatDepth + OffsetFlotteur
 	hImmergeeStructure := currentFloatDepth + buoy.StructureData.OffsetFlotteur
 	hSoFar = 0.0
 	for _, el := range buoy.StructureData.Elements {
 		seg := TroncConeElement{DiameterLow: el.DiametreBas, DiameterHigh: el.DiametreHaut, DiameterInter: el.DiametreInt, HauteurElement: el.Hauteur, VolumeReel: el.Volume}
-		if hImmergeeStructure > hSoFar {
+		if hImmergeeStructure >= hSoFar {
 			immersion := math.Min(el.Hauteur, hImmergeeStructure-hSoFar)
 			vol += seg.VolumeByHauteur(immersion)
 		}
 		hSoFar += el.Hauteur
 	}
-
 	return vol
 }
 
 func calculateTotalSurfaceImmergee(buoy models.Buoy, currentFloatDepth float64) float64 {
 	surf := 0.0
-
-	// 1. Surface Flotteur
 	hSoFar := 0.0
 	for _, el := range buoy.FlotteurData.Elements {
 		if currentFloatDepth > hSoFar {
@@ -185,8 +166,6 @@ func calculateTotalSurfaceImmergee(buoy models.Buoy, currentFloatDepth float64) 
 		}
 		hSoFar += el.Hauteur
 	}
-
-	// 2. Surface Structure
 	hImmergeeStructure := currentFloatDepth + buoy.StructureData.OffsetFlotteur
 	hSoFar = 0.0
 	for _, el := range buoy.StructureData.Elements {
@@ -197,35 +176,27 @@ func calculateTotalSurfaceImmergee(buoy models.Buoy, currentFloatDepth float64) 
 		}
 		hSoFar += el.Hauteur
 	}
-
 	return surf
 }
 
 func calculateTotalSurfaceEmergee(buoy models.Buoy, currentFloatDepth float64) float64 {
-	// Superstructure (Pylone + Equipement) : Toujours émergée par définition
 	surfFixed := (buoy.PyloneData.Height * (buoy.PyloneData.WidthHigh + buoy.PyloneData.WidthLow) / 2.0) +
 		(buoy.EquipementData.Height * (buoy.EquipementData.WidthHigh + buoy.EquipementData.WidthLow) / 2.0)
-
-	// Flotteur émergé
 	surfFloat := 0.0
 	hSoFar := 0.0
 	for _, el := range buoy.FlotteurData.Elements {
 		hTotalTranche := hSoFar + el.Hauteur
 		if hTotalTranche > currentFloatDepth {
-			// Y'a du rab au dessus de l'eau
 			emergeDansTranche := el.Hauteur
 			if currentFloatDepth > hSoFar {
 				emergeDansTranche = hTotalTranche - currentFloatDepth
 			}
-			// Diamètre à la flottaison
 			immersionAbsolue := math.Max(0, currentFloatDepth - hSoFar)
 			L_Flottaison := el.DiametreBas + (immersionAbsolue * (el.DiametreHaut - el.DiametreBas) / el.Hauteur)
-			
 			surfFloat += emergeDansTranche * (el.DiametreHaut + L_Flottaison) / 2.0
 		}
 		hSoFar += el.Hauteur
 	}
-
 	return surfFixed + surfFloat
 }
 

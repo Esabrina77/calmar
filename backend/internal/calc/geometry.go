@@ -1,3 +1,14 @@
+/*
+ * CALMAR GEOMETRY ENGINE - VOLUMETRIC MODULE
+ * --------------------------------------------
+ * Ce fichier gère la modélisation mathématique des segments
+ * de bouées (Troncs de cônes pleins ou creux).
+ *
+ * Concepts clés :
+ * - Calcul précis du volume par hauteur (H).
+ * - Application du "Volumetric Ratio" VB.NET pour l'ajustement réel.
+ * - Modélisation des surfaces horizontales et verticales (Trapèzes).
+ */
 package calc
 
 import "math"

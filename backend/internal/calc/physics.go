@@ -1,14 +1,25 @@
+/*
+ * CALMAR PHYSICS ENGINE - IALA COMPLIANCE MODULE
+ * --------------------------------------------
+ * Ce fichier contient les constantes physiques et les formules IALA
+ * transposées du projet legacy Calmar (VB.NET).
+ *
+ * Responsabilités :
+ * - Calcul des traînées (Drag) Vent, Courant, Vagues.
+ * - Modélisation de la caténaire (Catenary).
+ * - Calculs de sécurité (Chain Safety, Anchor Mass).
+ */
 package calc
 
 import "math"
 
 // --- Équivalents VB.NET Paramètres par Défaut ---
 const (
-	WaterDensity      = 1.025   // DensiteEau (kg/m3 pour eau salée, ou 1.025 t/m3)
-	AirDensity        = 0.00129 // DensiteAir
-	MetalDensity      = 7.85    // DensiteMetal (Acier)
-	BallastDensity    = 7.32    // DensiteLest (Fonte)
-	Gravity           = 9.81    // Constante gravitationnelle (m/s²)
+	WaterDensity      = 1025.0   // kg/m3 (eau salée)
+	AirDensity        = 1.225    // kg/m3 (air sec à 15°C)
+	MetalDensity      = 7850.0   // kg/m3 (Acier standard)
+	BallastDensity    = 7320.0   // kg/m3 (Fonte ductile)
+	Gravity           = 9.81     // m/s²
 )
 
 // CalculateBuoyancy calcule la force de la Poussée d'Archimède (en Newton).

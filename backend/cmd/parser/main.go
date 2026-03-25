@@ -159,8 +159,8 @@ func mapComponent(xmlComp XMLComponent) models.ComponentData {
 	for _, el := range xmlComp.Elements {
 		comp.Elements = append(comp.Elements, models.ElementDimItem{
 			Hauteur:      el.H,
-			DiametreHaut: el.D0,
-			DiametreBas:  el.D1,
+			DiametreBas:  el.D0, // D0 = Bas
+			DiametreHaut: el.D1, // D1 = Haut
 			DiametreInt:  el.DI,
 			Volume:       el.Volume,
 		})
