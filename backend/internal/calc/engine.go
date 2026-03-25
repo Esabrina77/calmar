@@ -13,6 +13,7 @@ type SiteConditions struct {
 	CurrentVelocity float64 // Vitesse du courant (V_current) en m/s
 	WaveHeight      float64 // Hauteur de la houle (H_wave) en mètres
 	WavePeriod      float64 // Période de la houle (T) en secondes
+	Marnage         float64 // Amplitude de marée (marnage) en mètres
 }
 
 
@@ -93,6 +94,43 @@ func FindEquilibrium(buoy models.Buoy, conditions SiteConditions) (SimulationRes
 
 			// Rayon d'évitage (Swinging Radius)
 			result.RayonEvitage = CalculateSwingRadius(totalHorizontalEffort, poidsLineicImmerge, hauteurCatenaire)
+
+			// --- CALCULS DE RAPPORT FINAUX ---
+			// Franc-Bord : Hauteur du flotteur qui reste hors de l'eau
+			hauteurTotalFlotteur := 0.0
+			for _, item := range buoy.FlotteurData.Elements {
+				hauteurTotalFlotteur += item.Hauteur
+			}
+			result.FrancBordBouee = hauteurTotalFlotteur - currentDepth
+
+			// Volume Total & Réserve de Flottabilité (%)
+			volTotal := calculateTotalVolume(buoy)
+			if volTotal > 0 {
+				result.ReserveFlotabilite = math.Round(((volTotal - submergedVolume)/volTotal)*100.0*100) / 100
+			}
+
+			// Coefficient de sécurité de la chaîne
+			// [ATTENTE_API] : Récupérer la vraie Charge de Rupture depuis la BDD
+			const chargeRuptureAirExemple = 50000.0 // kg - Charge d'épreuve (Breaking Load)
+			result.CoefSecChaine = CalculateChainSafetyCoefficient(chargeRuptureAirExemple, hauteurCatenaire, poidsLineicImmerge, totalHorizontalEffort)
+
+			// Angle de Tangence (angle de la chaîne à l'organeau)
+			result.AngleTangence = CalculateTangencyAngle(poidsCatenaireImmergee, result.TensionMaxMouillage)
+
+			// Tirant d'Eau & Profondeur de l'Organeau
+			result.TirantEau = CalculateDraught(currentDepth, buoy.StructureData.OffsetFlotteur)
+			// ProfondeurOrganeau non stockée dans SimulationResult pour l'instant
+
+			// Masse Minimale du Corps Mort
+			// [ATTENTE_API] : DensiteCM viendra du formulaire utilisateur (ex: béton=2.4, granite=2.7)
+			const densiteCMExemple = 2.4 // t/m3 (Béton armé standard)
+			result.MasseMinimaleCM = CalculateMinAnchorMass(totalHorizontalEffort, densiteCMExemple)
+			result.CoefSecCM = CalculateSubmergedAnchorWeight(result.MasseMinimaleCM, densiteCMExemple) / totalHorizontalEffort
+
+			// Profondeurs avec Marnage et Houle (depuis SiteConditions)
+			result.ProfondeurMax = CalculateMaxDepth(conditions.WaterDepth, conditions.Marnage, conditions.WaveHeight)
+			result.ProfondeurMin = CalculateMinDepth(conditions.WaterDepth, conditions.WaveHeight)
+
 			break
 		}
 
@@ -101,11 +139,22 @@ func FindEquilibrium(buoy models.Buoy, conditions SiteConditions) (SimulationRes
 		currentDepth += submersionStep
 	}
 
-	// Note: result.FrancBordBouee sera calculé après la sortie de la boucle
 	return result, nil
 }
 
 // --- FONCTIONS SECONDAIRES (À implémenter avec les tranches réelles) ---
+
+// calculateTotalVolume calcule le volume maximal absolu de la bouée (Flotteur + Structure)
+func calculateTotalVolume(buoy models.Buoy) float64 {
+	totalVol := 0.0
+	for _, item := range buoy.FlotteurData.Elements {
+		totalVol += item.Volume
+	}
+	for _, item := range buoy.StructureData.Elements {
+		totalVol += item.Volume
+	}
+	return totalVol
+}
 
 func calculateTotalSubmergedVolume(buoy models.Buoy, currentDepth float64) float64 {
 	totalVolume := 0.0
@@ -138,6 +187,14 @@ func calculateTotalSubmergedVolume(buoy models.Buoy, currentDepth float64) float
 		}
 
 		heightSoFar += item.Hauteur
+	}
+
+	// 2. Parcourir les tranches de la Structure (La queue sous-marine)
+	// [ATTENTE_API] La profondeur relative : structureDepth = currentDepth + buoy.StructureData.OffsetFlotteur
+	// (à câbler avec exactitude dans la semaine)
+	for _, item := range buoy.StructureData.Elements {
+		// La Structure est presque toujours sous l'eau complètement
+		totalVolume += item.Volume
 	}
 
 	return totalVolume
