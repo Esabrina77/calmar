@@ -32,8 +32,8 @@ type XMLBuoy struct {
 	NombreLestMax     int          `xml:"NombreLestMax,attr"`
 	Structure         XMLComponent `xml:"Structure"`
 	Flotteur          XMLComponent `xml:"Flotteur"`
-	Pylone            XMLTopmark   `xml:"Pylone"`
-	Equipement        XMLTopmark   `xml:"Equipement"`
+	Pylone            []XMLTopmark `xml:"Pylone"`
+	Equipement        []XMLTopmark `xml:"Equipement"`
 }
 
 type XMLComponent struct {
@@ -79,6 +79,7 @@ func main() {
 
 	// 2. Initialisation DB
 	db.InitDatabase()
+	db.DB.Exec("TRUNCATE TABLE buoys CASCADE")
 
 	fmt.Println("🚀 Démarrage du Parser Calmar (Bouées & Chaînes)...")
 
@@ -138,8 +139,8 @@ func main() {
 				NombreLestMax:     doc.Buoy.NombreLestMax,
 				StructureData:     mapComponent(doc.Buoy.Structure),
 				FlotteurData:      mapComponent(doc.Buoy.Flotteur),
-				PyloneData:        mapTopmark(doc.Buoy.Pylone),
-				EquipementData:    mapTopmark(doc.Buoy.Equipement),
+				PyloneData:        mapTopmarks(doc.Buoy.Pylone),
+				EquipementData:    mapTopmarks(doc.Buoy.Equipement),
 			}
 			db.DB.Where(models.Buoy{Name: buoyModel.Name}).FirstOrCreate(&buoyModel)
 			fmt.Printf("✅ Bouée [%s] synchronisée en BDD.\n", buoyModel.Name)
@@ -168,14 +169,18 @@ func mapComponent(xmlComp XMLComponent) models.ComponentData {
 	return comp
 }
 
-func mapTopmark(xmlTop XMLTopmark) models.TopmarkData {
-	return models.TopmarkData{
-		Name:      xmlTop.Name,
-		Height:    xmlTop.Height,
-		WidthHigh: xmlTop.WidthHigh,
-		WidthLow:  xmlTop.WidthLow,
-		Masse:     xmlTop.Masse,
+func mapTopmarks(xmlTops []XMLTopmark) []models.TopmarkData {
+	var tops []models.TopmarkData
+	for _, xt := range xmlTops {
+		tops = append(tops, models.TopmarkData{
+			Name:      xt.Name,
+			Height:    xt.Height,
+			WidthHigh: xt.WidthHigh,
+			WidthLow:  xt.WidthLow,
+			Masse:     xt.Masse,
+		})
 	}
+	return tops
 }
 
 func parseFloat(s string) float64 {

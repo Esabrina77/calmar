@@ -1,6 +1,6 @@
 module backend
 
-go 1.25.2
+go 1.22
 
 require (
 	gorm.io/driver/postgres v1.6.0

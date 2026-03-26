@@ -7,15 +7,6 @@ import (
 	"time"
 )
 
-// SimulationParams regroupe les choix de configuration de l'utilisateur
-type SimulationParams struct {
-	Buoy               models.Buoy
-	Chain              models.Chain
-	NumBallast         int     // Nombre de lests
-	ExtraEquipmentMass float64 // Masse supplémentaire en kg (Solar pipes, batteries...)
-	LestDensity        float64 // kg/m³
-	AnchorDensity      float64 // kg/m³
-}
 
 // FindEquilibrium fait tourner la boucle d'équilibre pas-à-pas
 func FindEquilibrium(params SimulationParams, conditions SiteConditions) (SimulationResult, error) {
@@ -85,11 +76,23 @@ func FindEquilibrium(params SimulationParams, conditions SiteConditions) (Simula
 			result.FrancBord = maxDepthAllowed - currentDepth
 			result.TirantEau = currentDepth + params.Buoy.StructureData.OffsetFlotteur
 			
+			// Calcul de la réserve de flottabilité (%)
+			volTotalFlotteur := 0.0
+			for _, el := range params.Buoy.FlotteurData.Elements { volTotalFlotteur += el.Volume }
+			if volTotalFlotteur > 0 {
+				result.ReserveFlottabilite = ((volTotalFlotteur - submergedVol) / volTotalFlotteur) * 100.0
+			}
+			
 			result.TraineeVent = windForce
 			result.TraineeCourant = currentForceChain
 			result.TraineeVague = currentForceBuoy
 			result.VitesseCourantSurface = vitesseCourantSurface
 			
+			// Sécurité IALA
+			result.IsSafe = true
+			result.CoefSecuriteChaine = CalculateChainSafetyCoefficient(params.ChainQualityCharge, hauteurCatenaire, poidsLineicImmerge, totalHorizontalEffort)
+			result.MasseMinCorpsMort = CalculateMinAnchorMass(totalHorizontalEffort, params.AnchorDensity) 
+
 			result.BuoyName = params.Buoy.Name
 			result.ChainType = params.Chain.Type
 			result.SiteConditions = conditions
@@ -105,7 +108,14 @@ func FindEquilibrium(params SimulationParams, conditions SiteConditions) (Simula
 }
 
 func calculateTotalMass(buoy models.Buoy) float64 {
-	return buoy.FlotteurData.Masse + buoy.StructureData.Masse + buoy.PyloneData.Masse + buoy.EquipementData.Masse
+	mass := buoy.FlotteurData.Masse + buoy.StructureData.Masse
+	for _, p := range buoy.PyloneData {
+		mass += p.Masse
+	}
+	for _, e := range buoy.EquipementData {
+		mass += e.Masse
+	}
+	return mass
 }
 
 func calculateTotalSubmergedVolume(buoy models.Buoy, immersion float64) float64 {
@@ -118,9 +128,10 @@ func calculateTotalSubmergedVolume(buoy models.Buoy, immersion float64) float64 
 
 func calculateTotalSurfaceEmergee(buoy models.Buoy, immersion float64) float64 {
 	surf := CalculateComponentSurfaceEmergee(buoy.FlotteurData, immersion)
-	// Surface pylône (Trapèze)
-	pyloneSurf := buoy.PyloneData.Height * (buoy.PyloneData.WidthHigh + buoy.PyloneData.WidthLow) / 2.0
-	surf += pyloneSurf
+	// Surface pylônes (Somme des trapèzes)
+	for _, p := range buoy.PyloneData {
+		surf += p.Height * (p.WidthHigh + p.WidthLow) / 2.0
+	}
 	return surf
 }
 

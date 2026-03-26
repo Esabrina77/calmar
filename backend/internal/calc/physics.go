@@ -109,7 +109,7 @@ func CalculateChainSafetyCoefficient(chargeEpreuve float64, hauteurCatenaire flo
 	if denom <= 0 {
 		return 0
 	}
-	return chargeEpreuve / denom
+	return (chargeEpreuve * 1000.0) / denom
 }
 
 func CalculateTangencyAngle(poidsCatenaireImmerge float64, tensionChaineTonnes float64) float64 {

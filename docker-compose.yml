@@ -7,24 +7,63 @@ services:
     container_name: calmar_db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER:-calmar_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-calmar_secret_2024}
+      POSTGRES_DB: ${DB_NAME:-calmar}
     ports:
-      - "${DB_PORT}:5432"
+      - "5433:5432" # Host:Container
     volumes:
       - calmar_pgdata:/var/lib/postgresql/data
     networks:
       - calmar_network
 
-  # --- Interface d'administration pgAdmin ---
+  # --- Backend GO (Moteur Physique) ---
+  backend:
+    image: calmar-backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: calmar_backend
+    restart: unless-stopped
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-calmar_user}
+      DB_PASSWORD: ${DB_PASSWORD:-calmar_secret_2024}
+      DB_NAME: ${DB_NAME:-calmar}
+      API_PORT: 4000
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    networks:
+      - calmar_network
+
+  # --- Frontend React/Next.js ---
+  frontend:
+    image: calmar-frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: calmar_frontend
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:4000/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - calmar_network
+
+  # --- pgAdmin ---
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: calmar_pgadmin
     restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@calmar.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
     ports:
       - "5050:80"
     depends_on:

@@ -1,5 +1,7 @@
 package calc
 
+import "backend/internal/models"
+
 // SiteConditions regroupe les paramètres météo-océaniques du site
 type SiteConditions struct {
 	WaterDepth      float64 `json:"water_depth"`      // Profondeur moyenne (m)
@@ -9,6 +11,17 @@ type SiteConditions struct {
 	CurrentVelocity float64 `json:"current_velocity"` // Vitesse courant (m/s)
 	WaveHeight      float64 `json:"wave_height"`      // Hauteur de houle (m)
 	WavePeriod      float64 `json:"wave_period"`      // Période de houle (s)
+}
+
+// SimulationParams regroupe les objets et choix de l'utilisateur
+type SimulationParams struct {
+	Buoy               models.Buoy
+	Chain              models.Chain
+	NumBallast         int
+	ExtraEquipmentMass float64
+	LestDensity        float64 // kg/m³
+	AnchorDensity      float64 // kg/m³ (2400 pour béton, 7850 pour acier)
+	ChainQualityCharge float64 // Charge d'épreuve en tonnes (Q1, Q2 ou Q3)
 }
 
 // SimulationResult contient toutes les données de sortie du moteur

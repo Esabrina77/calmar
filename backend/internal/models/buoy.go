@@ -45,10 +45,10 @@ type Buoy struct {
 	// L'utilisation de `serializer:json` permet à GORM de convertir automatiquement
 	// ces structs internes en colonnes JSONB sous PostgreSQL.
 	// C'est toute la puissance et la souplesse évoquée !
-	StructureData  ComponentData `gorm:"type:jsonb;serializer:json" json:"structure"`
-	FlotteurData   ComponentData `gorm:"type:jsonb;serializer:json" json:"flotteur"`
-	PyloneData     TopmarkData   `gorm:"type:jsonb;serializer:json" json:"pylone"`
-	EquipementData TopmarkData   `gorm:"type:jsonb;serializer:json" json:"equipement"`
+	StructureData  ComponentData   `gorm:"type:jsonb;serializer:json" json:"structure"`
+	FlotteurData   ComponentData   `gorm:"type:jsonb;serializer:json" json:"flotteur"`
+	PyloneData     []TopmarkData   `gorm:"type:jsonb;serializer:json" json:"pylone"`
+	EquipementData []TopmarkData   `gorm:"type:jsonb;serializer:json" json:"equipement"`
 
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`

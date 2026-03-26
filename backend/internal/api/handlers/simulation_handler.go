@@ -4,16 +4,19 @@ import (
 	"backend/internal/calc"
 	"backend/internal/db"
 	"backend/internal/models"
+	"fmt"
 	"github.com/gofiber/fiber/v2"
 )
 
 // SimulationRequest définit le format attendu du Frontend pour lancer un calcul
 type SimulationRequest struct {
-	BuoyID             uint                `json:"buoy_id"`
-	ChainID            uint                `json:"chain_id"`
-	NumBallast         int                 `json:"num_ballast"`
-	ExtraEquipmentMass float64             `json:"extra_mass"`
-	SiteConditions     calc.SiteConditions `json:"conditions"`
+	BuoyID        uint                `json:"buoy_id"`
+	ChainID       uint                `json:"chain_id"`
+	NumBallast    int                 `json:"num_ballast"`
+	EquipmentMass float64             `json:"equipment_mass"`
+	ChainQuality  string              `json:"chain_quality"` // Q1, Q2, Q3
+	AnchorDensity float64             `json:"anchor_density"`
+	Conditions    calc.SiteConditions `json:"conditions"`
 }
 
 // HandleSimulation orchestre l'appel au moteur physique IALA
@@ -36,21 +39,34 @@ func HandleSimulation(c *fiber.Ctx) error {
 		return fiber.NewError(404, "Type de chaîne non trouvé")
 	}
 
+	// Mapping de la Charge d'Épreuve selon la qualité Q1, Q2, Q3
+	chargeEpreuve := chain.ChargeEpreuveQ1
+	switch req.ChainQuality {
+	case "Q2":
+		chargeEpreuve = chain.ChargeEpreuveQ2
+	case "Q3":
+		chargeEpreuve = chain.ChargeEpreuveQ3
+	}
+
 	// 3. Setup Physics Engine Params
 	simParams := calc.SimulationParams{
-		Buoy:               buoy,
-		Chain:              chain,
-		NumBallast:         req.NumBallast,
-		ExtraEquipmentMass: req.ExtraEquipmentMass,
-		LestDensity:        calc.BallastDensity,
-		AnchorDensity:      2400.0, // Default concrete
+		Buoy:                buoy,
+		Chain:               chain,
+		NumBallast:          req.NumBallast,
+		ExtraEquipmentMass:  req.EquipmentMass,
+		LestDensity:         calc.BallastDensity,
+		AnchorDensity:       req.AnchorDensity,
+		ChainQualityCharge:  chargeEpreuve, // Nouvelle valeur injectée
 	}
 
 	// 4. Critical Calculation (IALA compliant)
-	result, err := calc.FindEquilibrium(simParams, req.SiteConditions)
+	result, err := calc.FindEquilibrium(simParams, req.Conditions)
 	if err != nil {
 		return fiber.NewError(500, "Échec du moteur physique : "+err.Error())
 	}
+
+	// DEBUG LOG
+	fmt.Printf("📊 RÉSULTAT BRUT : %+v\n", result)
 
 	return c.JSON(result)
 }
