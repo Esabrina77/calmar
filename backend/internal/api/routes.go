@@ -26,6 +26,7 @@ func SetupApp() *fiber.App {
 	// Chaque domaine métier est isolé
 	routes.RegisterBuoyRoutes(api)      // Gestion des modèles de bouées
 	routes.RegisterChainRoutes(api)     // Gestion du catalogue de chaînes
+	routes.RegisterEquipmentRoutes(api) // Catalogue d'équipements standards
 	routes.RegisterSimulationRoutes(api) // Moteur de calcul caténaire
 
 	// Health Check

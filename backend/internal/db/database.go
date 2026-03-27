@@ -40,8 +40,8 @@ func InitDatabase() {
 	log.Println("✅ Connexion à PostgreSQL établie !")
 
 	// 4. Auto-Migration : GORM crée / met à jour les tables automatiquement
-	log.Println("🔄 Auto-Migration des tables (Buoy, Chain)...")
-	err = DB.AutoMigrate(&models.Buoy{}, &models.Chain{})
+	log.Println("🔄 Auto-Migration des tables (Buoy, ChainType, Chain)...")
+	err = DB.AutoMigrate(&models.Buoy{}, &models.ChainType{}, &models.Chain{}, &models.EquipmentStandard{})
 	if err != nil {
 		log.Fatal("❌ Échec de l'Auto-Migration :", err)
 	}

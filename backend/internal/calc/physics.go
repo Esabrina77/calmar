@@ -11,7 +11,7 @@ import "math"
 // --- Constantes Alignées sur VB.NET ---
 const (
 	WaterDensity   = 1025.0 // kg/m3 (eau salée)
-	AirDensity     = 1.225  // kg/m3 (air sec à 15°C)
+	AirDensity     = 1.29   // kg/m3 (Match Calmar .NET)
 	MetalDensity   = 7850.0 // kg/m3 (Acier standard)
 	BallastDensity = 7320.0 // kg/m3 (Fonte ductile)
 	Gravity        = 9.81   // m/s²
@@ -29,15 +29,15 @@ func CalculateWindDrag(vitesseVent float64, surfaceEmergee float64) float64 {
 }
 
 // CalculateChainDrag calcule l'effort du courant sur la CHAINE (kgf)
-func CalculateChainDrag(vitesseCourant float64, surfaceChaine float64) float64 {
+func CalculateChainDrag(vitesseCourant float64, surfaceChaine float64, waterDensity float64) float64 {
 	const cdChain = 1.2
-	return (0.5 * (vitesseCourant * vitesseCourant) * WaterDensity * (cdChain * surfaceChaine)) / Gravity
+	return (0.5 * (vitesseCourant * vitesseCourant) * waterDensity * (cdChain * surfaceChaine)) / Gravity
 }
 
 // CalculateBuoyCurrentDrag calcule l'effort du courant sur la BOUEE (kgf)
-func CalculateBuoyCurrentDrag(vitesseCourantSurface float64, surfaceImmergee float64) float64 {
+func CalculateBuoyCurrentDrag(vitesseCourantSurface float64, surfaceImmergee float64, waterDensity float64) float64 {
 	const cdCurrent = 1.2
-	return (0.5 * (vitesseCourantSurface * vitesseCourantSurface) * WaterDensity * (cdCurrent * surfaceImmergee)) / Gravity
+	return (0.5 * (vitesseCourantSurface * vitesseCourantSurface) * waterDensity * (cdCurrent * surfaceImmergee)) / Gravity
 }
 
 // CalculateCatenaryLength calcule S^2 (Equation de la ligne de mouillage)
@@ -53,9 +53,6 @@ func CalculateLineicWeight(massLineiqueAir float64) float64 {
 	return massLineiqueAir * (1.0 - (WaterDensity / MetalDensity))
 }
 
-func CalculateSubmergedBallastWeight(massBallastAir float64) float64 {
-	return massBallastAir * (1.0 - (WaterDensity / BallastDensity))
-}
 
 // CalculateSubmergedBallastWeightDynamic avec densité d'eau variable
 func CalculateSubmergedBallastWeightDynamic(massBallastAir float64, waterDensity float64) float64 {
@@ -86,22 +83,29 @@ func CalculateSwingRadius(effortHorizontalKg float64, poidsLineique float64, hau
 	return forceRatio * ACosh((hauteurCatenaire/forceRatio)+1.0)
 }
 
-func CalculateMinAnchorMass(effortHorizontalKg float64, densiteCM float64) float64 {
+func CalculateMinAnchorMass(effortHorizontalKg float64, densiteCM float64, waterDensity float64) float64 {
 	const seaBedFrictionAngle = 45.0
 	const safetyFactor = 1.5
-	if densiteCM <= WaterDensity/1000.0 {
+	// CORRECTION #2 : densiteCM est en t/m³ (ex: 2.4), waterDensity en kg/m³ (ex: 1025)
+	// On convertit waterDensity en t/m³ pour cohérence avec .NET (DensiteEau = 1.025 t/m³)
+	waterDensityTons := waterDensity / 1000.0 // kg/m³ → t/m³
+	if densiteCM <= waterDensityTons {
 		return 0
 	}
 	angleRad := seaBedFrictionAngle * math.Pi / 180.0
-	return safetyFactor * (effortHorizontalKg / 1000.0) * (densiteCM / (densiteCM - WaterDensity/1000.0)) / math.Tan(angleRad) * 1000.0
+	// EFFORT_HORIZONTALE en .NET est en tonnes, on divise par 1000 pour convertir kg → t
+	// Résultat en tonnes × 1000 = kg
+	return safetyFactor * (effortHorizontalKg / 1000.0) * (densiteCM / (densiteCM - waterDensityTons)) / math.Tan(angleRad) * 1000.0
 }
 
-func CalculateSubmergedAnchorWeight(massCorpsMort float64, densiteCM float64) float64 {
+func CalculateSubmergedAnchorWeight(massCorpsMort float64, densiteCM float64, waterDensity float64) float64 {
 	if densiteCM <= 0 {
 		return 0
 	}
-	return massCorpsMort / (densiteCM * 1000.0) * (densiteCM*1000.0 - WaterDensity)
+	// On passe de kg à m3 -> (mass / (densiteCM*1000)) * (densiteCM*1000 - waterDensity)
+	return massCorpsMort * (1.0 - (waterDensity / (densiteCM * 1000.0)))
 }
+
 
 func CalculateChainSafetyCoefficient(chargeEpreuve float64, hauteurCatenaire float64, poidsLineique float64, effortHorizontalKg float64) float64 {
 	tensionVerticale := (hauteurCatenaire * poidsLineique)

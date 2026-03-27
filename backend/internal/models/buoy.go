@@ -53,3 +53,11 @@ type Buoy struct {
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
+
+// EquipmentStandard représente un équipement du catalogue (ex: Lanterne, Batterie).
+type EquipmentStandard struct {
+	ID             uint    `gorm:"primaryKey" json:"id"`
+	Categorie      string  `gorm:"type:varchar(100);not null" json:"categorie"`
+	Name           string  `gorm:"type:varchar(255);not null" json:"name"`
+	MasseUnitaire  float64 `json:"masse_unitaire"`
+}

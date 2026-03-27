@@ -39,7 +39,23 @@ func CalculateComponentSubmergedVolume(comp models.ComponentData, immersion floa
 		bInt := math.Pi * math.Pow(el.DiametreInt/2, 2)
 		volCreux := bInt * hInElement
 
-		totalVol += (volTranche - volCreux)
+		actualVol := volTranche - volCreux
+
+		// Application du Ratio de correction (si présent en base)
+		if el.Volume > 0 {
+			b1Full := math.Pi * math.Pow(el.DiametreBas/2, 2)
+			b2Full := math.Pi * math.Pow(el.DiametreHaut/2, 2)
+			volGeoTotal := (el.Hauteur / 3.0) * (b1Full + math.Sqrt(b1Full*b2Full) + b2Full)
+			volCreuxTotal := bInt * el.Hauteur
+			volNetTheo := volGeoTotal - volCreuxTotal
+			
+			if volNetTheo > 0 {
+				ratio := el.Volume / volNetTheo
+				actualVol *= ratio
+			}
+		}
+
+		totalVol += actualVol
 		currentH += el.Hauteur
 	}
 	return totalVol

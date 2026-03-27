@@ -44,10 +44,19 @@ type SimulationResult struct {
 	ChainType               string         `json:"chain_type"`
 	SiteConditions          SiteConditions `json:"site_conditions"`
 	
-    // --- Détails Physiques ---
+	// --- Détails Physiques ---
 	TraineeVent             float64 `json:"trainee_vent"`             // kg
 	TraineeCourant          float64 `json:"trainee_courant"`          // kg
 	TraineeVague            float64 `json:"trainee_vague"`            // kg
 	VitesseCourantSurface   float64 `json:"vitesse_courant_surface"`   // m/s
 	TimeCalcul              float64 `json:"time_calcul"`              // ms
+
+	// --- Nouveaux champs pour Fidélité 100% ---
+	LongueurCatenary        float64 `json:"longueur_catenary"`        // m
+	SurfaceLateraleEmergee  float64 `json:"surface_laterale_emergee"`  // m2
+	SurfaceLateraleImmergee float64 `json:"surface_laterale_immergee"` // m2
+	PoidsLineiqueImmerge    float64 `json:"poids_lineique_immerge"`    // kg/m
+	EffortHorizontalKg      float64 `json:"effort_horizontal_kg"`      // kg
+	PoidsLestImmerge        float64 `json:"poids_lest_immerge"`        // kg
+	MasseBoueeFixe          float64 `json:"masse_bouee_fixe"`          // kg (Avec équipements)
 }
