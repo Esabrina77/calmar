@@ -8,9 +8,10 @@ interface BuoyRendererProps {
   buoy: Buoy | any;
   width?: number;
   height?: number;
+  waterLine?: number;
 }
 
-export default function BuoyRenderer({ buoy, width = 300, height = 500 }: BuoyRendererProps) {
+export default function BuoyRenderer({ buoy, width = 300, height = 500, waterLine = 0 }: BuoyRendererProps) {
   if (!buoy) return <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Aucun modèle sélectionné</div>;
 
   const parts: { el: any; yBot: number; yTop: number; type: string }[] = [];
