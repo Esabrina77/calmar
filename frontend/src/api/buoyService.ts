@@ -1,6 +1,6 @@
 import { Buoy, Chain } from '../types/models';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api";
+const API_URL = "http://localhost:4000/api";
 
 export const fetchBuoys = async (): Promise<Buoy[]> => {
   const res = await fetch(`${API_URL}/buoys`);
@@ -9,6 +9,11 @@ export const fetchBuoys = async (): Promise<Buoy[]> => {
 
 export const fetchChains = async (): Promise<Chain[]> => {
   const res = await fetch(`${API_URL}/chains`);
+  return res.json();
+};
+
+export const fetchEquipments = async (): Promise<any[]> => {
+  const res = await fetch(`${API_URL}/equipments`);
   return res.json();
 };
 

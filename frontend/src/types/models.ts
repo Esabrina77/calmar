@@ -17,6 +17,8 @@ export interface BuoyComponent {
 export interface Buoy {
   id: number;
   name: string;
+  chaine_min: number;
+  chaine_max: number;
   structure?: BuoyComponent;
   flotteur?: BuoyComponent;
   pylone?: BuoyComponent[];
@@ -25,6 +27,7 @@ export interface Buoy {
 
 export interface Chain {
   id: number;
+  dn: number;
   type: string;
 }
 
@@ -33,6 +36,7 @@ export interface SiteConditions {
   marnage: number;
   wave_height: number;
   wave_significant: number;
+  wave_period: number;
   wind_velocity: number;
   current_velocity: number;
   water_density: number;
